@@ -4,34 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#09090b">
-<title>WhoEarns — Who's Making What</title>
-<meta name="description" content="Net worth, revenue and career stats for footballers, creators, tech giants and startups. The numbers people actually want to see.">
+<title>WhoEarns — Net Worth, Revenue & Career Stats</title>
+<meta name="description" content="Net worth, monthly revenue and career earnings for footballers, creators, tech giants and AI startups. The numbers people actually want to see.">
+<meta name="keywords" content="net worth, revenue, career stats, footballers, creators, tech companies, AI startups, who earns what">
+<meta property="og:title" content="WhoEarns — Net Worth, Revenue & Career Stats">
+<meta property="og:description" content="The numbers people actually want to see. Net worth and career stats for footballers, creators, tech giants and AI startups.">
+<meta property="og:url" content="https://whoearns.com">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://whoearns.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@WhoEarns">
+<meta name="twitter:title" content="WhoEarns — Net Worth, Revenue & Career Stats">
+<meta name="twitter:description" content="The numbers people actually want to see.">
+<link rel="canonical" href="https://whoearns.com">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%2309090b'/><text y='.9em' font-size='80' font-family='Georgia,serif' fill='%23f2b420'>W</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html{scroll-behavior:smooth;}
-
-/* ── VARIABLES ── */
 :root{
   --bg:#09090b;--s1:#111116;--s2:#18181f;--s3:#222230;
   --b1:rgba(255,255,255,0.07);--b2:rgba(255,255,255,0.12);--b3:rgba(255,255,255,0.20);
   --t1:#f0ece4;--t2:#b0acbc;--t3:#6e6a80;
-  --gold:#f2b420;--gd:rgba(242,180,32,0.13);
-  --green:#22c97a;--gr:rgba(34,201,122,0.13);
-  --blue:#5b9cf6;--br:rgba(91,156,246,0.13);
-  --purple:#a78bfa;--pr:rgba(167,139,250,0.13);
+  --gold:#f2b420;--gd:rgba(242,180,32,0.12);
+  --green:#22c97a;--gr:rgba(34,201,122,0.12);
+  --blue:#5b9cf6;--br:rgba(91,156,246,0.12);
+  --purple:#a78bfa;--pr:rgba(167,139,250,0.12);
   --red:#f25050;
-  --r:12px;--rm:16px;--rl:20px;
+  --r:10px;--rm:14px;--rl:18px;
 }
 body.light{
-  --bg:#f5f2ec;--s1:#ffffff;--s2:#eeebe3;--s3:#e4e0d6;
+  --bg:#f5f2ec;--s1:#ffffff;--s2:#eeeae3;--s3:#e3dfd6;
   --b1:rgba(0,0,0,0.07);--b2:rgba(0,0,0,0.12);--b3:rgba(0,0,0,0.20);
   --t1:#1a1624;--t2:#4a4660;--t3:#7a7690;
 }
 body{background:var(--bg);color:var(--t1);font-family:'Outfit',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.5;}
 ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--b3);border-radius:4px;}
 
-/* ── NAV ── */
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(9,9,11,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--b1);}
 body.light nav{background:rgba(245,242,236,0.92);}
 .logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--t1);text-decoration:none;}
@@ -42,17 +52,16 @@ body.light nav{background:rgba(245,242,236,0.92);}
 .nav-pro{background:var(--gold);color:#000;font-size:12px;font-weight:700;padding:8px 18px;border-radius:100px;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s;white-space:nowrap;}
 .nav-pro:hover{background:var(--t1);}
 
-/* ── HERO ── */
+/* HERO */
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 20px 60px;text-align:center;position:relative;overflow:hidden;}
-.hero-orb{position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:500px;background:radial-gradient(ellipse at center top,rgba(242,180,32,0.09) 0%,transparent 65%);pointer-events:none;}
+.hero-orb{position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:500px;background:radial-gradient(ellipse at center top,rgba(242,180,32,0.08) 0%,transparent 65%);pointer-events:none;}
 .eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;opacity:0;animation:up .6s ease .1s forwards;}
 h1{font-family:'Playfair Display',serif;font-size:clamp(46px,10vw,90px);font-weight:800;letter-spacing:-2px;line-height:.93;margin-bottom:16px;opacity:0;animation:up .6s ease .2s forwards;}
-h1 .g{color:var(--gold);}
-h1 .it{font-style:italic;color:var(--t3);}
+h1 .g{color:var(--gold);}h1 .it{font-style:italic;color:var(--t3);}
 .sub{font-size:clamp(14px,3.5vw,17px);color:var(--t2);line-height:1.7;max-width:500px;margin:0 auto 32px;opacity:0;animation:up .6s ease .3s forwards;}
 .sub strong{color:var(--t1);font-weight:600;}
 
-/* ── SEARCH ── */
+/* SEARCH */
 .search-outer{width:100%;max-width:580px;position:relative;opacity:0;animation:up .6s ease .4s forwards;}
 .search-box{display:flex;background:var(--s1);border:1.5px solid var(--b2);border-radius:var(--rl);overflow:hidden;transition:border-color .2s,box-shadow .2s;}
 .search-box:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px var(--gd);}
@@ -60,8 +69,6 @@ h1 .it{font-style:italic;color:var(--t3);}
 .search-input::placeholder{color:var(--t3);}
 .search-btn{background:var(--gold);color:#000;border:none;padding:12px 22px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .2s;}
 .search-btn:hover{background:#fff;}
-
-/* SEARCH DROPDOWN */
 .search-drop{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--s1);border:1px solid var(--b2);border-radius:var(--rm);overflow:hidden;display:none;z-index:100;box-shadow:0 8px 24px rgba(0,0,0,0.3);}
 .search-drop.show{display:block;}
 .sd-item{display:flex;align-items:center;gap:12px;padding:11px 16px;cursor:pointer;transition:background .15s;border-bottom:1px solid var(--b1);}
@@ -72,13 +79,11 @@ h1 .it{font-style:italic;color:var(--t3);}
 .sd-name{font-size:13px;font-weight:600;margin-bottom:1px;}
 .sd-det{font-size:11px;color:var(--t2);}
 .sd-val{margin-left:auto;font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--gold);flex-shrink:0;}
-
 .qs{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-top:12px;opacity:0;animation:up .6s ease .5s forwards;}
 .qb{background:var(--s1);border:1px solid var(--b1);border-radius:100px;padding:6px 13px;font-size:12px;color:var(--t2);cursor:pointer;transition:all .2s;font-family:'Outfit',sans-serif;font-weight:500;}
 .qb:hover{border-color:var(--gold);color:var(--gold);}
-.qb:active{transform:scale(.97);}
 
-/* ── TICKER ── */
+/* TICKER */
 .ticker{overflow:hidden;background:var(--s1);border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);padding:11px 0;}
 .ticker-track{display:flex;gap:36px;animation:tickScroll 55s linear infinite;white-space:nowrap;width:max-content;}
 .ticker:hover .ticker-track{animation-play-state:paused;}
@@ -87,15 +92,14 @@ h1 .it{font-style:italic;color:var(--t3);}
 .tdot{width:4px;height:4px;border-radius:50%;background:var(--b3);}
 @keyframes tickScroll{from{transform:translateX(0);}to{transform:translateX(-50%)}}
 
-/* ── COUNTERS ── */
+/* COUNTERS */
 .counters{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--b1);}
-.cc{padding:22px 16px;text-align:center;border-right:1px solid var(--b1);transition:background .2s;cursor:default;}
+.cc{padding:22px 16px;text-align:center;border-right:1px solid var(--b1);}
 .cc:last-child{border-right:none;}
-.cc:hover{background:var(--s1);}
 .cn{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,34px);font-weight:700;color:var(--gold);letter-spacing:-1px;line-height:1;margin-bottom:5px;}
 .cl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--t3);}
 
-/* ── ACTIVITY FEED ── */
+/* ACTIVITY FEED */
 .feed-section{max-width:1080px;margin:0 auto;padding:40px 16px 0;}
 .feed-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
 .feed-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;letter-spacing:-.3px;}
@@ -105,7 +109,7 @@ h1 .it{font-style:italic;color:var(--t3);}
 .feed-list{display:flex;flex-direction:column;gap:6px;}
 .feed-item{display:flex;align-items:center;gap:12px;padding:11px 14px;background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);transition:all .2s;cursor:pointer;}
 .feed-item:hover{border-color:var(--b2);transform:translateX(2px);}
-.feed-ico{font-size:16px;flex-shrink:0;width:28px;text-align:center;}
+.feed-ico{font-size:14px;flex-shrink:0;width:24px;text-align:center;}
 .feed-text{flex:1;font-size:12px;color:var(--t1);line-height:1.4;}
 .feed-text strong{color:var(--gold);}
 .feed-time{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--t3);flex-shrink:0;letter-spacing:.5px;}
@@ -114,20 +118,18 @@ h1 .it{font-style:italic;color:var(--t3);}
 .feed-type.up{background:var(--gd);color:var(--gold);}
 .feed-type.hot{background:rgba(242,80,80,.12);color:var(--red);}
 
-/* ── PROFILE PANEL ── */
+/* PROFILE PANEL */
 .pp{display:none;max-width:1080px;margin:0 auto;padding:28px 16px 20px;}
 .pp.show{display:block;animation:up .35s ease both;}
-
-/* PROFILE HEADER */
 .ph{background:var(--s1);border:1px solid var(--b2);border-radius:var(--rl);padding:clamp(16px,4vw,26px);margin-bottom:10px;position:relative;overflow:hidden;}
-.ph::after{content:'';position:absolute;top:0;right:0;width:200px;height:100%;background:radial-gradient(ellipse at top right,rgba(242,180,32,0.06) 0%,transparent 60%);pointer-events:none;}
+.ph::after{content:'';position:absolute;top:0;right:0;width:200px;height:100%;background:radial-gradient(ellipse at top right,rgba(242,180,32,0.05) 0%,transparent 60%);pointer-events:none;}
 .ph-inner{display:flex;gap:clamp(12px,3vw,20px);align-items:flex-start;}
 .avatar{width:clamp(60px,13vw,82px);height:clamp(60px,13vw,82px);border-radius:14px;flex-shrink:0;overflow:hidden;border:1px solid var(--b2);background:var(--s2);}
 .avatar svg{width:100%;height:100%;display:block;}
 .pname{font-family:'Playfair Display',serif;font-size:clamp(20px,5vw,36px);font-weight:700;letter-spacing:-.5px;line-height:1.1;margin-bottom:7px;}
-.pmeta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:9px;}
+.pmeta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
 .pmeta span{font-size:12px;color:var(--t2);}
-.ptags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:9px;}
+.ptags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;}
 .pt{font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:3px 9px;border-radius:100px;border:1px solid var(--b2);color:var(--t2);}
 .pt.s{background:var(--gr);color:var(--green);border-color:rgba(34,201,122,.25);}
 .pt.a{background:var(--br);color:var(--blue);border-color:rgba(91,156,246,.25);}
@@ -139,12 +141,14 @@ h1 .it{font-style:italic;color:var(--t3);}
 .pvr{display:flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.5px;color:var(--t3);text-transform:uppercase;}
 .vdot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;}
 .vdot.e{background:var(--gold);}
+.vb{display:inline-flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.5px;font-weight:600;text-transform:uppercase;border-radius:3px;padding:1px 5px;vertical-align:middle;}
+.vb.v{background:var(--gr);color:var(--green);}
+.vb.e{background:var(--gd);color:var(--gold);}
 
-/* PROFILE ACTION ROW */
+/* ACTIONS */
 .p-actions{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;}
 .p-action{display:flex;align-items:center;gap:6px;background:var(--s1);border:1px solid var(--b2);border-radius:var(--r);padding:8px 14px;font-size:12px;font-weight:600;color:var(--t1);cursor:pointer;transition:all .2s;font-family:'Outfit',sans-serif;}
 .p-action:hover{background:var(--s2);}
-.p-action:active{transform:scale(.97);}
 .p-action.share{border-color:rgba(91,156,246,.3);color:var(--blue);}
 .p-action.compare{border-color:rgba(242,180,32,.3);color:var(--gold);}
 .p-action.notify{border-color:rgba(34,201,122,.3);color:var(--green);}
@@ -154,29 +158,20 @@ h1 .it{font-style:italic;color:var(--t3);}
 .claim.show{display:flex;}
 .claim-t{font-size:13px;color:var(--t1);line-height:1.4;}
 .claim-t small{display:block;font-size:11px;color:var(--t2);margin-top:1px;}
-.claim-btn{background:var(--blue);color:#000;border:none;border-radius:7px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Outfit',sans-serif;transition:background .2s;}
-.claim-btn:hover{background:var(--t1);}
+.claim-btn{background:var(--blue);color:#000;border:none;border-radius:7px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Outfit',sans-serif;}
 
-/* DATA BADGES */
-.vb{display:inline-flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.5px;font-weight:600;text-transform:uppercase;border-radius:3px;padding:1px 5px;vertical-align:middle;}
-.vb.v{background:var(--gr);color:var(--green);}
-.vb.e{background:var(--gd);color:var(--gold);}
-
-/* AI BUTTON */
+/* AI */
 .ai-btn{width:100%;display:flex;align-items:center;gap:12px;background:var(--pr);border:1px solid rgba(167,139,250,.22);border-radius:var(--rm);padding:14px 16px;cursor:pointer;margin-bottom:10px;text-align:left;transition:all .25s;font-family:'Outfit',sans-serif;}
 .ai-btn:hover{border-color:rgba(167,139,250,.45);}
-.ai-btn:active{transform:scale(.99);}
-.ai-btn-ico{font-size:18px;flex-shrink:0;}
+.ai-btn-ico{font-size:16px;flex-shrink:0;}
 .ai-btn-body{flex:1;min-width:0;}
 .ai-btn-title{font-size:13px;font-weight:600;color:var(--purple);margin-bottom:1px;}
 .ai-btn-sub{font-size:11px;color:var(--t2);}
 .ai-arr{color:var(--purple);font-size:16px;flex-shrink:0;transition:transform .25s;}
 .ai-btn.open .ai-arr{transform:rotate(90deg);}
-
-/* AI PANEL */
 .ai-panel{display:none;background:var(--s1);border:1px solid rgba(167,139,250,.18);border-radius:var(--rm);padding:clamp(14px,4vw,22px);margin-bottom:10px;}
 .ai-panel.show{display:block;animation:up .3s ease both;}
-.ai-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--purple);margin-bottom:16px;line-height:1.3;}
+.ai-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--purple);margin-bottom:16px;}
 .opp-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
 .opp-card{background:var(--s2);border:1px solid var(--b2);border-radius:var(--r);padding:13px;}
 .opp-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:7px;}
@@ -186,18 +181,54 @@ h1 .it{font-style:italic;color:var(--t3);}
 .build-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:7px;}
 .build-text{font-size:12px;color:var(--t1);line-height:1.65;}
 .build-text strong{color:var(--green);}
-.mini{border:1px solid var(--b2);border-radius:var(--rm);overflow:hidden;}
+
+/* MINI LANDING — varied layouts */
+.mini{border:1px solid var(--b2);border-radius:var(--rm);overflow:hidden;margin-bottom:10px;}
 .mini-bar{background:var(--s3);padding:7px 12px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--b1);}
 .mini-dots{display:flex;gap:4px;}
 .mini-dot{width:7px;height:7px;border-radius:50%;}
 .mini-url{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--t3);margin-left:4px;}
-.mini-body{padding:clamp(14px,4vw,22px);text-align:center;}
-.mini-logo{font-family:'Playfair Display',serif;font-size:15px;margin-bottom:4px;}
-.mini-tag{font-size:11px;color:rgba(255,255,255,.5);margin-bottom:12px;}
-.mini-cta{display:inline-block;font-size:10px;font-weight:700;padding:6px 16px;border-radius:100px;margin-bottom:12px;color:#000;}
-.mini-feats{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;}
-.mini-feat{font-size:9px;background:rgba(255,255,255,.07);border-radius:100px;padding:3px 9px;color:rgba(255,255,255,.45);}
-.ai-disc{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--t3);margin-top:10px;text-align:center;letter-spacing:.3px;}
+
+/* Layout A: Centred (creator/consumer products) */
+.mini-body-a{padding:clamp(18px,4vw,28px);text-align:center;}
+.mini-logo-a{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:4px;}
+.mini-tag-a{font-size:12px;margin-bottom:14px;line-height:1.5;}
+.mini-cta-a{display:inline-block;font-size:11px;font-weight:700;padding:8px 20px;border-radius:100px;margin-bottom:14px;color:#000;}
+.mini-feats-a{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;}
+.mini-feat{font-size:9px;border-radius:100px;padding:3px 10px;}
+
+/* Layout B: SaaS/tool (two column) */
+.mini-body-b{padding:clamp(14px,3vw,22px);display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center;}
+.mini-b-left{}
+.mini-logo-b{font-family:'Playfair Display',serif;font-size:16px;margin-bottom:6px;}
+.mini-tag-b{font-size:11px;line-height:1.6;margin-bottom:10px;}
+.mini-cta-b{display:inline-block;font-size:10px;font-weight:700;padding:7px 16px;border-radius:6px;color:#000;}
+.mini-b-right{display:flex;flex-direction:column;gap:5px;}
+.mini-feat-b{font-size:10px;padding:6px 10px;border-radius:6px;display:flex;align-items:center;gap:6px;}
+.mini-feat-b::before{content:'→';font-size:10px;opacity:.5;}
+
+/* Layout C: Media/editorial */
+.mini-body-c{padding:clamp(14px,3vw,22px);}
+.mini-c-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
+.mini-logo-c{font-family:'Playfair Display',serif;font-size:15px;}
+.mini-cta-c{font-size:10px;font-weight:700;padding:6px 14px;border-radius:4px;color:#000;flex-shrink:0;}
+.mini-c-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+.mini-c-card{border-radius:6px;padding:8px;font-size:9px;line-height:1.5;}
+.mini-c-card strong{display:block;font-size:11px;margin-bottom:2px;}
+
+/* Layout D: B2B / enterprise */
+.mini-body-d{padding:clamp(14px,3vw,22px);}
+.mini-d-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.06);}
+.mini-logo-d{font-family:'Playfair Display',serif;font-size:15px;}
+.mini-cta-d{font-size:10px;font-weight:700;padding:6px 14px;border-radius:4px;color:#000;}
+.mini-d-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;}
+.mini-d-stat{text-align:center;padding:8px;border-radius:6px;}
+.mini-d-stat-val{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:2px;}
+.mini-d-stat-lbl{font-size:9px;opacity:.5;letter-spacing:.5px;text-transform:uppercase;}
+.mini-d-feats{display:flex;gap:5px;flex-wrap:wrap;}
+.mini-d-feat{font-size:9px;padding:3px 9px;border-radius:3px;}
+
+.ai-disc{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--t3);margin-top:8px;text-align:center;letter-spacing:.3px;}
 .ldots{display:inline-flex;gap:4px;align-items:center;padding:6px 0;}
 .ldots span{width:5px;height:5px;border-radius:50%;background:var(--purple);animation:ldot 1.2s infinite;}
 .ldots span:nth-child(2){animation-delay:.2s;}
@@ -211,9 +242,9 @@ h1 .it{font-style:italic;color:var(--t3);}
 .sl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:7px;display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
 .sv{font-family:'Playfair Display',serif;font-size:clamp(19px,4vw,26px);font-weight:700;letter-spacing:-.5px;line-height:1;margin-bottom:4px;}
 .sv.gold{color:var(--gold);}.sv.green{color:var(--green);}.sv.blue{color:var(--blue);}
-.sn{font-size:10px;color:var(--t3);line-height:1.4;}
+.sn{font-size:10px;color:var(--t3);}
 
-/* CAREER TABLE */
+/* CAREER */
 .career-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:10px;border-radius:var(--rm);border:1px solid var(--b1);}
 .ct{width:100%;min-width:460px;border-collapse:collapse;background:var(--s1);font-size:12px;}
 .ct thead tr{background:rgba(255,255,255,.025);}
@@ -235,25 +266,23 @@ h1 .it{font-style:italic;color:var(--t3);}
 .dv{font-weight:600;text-align:right;word-break:break-word;color:var(--t1);}
 .dv.gold{color:var(--gold);}.dv.green{color:var(--green);}.dv.blue{color:var(--blue);}
 
-/* ── SUBMIT DATA FORM ── */
-.submit-banner{background:var(--s1);border:1px solid var(--b1);border-radius:var(--rm);padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+/* SUBMIT */
+.submit-banner{background:var(--s1);border:1px solid var(--b1);border-radius:var(--rm);padding:13px 16px;margin-bottom:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
 .submit-text{flex:1;font-size:12px;color:var(--t2);line-height:1.5;}
 .submit-text strong{color:var(--t1);}
 .submit-btn{background:transparent;border:1px solid var(--b2);border-radius:var(--r);padding:7px 14px;font-size:11px;font-weight:600;color:var(--t2);cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s;white-space:nowrap;}
 .submit-btn:hover{border-color:var(--b3);color:var(--t1);}
 
-/* ── CATEGORIES ── */
+/* CATEGORIES */
 .section{max-width:1080px;margin:0 auto;padding:48px 16px 0;}
 .sec-ey{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:9px;}
 .sec-h{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);font-weight:700;letter-spacing:-.5px;margin-bottom:5px;}
-.sec-s{font-size:13px;color:var(--t2);margin-bottom:22px;line-height:1.6;}
+.sec-s{font-size:13px;color:var(--t2);margin-bottom:22px;}
 
-/* COUNTRY FILTER */
 .country-filter{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px;}
 .cf{display:flex;align-items:center;gap:5px;background:var(--s1);border:1px solid var(--b1);border-radius:100px;padding:6px 12px;font-size:12px;color:var(--t2);cursor:pointer;transition:all .2s;font-family:'Outfit',sans-serif;font-weight:500;}
 .cf:hover{border-color:var(--b2);color:var(--t1);}
 .cf.on{background:var(--gd);border-color:rgba(242,180,32,.3);color:var(--gold);}
-.cf:active{transform:scale(.97);}
 
 .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;}
 .cat{background:var(--s1);border:1px solid var(--b1);border-radius:var(--rm);padding:clamp(14px,3vw,20px);cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
@@ -261,11 +290,11 @@ h1 .it{font-style:italic;color:var(--t3);}
 .cat:hover,.cat.on{border-color:var(--b2);}
 .cat:hover::after,.cat.on::after{background:var(--gold);}
 .cat:active{transform:scale(.98);}
-.cat-ico{font-size:22px;margin-bottom:9px;display:block;}
+.cat-ico{font-size:20px;margin-bottom:8px;display:block;}
 .cat-n{font-size:13px;font-weight:600;margin-bottom:2px;color:var(--t1);}
 .cat-h{font-size:10px;color:var(--t3);}
 
-/* ── LEADERBOARD ── */
+/* LEADERBOARD */
 .lb{max-width:1080px;margin:0 auto;padding:20px 16px 48px;}
 .lb-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
 .lb-t{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;letter-spacing:-.3px;}
@@ -273,8 +302,6 @@ h1 .it{font-style:italic;color:var(--t3);}
 .lb-filt{display:flex;gap:5px;flex-wrap:wrap;}
 .lf{font-size:11px;font-weight:500;padding:6px 12px;border-radius:100px;border:1px solid var(--b2);background:transparent;color:var(--t2);cursor:pointer;transition:all .2s;font-family:'Outfit',sans-serif;}
 .lf.on{background:var(--gold);color:#000;border-color:var(--gold);}
-
-/* GROWTH BADGE */
 .growth{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:5px;vertical-align:middle;}
 .growth.up{background:var(--gr);color:var(--green);}
 .growth.dn{background:rgba(242,80,80,.1);color:var(--red);}
@@ -285,12 +312,11 @@ h1 .it{font-style:italic;color:var(--t3);}
 .rc:hover{border-color:var(--b2);transform:translateX(2px);}
 .rc:hover::before,.rc.p1::before{background:var(--gold);}
 .rc.p2::before{background:#9ca3af;}.rc.p3::before{background:#b45309;}
-.rc:active{transform:scale(.99);}
 .rpos{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--t3);width:20px;flex-shrink:0;text-align:center;}
 .rpos.top{color:var(--gold);}
 .rava{width:38px;height:38px;border-radius:9px;flex-shrink:0;overflow:hidden;background:var(--s2);border:1px solid var(--b1);}
 .rava svg{width:100%;height:100%;display:block;}
-.rava-e{width:38px;height:38px;border-radius:9px;flex-shrink:0;background:var(--s2);border:1px solid var(--b1);display:flex;align-items:center;justify-content:center;font-size:17px;}
+.rava-e{width:38px;height:38px;border-radius:9px;flex-shrink:0;background:var(--s2);border:1px solid var(--b1);display:flex;align-items:center;justify-content:center;font-size:16px;}
 .ri{flex:1;min-width:0;}
 .rn{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:1px;color:var(--t1);}
 .rd{font-size:11px;color:var(--t2);}
@@ -303,23 +329,22 @@ h1 .it{font-style:italic;color:var(--t3);}
 .rb.r{background:var(--gd);color:var(--gold);}
 .rb.hot{background:rgba(242,80,80,.12);color:var(--red);}
 
-/* ── COMPARE TOOL ── */
+/* COMPARE */
 .compare-tool{max-width:1080px;margin:0 auto;padding:0 16px 48px;}
-.ct-head{margin-bottom:16px;}
 .ct-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;letter-spacing:-.3px;margin-bottom:4px;}
-.ct-sub{font-size:13px;color:var(--t2);}
+.ct-sub{font-size:13px;color:var(--t2);margin-bottom:16px;}
 .compare-selects{display:grid;grid-template-columns:1fr 40px 1fr;gap:10px;align-items:center;margin-bottom:16px;}
-.cs{background:var(--s1);border:1px solid var(--b2);border-radius:var(--rm);padding:11px 14px;font-family:'Outfit',sans-serif;font-size:13px;color:var(--t1);cursor:pointer;width:100%;transition:border-color .2s;}
-.cs:focus{outline:none;border-color:var(--gold);}
+.cs{background:var(--s1);border:1px solid var(--b2);border-radius:var(--rm);padding:11px 14px;font-family:'Outfit',sans-serif;font-size:13px;color:var(--t1);cursor:pointer;width:100%;transition:border-color .2s;outline:none;}
+.cs:focus{border-color:var(--gold);}
 .vs-mid{text-align:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--gold);}
-
-/* VS HARDCODED */
+.dyn-vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.dyn-vs-card{background:var(--s1);border:1px solid var(--b2);border-radius:var(--rl);padding:20px;}
 .vs-sec{background:var(--s1);border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);padding:48px 16px;}
 .vs-in{max-width:1080px;margin:0 auto;}
 .vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative;}
-.vs-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:var(--bg);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:13px;color:var(--gold);box-shadow:0 0 20px var(--gd);}
+.vs-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:var(--bg);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:13px;color:var(--gold);}
 .vs-card{background:var(--bg);border:1px solid var(--b2);border-radius:var(--rl);padding:clamp(16px,4vw,24px);}
-.vs-name{font-family:'Playfair Display',serif;font-size:clamp(16px,3vw,20px);font-weight:700;letter-spacing:-.3px;margin-bottom:3px;}
+.vs-name{font-family:'Playfair Display',serif;font-size:clamp(16px,3vw,20px);font-weight:700;margin-bottom:3px;}
 .vs-sub{font-size:11px;color:var(--t2);margin-bottom:18px;}
 .vs-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--b1);}
 .vs-row:last-child{border-bottom:none;}
@@ -327,43 +352,25 @@ h1 .it{font-style:italic;color:var(--t3);}
 .vs-v{font-size:14px;font-weight:700;color:var(--t1);}
 .vs-v.w{color:var(--gold);}.vs-v.d{color:var(--t3);}
 
-/* DYNAMIC VS */
-.dyn-vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:0;}
-.dyn-vs-card{background:var(--bg);border:1px solid var(--b2);border-radius:var(--rl);padding:20px;}
-
-/* ── NOTIFY MODAL ── */
-.notify-modal{display:none;position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px;}
-.notify-modal.show{display:flex;animation:fi .2s ease both;}
-.nm-box{background:var(--s1);border:1px solid var(--b2);border-radius:var(--rl);padding:28px;max-width:400px;width:100%;}
-.nm-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;letter-spacing:-.3px;margin-bottom:6px;}
-.nm-sub{font-size:13px;color:var(--t2);margin-bottom:18px;line-height:1.6;}
-.nm-input{width:100%;background:var(--s2);border:1px solid var(--b2);border-radius:var(--r);padding:12px 14px;font-family:'Outfit',sans-serif;font-size:14px;color:var(--t1);outline:none;margin-bottom:10px;transition:border-color .2s;}
-.nm-input:focus{border-color:var(--gold);}
-.nm-input::placeholder{color:var(--t3);}
-.nm-btn{width:100%;background:var(--green);color:#000;border:none;border-radius:var(--r);padding:12px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:background .2s;margin-bottom:8px;}
-.nm-btn:hover{background:#fff;}
-.nm-cancel{width:100%;background:transparent;border:1px solid var(--b2);border-radius:var(--r);padding:10px;font-family:'Outfit',sans-serif;font-size:12px;color:var(--t2);cursor:pointer;}
-
-/* ── TRENDING ── */
+/* TRENDING */
 .trend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
 .tcard{background:var(--s1);border:1px solid var(--b1);border-radius:var(--rm);padding:12px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:10px;}
 .tcard:hover{border-color:var(--b2);transform:translateX(2px);}
-.tcard:active{transform:scale(.98);}
 .tava{width:36px;height:36px;border-radius:8px;overflow:hidden;background:var(--s2);flex-shrink:0;border:1px solid var(--b1);}
 .tava svg{width:100%;height:100%;display:block;}
 .tname{font-size:13px;font-weight:600;margin-bottom:1px;color:var(--t1);}
-.tfact{font-size:10px;color:var(--t2);line-height:1.3;}
+.tfact{font-size:10px;color:var(--t2);}
 .tarr{margin-left:auto;color:var(--t3);font-size:12px;flex-shrink:0;}
 
-/* ── HOW ── */
+/* HOW */
 .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
 .hcard{background:var(--s1);border:1px solid var(--b1);border-radius:var(--rm);padding:clamp(16px,3vw,22px);}
-.hico{font-size:20px;margin-bottom:10px;display:block;}
+.hico{font-size:18px;margin-bottom:10px;display:block;}
 .ht{font-size:13px;font-weight:600;margin-bottom:5px;color:var(--t1);}
 .hd{font-size:12px;color:var(--t2);line-height:1.7;}
 .hsrc{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--green);letter-spacing:1px;margin-top:9px;text-transform:uppercase;}
 
-/* ── PRO MODAL ── */
+/* MODALS */
 .overlay{display:none;position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);align-items:flex-end;justify-content:center;}
 .overlay.show{display:flex;animation:fi .2s ease both;}
 @keyframes fi{from{opacity:0;}to{opacity:1;}}
@@ -383,14 +390,44 @@ h1 .it{font-style:italic;color:var(--t3);}
 .pc-feats li{font-size:11px;color:var(--t2);display:flex;align-items:flex-start;gap:6px;line-height:1.4;}
 .pc-feats li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
 .pc-feats li.no{opacity:.4;}
-.pc-feats li.no::before{content:'✕';color:var(--t3);}
+.pc-feats li.no::before{content:'✗';color:var(--t3);}
 .pc-btn{width:100%;background:var(--b2);color:var(--t1);border:1px solid var(--b2);border-radius:var(--r);padding:10px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;}
 .pc.feat .pc-btn{background:var(--gold);color:#000;border-color:var(--gold);}
 .m-also{font-size:11px;color:var(--t3);background:var(--s2);border-radius:var(--r);padding:10px;margin-bottom:12px;line-height:1.6;}
-.m-also strong{color:var(--t2);}
 .stripe-note{display:flex;align-items:center;justify-content:center;gap:6px;font-size:10px;color:var(--t3);}
 
-/* ── FOOTER ── */
+/* NOTIFY MODAL */
+.notify-modal{display:none;position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px;}
+.notify-modal.show{display:flex;animation:fi .2s ease both;}
+.nm-box{background:var(--s1);border:1px solid var(--b2);border-radius:var(--rl);padding:28px;max-width:400px;width:100%;}
+.nm-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;letter-spacing:-.3px;margin-bottom:6px;}
+.nm-sub{font-size:13px;color:var(--t2);margin-bottom:18px;line-height:1.6;}
+.nm-input{width:100%;background:var(--s2);border:1px solid var(--b2);border-radius:var(--r);padding:12px 14px;font-family:'Outfit',sans-serif;font-size:14px;color:var(--t1);outline:none;margin-bottom:10px;transition:border-color .2s;}
+.nm-input:focus{border-color:var(--gold);}
+.nm-input::placeholder{color:var(--t3);}
+.nm-btn{width:100%;background:var(--green);color:#000;border:none;border-radius:var(--r);padding:12px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:8px;}
+.nm-cancel{width:100%;background:transparent;border:1px solid var(--b2);border-radius:var(--r);padding:10px;font-family:'Outfit',sans-serif;font-size:12px;color:var(--t2);cursor:pointer;}
+
+/* SUBPAGES (legal etc) */
+.subpage{display:none;max-width:760px;margin:0 auto;padding:90px 20px 80px;}
+.subpage.show{display:block;animation:up .3s ease both;}
+.sp-back{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--t2);cursor:pointer;margin-bottom:28px;transition:color .2s;background:none;border:none;font-family:'Outfit',sans-serif;}
+.sp-back:hover{color:var(--t1);}
+.sp-h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:-.5px;margin-bottom:8px;}
+.sp-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:32px;}
+.sp-body h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin:28px 0 10px;color:var(--t1);}
+.sp-body h3{font-size:14px;font-weight:700;margin:20px 0 7px;color:var(--t1);}
+.sp-body p{font-size:14px;color:var(--t2);line-height:1.8;margin-bottom:14px;}
+.sp-body ul{padding-left:20px;margin-bottom:14px;}
+.sp-body ul li{font-size:14px;color:var(--t2);line-height:1.8;margin-bottom:4px;}
+.sp-body a{color:var(--gold);text-underline-offset:3px;}
+.sp-divider{height:1px;background:var(--b1);margin:24px 0;}
+
+/* TOAST */
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--green);color:#000;font-size:13px;font-weight:700;padding:10px 20px;border-radius:100px;z-index:700;transition:transform .3s;white-space:nowrap;pointer-events:none;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* FOOTER */
 footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5vw,48px) 20px max(clamp(32px,5vw,48px),env(safe-area-inset-bottom));}
 .fi{max-width:1080px;margin:0 auto;}
 .legend{background:var(--gd);border:1px solid rgba(242,180,32,.15);border-radius:var(--r);padding:11px 14px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--t2);margin-bottom:18px;line-height:1.6;}
@@ -404,65 +441,61 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
 .fsl:hover{color:var(--t1);border-color:var(--b2);}
 .fct{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;}
 .flinks{list-style:none;display:flex;flex-direction:column;gap:8px;}
-.flinks a{font-size:12px;color:var(--t2);text-decoration:none;transition:color .2s;}
+.flinks a{font-size:12px;color:var(--t2);text-decoration:none;transition:color .2s;cursor:pointer;}
 .flinks a:hover{color:var(--t1);}
 .fbot{padding-top:18px;border-top:1px solid var(--b1);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;}
 .flegal{font-size:10px;color:var(--t3);line-height:1.7;max-width:580px;}
-.flegal a{color:var(--t3);text-decoration:underline;text-underline-offset:3px;}
+.flegal a{color:var(--t3);text-decoration:underline;text-underline-offset:3px;cursor:pointer;}
 .fbadges{display:flex;gap:6px;flex-wrap:wrap;}
 .fbadge{background:var(--s2);border:1px solid var(--b1);border-radius:5px;padding:4px 8px;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.5px;text-transform:uppercase;color:var(--t3);}
 
-/* SHARE TOAST */
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--green);color:#000;font-size:13px;font-weight:700;padding:10px 20px;border-radius:100px;z-index:700;transition:transform .3s;white-space:nowrap;}
-.toast.show{transform:translateX(-50%) translateY(0);}
-
 @keyframes up{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:900px){
   .counters{grid-template-columns:1fr 1fr;}
   .cc:nth-child(2){border-right:none;}
   .cc:nth-child(3){border-top:1px solid var(--b1);}
   .cc:nth-child(4){border-top:1px solid var(--b1);border-right:none;}
   .sg{grid-template-columns:1fr 1fr;}
-  .two-col,.opp-grid{grid-template-columns:1fr;}
+  .two-col,.opp-grid,.mini-body-b,.mini-c-grid,.mini-d-stats{grid-template-columns:1fr;}
   .cat-grid{grid-template-columns:repeat(2,1fr);}
-  .vs-grid{grid-template-columns:1fr;}
+  .vs-grid,.dyn-vs{grid-template-columns:1fr;}
   .vs-badge{display:none;}
   .trend-grid{grid-template-columns:1fr 1fr;}
   .how-grid{grid-template-columns:1fr;}
   .ftop{grid-template-columns:1fr 1fr;}
   .pc-grid{grid-template-columns:1fr;}
   .compare-selects{grid-template-columns:1fr;}
-  .dyn-vs{grid-template-columns:1fr;}
 }
 @media(max-width:600px){
   .cat-grid{grid-template-columns:repeat(2,1fr);}
   .trend-grid{grid-template-columns:1fr;}
   .ftop{grid-template-columns:1fr;}
   .sg{grid-template-columns:1fr 1fr;}
-  .p-actions{gap:6px;}
-  .p-action{padding:7px 11px;font-size:11px;}
+  .p-actions{gap:5px;}
+  .p-action{padding:7px 10px;font-size:11px;}
 }
 </style>
-  <!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2VRE1FSFN"></script><script>  window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'G-Q2VRE1FSFN');</script>
 </head>
 <body>
 
+<!-- MAIN SITE -->
+<div id="mainSite">
+
 <nav>
-  <a href="#" class="logo">Who<em>Earns</em></a>
+  <a href="#" class="logo" onclick="showMain();return false">Who<em>Earns</em></a>
   <div class="nav-r">
-    <div class="nav-mode" onclick="toggleMode()" id="modeBtn">🌙</div>
-    <button class="nav-pro" onclick="openPro()">Go Pro →</button>
+    <div class="nav-mode" onclick="toggleMode()" id="modeBtn">☀</div>
+    <button class="nav-pro" onclick="openPro()">Go Pro</button>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-orb"></div>
   <div class="eyebrow">Revenue · Net Worth · Career Stats</div>
   <h1>Who's making<br><span class="g">what.</span> <span class="it">Right now.</span></h1>
-  <p class="sub">Net worth, monthly revenue and career earnings for <strong>footballers, creators, tech giants, AI startups</strong> and local businesses — including 🇵🇱 Poland.</p>
+  <p class="sub">Net worth, monthly revenue and career earnings for <strong>footballers, creators, tech giants</strong> and AI startups. The numbers people actually want to see.</p>
   <div class="search-outer">
     <div class="search-box">
       <input class="search-input" id="si" type="text" placeholder="Search Lewandowski, MrBeast, OpenAI…" oninput="liveSearch()" onkeydown="if(event.key==='Enter')doSearch();if(event.key==='Escape')closeSearch()" autocomplete="off" autocorrect="off" spellcheck="false">
@@ -470,13 +503,13 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
     </div>
     <div class="search-drop" id="searchDrop"></div>
     <div class="qs">
-      <button class="qb" onclick="showP('lewandowski')">🇵🇱 Lewandowski</button>
-      <button class="qb" onclick="showP('ronaldo')">⚽ Ronaldo</button>
-      <button class="qb" onclick="showP('messi')">🐐 Messi</button>
-      <button class="qb" onclick="showP('cdprojekt')">🎮 CD Projekt</button>
-      <button class="qb" onclick="showP('mrbeast')">📺 MrBeast</button>
-      <button class="qb" onclick="showP('openai')">🤖 OpenAI</button>
-      <button class="qb" onclick="showP('marclou')">🚀 Marc Lou</button>
+      <button class="qb" onclick="showP('lewandowski')">Lewandowski</button>
+      <button class="qb" onclick="showP('ronaldo')">Ronaldo</button>
+      <button class="qb" onclick="showP('messi')">Messi</button>
+      <button class="qb" onclick="showP('cdprojekt')">CD Projekt</button>
+      <button class="qb" onclick="showP('mrbeast')">MrBeast</button>
+      <button class="qb" onclick="showP('openai')">OpenAI</button>
+      <button class="qb" onclick="showP('marclou')">Marc Lou</button>
     </div>
   </div>
 </section>
@@ -484,27 +517,22 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
-    <div class="ti"><span class="tn">🇵🇱 Lewandowski</span><span class="tv">$200M ~ · 148 caps ✓</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">CD Projekt</span><span class="tv">$270M revenue ✓ · Witcher, Cyberpunk</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">Ronaldo</span><span class="tv">$1.1B ~ · 217 caps world record ✓</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">Google</span><span class="tv">$307B revenue ✓</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">MrBeast</span><span class="tv">$700M ~ · 370M subs ✓</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">🇵🇱 Sołowow</span><span class="tv">$3B+ ~ richest Pole</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">OpenAI</span><span class="tv">$3.7B ARR ~</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">Neymar</span><span class="tv">$56K crypto on-chain ✓</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">🇵🇱 Friz (Ekipa)</span><span class="tv">~$15M est. · 5M+ subs</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">Flamini</span><span class="tv">$13B+ ~ ex-Arsenal, biotech billionaire</span></div><div class="tdot"></div>
-    <!-- dup -->
-    <div class="ti"><span class="tn">🇵🇱 Lewandowski</span><span class="tv">$200M ~ · 148 caps ✓</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">CD Projekt</span><span class="tv">$270M revenue ✓ · Witcher, Cyberpunk</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">Ronaldo</span><span class="tv">$1.1B ~ · 217 caps world record ✓</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">Google</span><span class="tv">$307B revenue ✓</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">MrBeast</span><span class="tv">$700M ~ · 370M subs ✓</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">🇵🇱 Sołowow</span><span class="tv">$3B+ ~ richest Pole</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">OpenAI</span><span class="tv">$3.7B ARR ~</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">Neymar</span><span class="tv">$56K crypto on-chain ✓</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">🇵🇱 Friz (Ekipa)</span><span class="tv">~$15M est. · 5M+ subs</span></div><div class="tdot"></div>
-    <div class="ti"><span class="tn">Flamini</span><span class="tv">$13B+ ~ ex-Arsenal, biotech billionaire</span></div>
+    <div class="ti"><span class="tn">Lewandowski</span><span class="tv">$200M est · 148 caps · Poland record</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">CD Projekt</span><span class="tv">$270M revenue · Witcher · Cyberpunk</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">Ronaldo</span><span class="tv">$1.1B est · 217 caps world record</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">Google</span><span class="tv">$307B revenue verified</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">MrBeast</span><span class="tv">$700M est · 370M YouTube subscribers</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">Sołowow</span><span class="tv">$3B est · Poland's richest · 3x WRC champion</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">OpenAI</span><span class="tv">$3.7B ARR est · fastest growing software ever</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">Flamini</span><span class="tv">$13B+ est · ex-Arsenal · biotech billionaire</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">Lewandowski</span><span class="tv">$200M est · 148 caps · Poland record</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">CD Projekt</span><span class="tv">$270M revenue · Witcher · Cyberpunk</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">Ronaldo</span><span class="tv">$1.1B est · 217 caps world record</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">Google</span><span class="tv">$307B revenue verified</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">MrBeast</span><span class="tv">$700M est · 370M YouTube subscribers</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">Sołowow</span><span class="tv">$3B est · Poland's richest · 3x WRC champion</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">OpenAI</span><span class="tv">$3.7B ARR est · fastest growing software ever</span></div><div class="tdot"></div>
+    <div class="ti"><span class="tn">Flamini</span><span class="tv">$13B est · ex-Arsenal · biotech billionaire</span></div>
   </div>
 </div>
 
@@ -523,18 +551,18 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
     <div class="feed-live"><div class="feed-dot"></div>Live updates</div>
   </div>
   <div class="feed-list">
-    <div class="feed-item" onclick="showP('lewandowski')"><div class="feed-ico">🇵🇱</div><div class="feed-text"><strong>New profile added:</strong> Robert Lewandowski — $200M net worth, 148 international caps, all-time Poland top scorer</div><div class="feed-type new">New</div><div class="feed-time">Today</div></div>
-    <div class="feed-item" onclick="showP('cdprojekt')"><div class="feed-ico">🎮</div><div class="feed-text"><strong>CD Projekt updated:</strong> 2024 revenue figures confirmed via Warsaw Stock Exchange filing — $270M</div><div class="feed-type up">Updated</div><div class="feed-time">Today</div></div>
-    <div class="feed-item" onclick="showP('openai')"><div class="feed-ico">🤖</div><div class="feed-text"><strong>OpenAI trending:</strong> ARR confirmed at $3.7B end of 2024. Growing faster than any software company in history</div><div class="feed-type hot">Trending</div><div class="feed-time">2 days ago</div></div>
-    <div class="feed-item" onclick="showP('ronaldo')"><div class="feed-ico">⚽</div><div class="feed-text"><strong>Ronaldo record extended:</strong> 217 international caps — world record that will likely never be broken</div><div class="feed-type up">Updated</div><div class="feed-time">3 days ago</div></div>
-    <div class="feed-item" onclick="showP('marclou')"><div class="feed-ico">🚀</div><div class="feed-text"><strong>Marc Lou trending:</strong> Multiple products passing $250K combined MRR as solo founder</div><div class="feed-type hot">Trending</div><div class="feed-time">4 days ago</div></div>
-    <div class="feed-item"><div class="feed-ico">🇵🇱</div><div class="feed-text"><strong>Poland category launched:</strong> 8 Polish profiles added — footballers, creators, billionaires, and businesses</div><div class="feed-type new">New</div><div class="feed-time">This week</div></div>
+    <div class="feed-item" onclick="showP('lewandowski')"><div class="feed-ico">—</div><div class="feed-text"><strong>New profile:</strong> Robert Lewandowski — $200M net worth, 148 international caps, all-time Poland top scorer</div><div class="feed-type new">New</div><div class="feed-time">Today</div></div>
+    <div class="feed-item" onclick="showP('cdprojekt')"><div class="feed-ico">—</div><div class="feed-text"><strong>CD Projekt updated:</strong> 2024 revenue figures confirmed via Warsaw Stock Exchange — $270M</div><div class="feed-type up">Updated</div><div class="feed-time">Today</div></div>
+    <div class="feed-item" onclick="showP('openai')"><div class="feed-ico">—</div><div class="feed-text"><strong>OpenAI trending:</strong> ARR confirmed at $3.7B end of 2024. Growing faster than any software company in history</div><div class="feed-type hot">Trending</div><div class="feed-time">2 days ago</div></div>
+    <div class="feed-item" onclick="showP('ronaldo')"><div class="feed-ico">—</div><div class="feed-text"><strong>Ronaldo record:</strong> 217 international caps — a world record that will likely never be broken</div><div class="feed-type up">Updated</div><div class="feed-time">3 days ago</div></div>
+    <div class="feed-item" onclick="showP('marclou')"><div class="feed-ico">—</div><div class="feed-text"><strong>Marc Lou trending:</strong> Multiple products passing $250K combined MRR as a solo founder</div><div class="feed-type hot">Trending</div><div class="feed-time">4 days ago</div></div>
+    <div class="feed-item"><div class="feed-ico">—</div><div class="feed-text"><strong>Poland category launched:</strong> 8 Polish profiles added — footballers, creators, billionaires and businesses</div><div class="feed-type new">New</div><div class="feed-time">This week</div></div>
   </div>
 </div>
 
 <!-- PROFILE PANEL -->
 <div class="pp" id="pp">
-  <div class="ph" id="ph">
+  <div class="ph">
     <div class="ph-inner">
       <div class="avatar" id="pAva"></div>
       <div style="flex:1;min-width:0">
@@ -546,30 +574,27 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
       </div>
     </div>
   </div>
-
-  <!-- ACTION ROW -->
   <div class="p-actions">
-    <button class="p-action share" onclick="shareProfile()">📤 Share Profile</button>
-    <button class="p-action compare" onclick="scrollToCompare()">⚖️ Compare</button>
-    <button class="p-action notify" onclick="openNotify()">🔔 Get Updates</button>
+    <button class="p-action share" onclick="shareProfile()">Share Profile</button>
+    <button class="p-action compare" onclick="scrollToCompare()">Compare</button>
+    <button class="p-action notify" onclick="openNotify()">Get Updates</button>
   </div>
-
-  <div class="claim" id="cl"><div class="claim-t">Is this your profile?<small>Claim it to add your website, socials and founder's note.</small></div><button class="claim-btn" onclick="openPro()">Claim — €49/mo</button></div>
-
+  <div class="claim" id="cl">
+    <div class="claim-t">Is this your profile?<small>Claim it to add your website, socials and founder's note.</small></div>
+    <button class="claim-btn" onclick="openPro()">Claim — €49/mo</button>
+  </div>
   <button class="ai-btn" id="aiB" onclick="toggleAI()">
-    <div class="ai-btn-ico">🤖</div>
-    <div class="ai-btn-body"><div class="ai-btn-title">AI Opportunity Analysis</div><div class="ai-btn-sub">See the weakness in this business and what you could build to compete</div></div>
+    <div class="ai-btn-ico">AI</div>
+    <div class="ai-btn-body"><div class="ai-btn-title">AI Opportunity Analysis</div><div class="ai-btn-sub">See the gap in this business and what you could build to compete</div></div>
     <div class="ai-arr" id="aiArr">›</div>
   </button>
   <div class="ai-panel" id="aiP"></div>
-
   <div class="sg" id="pSt"></div>
   <div id="pCr"></div>
   <div class="two-col" id="pIn"></div>
-
   <div class="submit-banner">
-    <div class="submit-text"><strong>Know something we don't?</strong> Submit updated data with a source and we'll review within 48 hours.</div>
-    <button class="submit-btn" onclick="alert('Data submission form — coming in next version. For now email hello@whoearns.io with the data and source.')">Submit Data →</button>
+    <div class="submit-text"><strong>Spotted an error?</strong> Submit updated data with a source and we'll review within 48 hours.</div>
+    <button class="submit-btn" onclick="window.location.href='mailto:hello@whoearns.com?subject=Data correction'">Submit Data</button>
   </div>
 </div>
 
@@ -577,63 +602,54 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
 <div class="section" id="categories">
   <div class="sec-ey">Browse</div>
   <div class="sec-h">Every Category</div>
-  <div class="sec-s">From tech giants to local businesses — filter by country</div>
-
-  <!-- COUNTRY FILTER -->
+  <div class="sec-s">Filter by country or category</div>
   <div class="country-filter">
-    <div class="cf on" id="cf-all" onclick="filterCountry('all')">🌍 All Countries</div>
-    <div class="cf" id="cf-pl" onclick="filterCountry('pl')">🇵🇱 Poland</div>
-    <div class="cf" id="cf-pt" onclick="filterCountry('pt')">🇵🇹 Portugal</div>
-    <div class="cf" id="cf-br" onclick="filterCountry('br')">🇧🇷 Brazil</div>
-    <div class="cf" id="cf-fr" onclick="filterCountry('fr')">🇫🇷 France</div>
-    <div class="cf" id="cf-us" onclick="filterCountry('us')">🇺🇸 USA</div>
-    <div class="cf" id="cf-nl" onclick="filterCountry('nl')">🇳🇱 Netherlands</div>
+    <div class="cf on" id="cf-all" onclick="filterCountry('all')">All Countries</div>
+    <div class="cf" id="cf-pl" onclick="filterCountry('pl')">Poland</div>
+    <div class="cf" id="cf-pt" onclick="filterCountry('pt')">Portugal</div>
+    <div class="cf" id="cf-br" onclick="filterCountry('br')">Brazil</div>
+    <div class="cf" id="cf-fr" onclick="filterCountry('fr')">France</div>
+    <div class="cf" id="cf-us" onclick="filterCountry('us')">USA</div>
+    <div class="cf" id="cf-nl" onclick="filterCountry('nl')">Netherlands</div>
   </div>
-
   <div class="cat-grid">
-    <div class="cat on" id="ct-tech" onclick="switchCat('tech')"><span class="cat-ico">🔍</span><div class="cat-n">Tech Giants</div><div class="cat-h">Google · Apple · Meta</div></div>
-    <div class="cat" id="ct-ai" onclick="switchCat('ai')"><span class="cat-ico">🤖</span><div class="cat-n">AI Companies</div><div class="cat-h">OpenAI · Midjourney</div></div>
-    <div class="cat" id="ct-founders" onclick="switchCat('founders')"><span class="cat-ico">👨‍💻</span><div class="cat-n">Tech Founders</div><div class="cat-h">Marc Lou · Pieter Levels</div></div>
-    <div class="cat" id="ct-startups" onclick="switchCat('startups')"><span class="cat-ico">🚀</span><div class="cat-n">Startup MRR</div><div class="cat-h">Verified revenue data</div></div>
-    <div class="cat" id="ct-footballers" onclick="switchCat('footballers')"><span class="cat-ico">⚽</span><div class="cat-n">Footballers</div><div class="cat-h">Net worth + stats</div></div>
-    <div class="cat" id="ct-poland" onclick="switchCat('poland')"><span class="cat-ico">🇵🇱</span><div class="cat-n">Poland</div><div class="cat-h">Footballers · Creators · Biz</div></div>
-    <div class="cat" id="ct-creators" onclick="switchCat('creators')"><span class="cat-ico">📺</span><div class="cat-n">Creators</div><div class="cat-h">YouTube · TikTok earners</div></div>
-    <div class="cat" id="ct-local" onclick="switchCat('local')"><span class="cat-ico">🏪</span><div class="cat-n">Local Business</div><div class="cat-h">Revenue benchmarks</div></div>
+    <div class="cat on" id="ct-tech" onclick="switchCat('tech')"><span class="cat-ico">—</span><div class="cat-n">Tech Giants</div><div class="cat-h">Google · Apple · Meta</div></div>
+    <div class="cat" id="ct-ai" onclick="switchCat('ai')"><span class="cat-ico">—</span><div class="cat-n">AI Companies</div><div class="cat-h">OpenAI · Midjourney</div></div>
+    <div class="cat" id="ct-founders" onclick="switchCat('founders')"><span class="cat-ico">—</span><div class="cat-n">Tech Founders</div><div class="cat-h">Marc Lou · Pieter Levels</div></div>
+    <div class="cat" id="ct-startups" onclick="switchCat('startups')"><span class="cat-ico">—</span><div class="cat-n">Startup MRR</div><div class="cat-h">Verified revenue data</div></div>
+    <div class="cat" id="ct-footballers" onclick="switchCat('footballers')"><span class="cat-ico">—</span><div class="cat-n">Footballers</div><div class="cat-h">Net worth + stats</div></div>
+    <div class="cat" id="ct-poland" onclick="switchCat('poland')"><span class="cat-ico">—</span><div class="cat-n">Poland</div><div class="cat-h">Footballers · Creators · Business</div></div>
+    <div class="cat" id="ct-creators" onclick="switchCat('creators')"><span class="cat-ico">—</span><div class="cat-n">Creators</div><div class="cat-h">YouTube · TikTok earners</div></div>
+    <div class="cat" id="ct-local" onclick="switchCat('local')"><span class="cat-ico">—</span><div class="cat-n">Local Business</div><div class="cat-h">Revenue benchmarks</div></div>
   </div>
 </div>
 
 <!-- LEADERBOARD -->
 <div class="lb" id="leaderboard">
   <div class="lb-head">
-    <div><div class="lb-t" id="lbT">Tech Giants — Annual Revenue</div><div class="lb-s" id="lbS">SEC filings · Annual reports · Verified ✓</div></div>
+    <div><div class="lb-t" id="lbT">Tech Giants — Annual Revenue</div><div class="lb-s" id="lbS">SEC filings · Annual reports · Verified</div></div>
     <div class="lb-filt">
       <button class="lf on">Highest</button>
       <button class="lf" onclick="swF(this)">Trending</button>
-      <button class="lf" onclick="swF(this)">Verified ✓</button>
+      <button class="lf" onclick="swF(this)">Verified</button>
     </div>
   </div>
   <div class="rl" id="rl"></div>
 </div>
 
-<!-- COMPARE TOOL -->
+<!-- COMPARE -->
 <div class="compare-tool" id="compare-tool">
-  <div class="ct-head">
-    <div class="ct-title">Compare Any Two</div>
-    <div class="ct-sub">Pick any two profiles and compare them side by side</div>
-  </div>
+  <div class="ct-title">Compare Any Two</div>
+  <div class="ct-sub">Pick any two profiles and compare them side by side</div>
   <div class="compare-selects">
-    <select class="cs" id="cmp1" onchange="renderCompare()">
-      <option value="">Select first profile…</option>
-    </select>
+    <select class="cs" id="cmp1" onchange="renderCompare()"><option value="">Select first profile…</option></select>
     <div class="vs-mid">vs</div>
-    <select class="cs" id="cmp2" onchange="renderCompare()">
-      <option value="">Select second profile…</option>
-    </select>
+    <select class="cs" id="cmp2" onchange="renderCompare()"><option value="">Select second profile…</option></select>
   </div>
   <div class="dyn-vs" id="dynVs"></div>
 </div>
 
-<!-- VS HARDCODED -->
+<!-- VS FIXED -->
 <div class="vs-sec" id="compare">
   <div class="vs-in">
     <div class="sec-ey">Head to Head</div>
@@ -642,28 +658,28 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
     <div class="vs-grid">
       <div class="vs-card">
         <div class="vs-name">Cristiano Ronaldo</div>
-        <div class="vs-sub">🇵🇹 Portugal · Al Nassr · Active</div>
-        <div class="vs-row"><span class="vs-k">Net Worth</span><span class="vs-v w">$1.1B <span class="vb e">~</span></span></div>
-        <div class="vs-row"><span class="vs-k">Annual Earnings</span><span class="vs-v w">$200M <span class="vb e">~</span></span></div>
-        <div class="vs-row"><span class="vs-k">Intl Caps</span><span class="vs-v w">217 <span class="vb v">✓</span></span></div>
-        <div class="vs-row"><span class="vs-k">Intl Goals</span><span class="vs-v w">135 <span class="vb v">✓</span></span></div>
+        <div class="vs-sub">Portugal · Al Nassr · Active</div>
+        <div class="vs-row"><span class="vs-k">Net Worth</span><span class="vs-v w">$1.1B <span class="vb e">est</span></span></div>
+        <div class="vs-row"><span class="vs-k">Annual Earnings</span><span class="vs-v w">$200M <span class="vb e">est</span></span></div>
+        <div class="vs-row"><span class="vs-k">Intl Caps</span><span class="vs-v w">217 <span class="vb v">verified</span></span></div>
+        <div class="vs-row"><span class="vs-k">Intl Goals</span><span class="vs-v w">135 <span class="vb v">verified</span></span></div>
         <div class="vs-row"><span class="vs-k">UCL Titles</span><span class="vs-v w">5×</span></div>
         <div class="vs-row"><span class="vs-k">Ballon d'Or</span><span class="vs-v">5×</span></div>
         <div class="vs-row"><span class="vs-k">World Cup</span><span class="vs-v d">—</span></div>
-        <div class="vs-row"><span class="vs-k">Instagram</span><span class="vs-v w">650M+</span></div>
+        <div class="vs-row"><span class="vs-k">Instagram followers</span><span class="vs-v w">650M+</span></div>
       </div>
       <div class="vs-badge">vs</div>
       <div class="vs-card">
         <div class="vs-name">Lionel Messi</div>
-        <div class="vs-sub">🇦🇷 Argentina · Inter Miami · Active</div>
-        <div class="vs-row"><span class="vs-k">Net Worth</span><span class="vs-v">$700M <span class="vb e">~</span></span></div>
-        <div class="vs-row"><span class="vs-k">Annual Earnings</span><span class="vs-v">$135M <span class="vb e">~</span></span></div>
-        <div class="vs-row"><span class="vs-k">Intl Caps</span><span class="vs-v">191 <span class="vb v">✓</span></span></div>
-        <div class="vs-row"><span class="vs-k">Intl Goals</span><span class="vs-v">112 <span class="vb v">✓</span></span></div>
+        <div class="vs-sub">Argentina · Inter Miami · Active</div>
+        <div class="vs-row"><span class="vs-k">Net Worth</span><span class="vs-v">$700M <span class="vb e">est</span></span></div>
+        <div class="vs-row"><span class="vs-k">Annual Earnings</span><span class="vs-v">$135M <span class="vb e">est</span></span></div>
+        <div class="vs-row"><span class="vs-k">Intl Caps</span><span class="vs-v">191 <span class="vb v">verified</span></span></div>
+        <div class="vs-row"><span class="vs-k">Intl Goals</span><span class="vs-v">112 <span class="vb v">verified</span></span></div>
         <div class="vs-row"><span class="vs-k">UCL Titles</span><span class="vs-v">4×</span></div>
-        <div class="vs-row"><span class="vs-k">Ballon d'Or</span><span class="vs-v w">8× <span class="vb v">✓</span></span></div>
-        <div class="vs-row"><span class="vs-k">World Cup</span><span class="vs-v w">✓ 2022</span></div>
-        <div class="vs-row"><span class="vs-k">Instagram</span><span class="vs-v">500M+</span></div>
+        <div class="vs-row"><span class="vs-k">Ballon d'Or</span><span class="vs-v w">8× <span class="vb v">verified</span></span></div>
+        <div class="vs-row"><span class="vs-k">World Cup</span><span class="vs-v w">2022 winner</span></div>
+        <div class="vs-row"><span class="vs-k">Instagram followers</span><span class="vs-v">500M+</span></div>
       </div>
     </div>
   </div>
@@ -676,15 +692,15 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
   <div class="trend-grid" id="tg"></div>
 </div>
 
-<!-- HOW -->
+<!-- HOW IT WORKS -->
 <div class="section" style="padding-bottom:48px">
   <div class="sec-ey">Transparency</div>
   <div class="sec-h" style="margin-bottom:5px">How the data works</div>
   <div class="sec-s" style="margin-bottom:20px">Honest about sources. Clear about estimates.</div>
   <div class="how-grid">
-    <div class="hcard"><span class="hico">✅</span><div class="ht">Verified data <span class="vb v">✓</span></div><div class="hd">Public company revenues from SEC, Warsaw Stock Exchange, and official filings. Startup MRR via Stripe API. Football stats from UEFA/FIFA records. Crypto from public blockchain data.</div><div class="hsrc">SEC · GPW · Stripe · UEFA · Blockchain</div></div>
-    <div class="hcard"><span class="hico">📊</span><div class="ht">Estimated figures <span class="vb e">~</span></div><div class="hd">Net worth for celebrities and athletes estimated from reported salaries, endorsements, property records, Forbes and Bloomberg. Every estimate shows its source and is clearly labelled.</div><div class="hsrc">Forbes · Bloomberg · Public records</div></div>
-    <div class="hcard"><span class="hico">📅</span><div class="ht">Updates & disputes</div><div class="hd">All profiles show a last-reviewed date. Top 100 profiles reviewed monthly. Dispute any data at hello@whoearns.io — we respond within 48 hours. You can also submit data corrections directly.</div><div class="hsrc">Last review: April 2026</div></div>
+    <div class="hcard"><span class="hico">—</span><div class="ht">Verified data <span class="vb v">verified</span></div><div class="hd">Public company revenues from SEC EDGAR, Warsaw Stock Exchange and official filings. Startup MRR via Stripe API. Football stats from official UEFA and FIFA records. Crypto from public blockchain data.</div><div class="hsrc">SEC · GPW Warsaw · Stripe · UEFA · Blockchain</div></div>
+    <div class="hcard"><span class="hico">—</span><div class="ht">Estimated figures <span class="vb e">est</span></div><div class="hd">Net worth for celebrities and athletes estimated from reported salaries, endorsements, property records, and outlets including Forbes and Bloomberg. Every estimate shows its source and is clearly labelled.</div><div class="hsrc">Forbes · Bloomberg · Public records</div></div>
+    <div class="hcard"><span class="hico">—</span><div class="ht">Updates and disputes</div><div class="hd">All profiles show a last-reviewed date. Top 100 profiles reviewed monthly. To dispute any data or request a correction, email hello@whoearns.com — we respond within 48 hours.</div><div class="hsrc">Last review: April 2026</div></div>
   </div>
 </div>
 
@@ -692,68 +708,229 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
 <footer>
   <div class="fi">
     <div class="legend">
-      <div class="li"><span class="vb v">✓ Verified</span> confirmed via official filings, APIs or on-chain data</div>
-      <div class="li"><span class="vb e">~ Est.</span> estimated from Forbes, Bloomberg & public records</div>
-      <div class="li">Dispute data: <a href="mailto:hello@whoearns.io" style="color:var(--gold);text-decoration:none">hello@whoearns.io</a></div>
+      <div class="li"><span class="vb v">verified</span> confirmed via official filings, APIs or on-chain data</div>
+      <div class="li"><span class="vb e">est</span> estimated from Forbes, Bloomberg and public records</div>
+      <div class="li">Dispute data: <a href="mailto:hello@whoearns.com" style="color:var(--gold);text-decoration:none">hello@whoearns.com</a></div>
     </div>
     <div class="ftop">
       <div>
         <div class="fb">Who<em>Earns</em></div>
-        <div class="ftag">Revenue intelligence for every business — tech giants, footballers, creators, AI startups, local businesses and Polish profiles.</div>
+        <div class="ftag">Revenue intelligence for every business — tech giants, footballers, creators, AI startups and local businesses.</div>
         <div class="fsoc">
-          <a href="https://x.com/whoearns" class="fsl" target="_blank">𝕏 @WhoEarns</a>
-          <a href="https://instagram.com/whoearns" class="fsl" target="_blank">📸 Instagram</a>
-          <a href="https://tiktok.com/@whoearns" class="fsl" target="_blank">▶ TikTok</a>
-          <a href="https://youtube.com/@whoearns" class="fsl" target="_blank">▶️ YouTube</a>
+          <a href="https://x.com/whoearns" class="fsl" target="_blank" rel="noopener">X — @WhoEarns</a>
+          <a href="https://instagram.com/whoearns" class="fsl" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://tiktok.com/@whoearns" class="fsl" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://youtube.com/@whoearns" class="fsl" target="_blank" rel="noopener">YouTube</a>
         </div>
       </div>
       <div>
         <div class="fct">Categories</div>
         <ul class="flinks">
-          <li><a href="#" onclick="switchCat('tech');return false">Tech Giants</a></li>
-          <li><a href="#" onclick="switchCat('ai');return false">AI Companies</a></li>
-          <li><a href="#" onclick="switchCat('poland');return false">🇵🇱 Poland</a></li>
-          <li><a href="#" onclick="switchCat('footballers');return false">Footballers</a></li>
-          <li><a href="#" onclick="switchCat('creators');return false">Creators</a></li>
-          <li><a href="#" onclick="switchCat('local');return false">Local Business</a></li>
+          <li><a onclick="switchCat('tech');return false">Tech Giants</a></li>
+          <li><a onclick="switchCat('ai');return false">AI Companies</a></li>
+          <li><a onclick="switchCat('poland');return false">Poland</a></li>
+          <li><a onclick="switchCat('footballers');return false">Footballers</a></li>
+          <li><a onclick="switchCat('creators');return false">Creators</a></li>
+          <li><a onclick="switchCat('local');return false">Local Business</a></li>
         </ul>
       </div>
       <div>
         <div class="fct">Product</div>
         <ul class="flinks">
-          <li><a href="#" onclick="openPro();return false">Go Pro — €9/mo</a></li>
-          <li><a href="#" onclick="openPro();return false">Claim Profile — €49/mo</a></li>
-          <li><a href="#" onclick="openPro();return false">Featured Placement</a></li>
-          <li><a href="mailto:hello@whoearns.io">API Access — €99/mo</a></li>
-          <li><a href="mailto:hello@whoearns.io">Submit a Profile</a></li>
-          <li><a href="mailto:hello@whoearns.io">Dispute Data</a></li>
+          <li><a onclick="openPro();return false">Go Pro — €9/mo</a></li>
+          <li><a onclick="openPro();return false">Claim Profile — €49/mo</a></li>
+          <li><a onclick="openPro();return false">Featured Placement</a></li>
+          <li><a href="mailto:hello@whoearns.com">API Access — €99/mo</a></li>
+          <li><a href="mailto:hello@whoearns.com">Submit a Profile</a></li>
+          <li><a href="mailto:hello@whoearns.com">Dispute Data</a></li>
         </ul>
       </div>
       <div>
         <div class="fct">Legal</div>
         <ul class="flinks">
-          <li><a href="#tos">Terms of Service</a></li>
-          <li><a href="#privacy">Privacy Policy</a></li>
-          <li><a href="#cookies">Cookie Policy</a></li>
-          <li><a href="#disclaimer">Data Disclaimer</a></li>
-          <li><a href="mailto:hello@whoearns.io">GDPR Request</a></li>
+          <li><a onclick="showPage('tos');return false">Terms of Service</a></li>
+          <li><a onclick="showPage('privacy');return false">Privacy Policy</a></li>
+          <li><a onclick="showPage('cookies');return false">Cookie Policy</a></li>
+          <li><a onclick="showPage('disclaimer');return false">Data Disclaimer</a></li>
+          <li><a href="mailto:hello@whoearns.com">GDPR Request</a></li>
         </ul>
       </div>
     </div>
     <div class="fbot">
-      <div class="flegal">© 2026 WhoEarns. All net worth figures marked <span class="vb e" style="font-size:7px">~</span> are estimates from publicly available information and are not verified financial statements. Figures marked <span class="vb v" style="font-size:7px">✓</span> are from official filings or APIs. Nothing here constitutes financial, legal or investment advice. Dispute information at <a href="mailto:hello@whoearns.io">hello@whoearns.io</a>. GDPR compliant.</div>
-      <div class="fbadges"><div class="fbadge">🔒 GDPR</div><div class="fbadge">🔐 Stripe</div><div class="fbadge">🇵🇱 Poland</div><div class="fbadge">📅 Apr 2026</div></div>
+      <div class="flegal">
+        © 2026 WhoEarns. All net worth figures marked <span class="vb e" style="font-size:7px">est</span> are estimates from publicly available information — not verified financial statements. Figures marked <span class="vb v" style="font-size:7px">verified</span> are from official filings or APIs. Nothing on this site constitutes financial, legal or investment advice.
+        <a onclick="showPage('disclaimer');return false">Data Disclaimer</a> ·
+        <a onclick="showPage('privacy');return false">Privacy Policy</a> ·
+        <a href="mailto:hello@whoearns.com">hello@whoearns.com</a>
+      </div>
+      <div class="fbadges"><div class="fbadge">GDPR</div><div class="fbadge">Stripe</div><div class="fbadge">Apr 2026</div></div>
     </div>
   </div>
 </footer>
 
-<!-- PRO MODAL -->
+</div><!-- end mainSite -->
+
+<!-- ── SUBPAGES ─────────────────────────────────────── -->
+<div id="subpages">
+
+<!-- TERMS OF SERVICE -->
+<div class="subpage" id="page-tos">
+  <button class="sp-back" onclick="showMain()">← Back to WhoEarns</button>
+  <div class="sp-h1">Terms of Service</div>
+  <div class="sp-date">Last updated: April 2026</div>
+  <div class="sp-body">
+    <p>Welcome to WhoEarns ("we", "our", or "us"). By accessing or using whoearns.com (the "Site"), you agree to be bound by these Terms of Service. Please read them carefully before using the Site.</p>
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using the Site in any way, you represent that you have read, understood, and agree to be bound by these Terms. If you do not agree, please do not use the Site.</p>
+    <h2>2. Description of Service</h2>
+    <p>WhoEarns is an information and research platform that aggregates and presents publicly available data about individuals, companies and businesses, including estimated net worth figures, career statistics, revenue data and business intelligence. The Site also provides AI-generated analysis and opportunity assessments based on this data.</p>
+    <h2>3. Data Accuracy and Disclaimers</h2>
+    <p>All data marked <strong>Est.</strong> (estimated) represents our best estimates based on publicly available information including media reports, public filings, and industry databases. These figures are not verified financial statements and should not be treated as such.</p>
+    <p>Data marked <strong>Verified</strong> has been sourced directly from official filings, regulatory databases (such as SEC EDGAR or Warsaw Stock Exchange filings), verified APIs, or on-chain blockchain data.</p>
+    <p>WhoEarns makes no warranty, express or implied, about the accuracy, completeness or reliability of any information on the Site. We are not financial advisors. Nothing on this Site constitutes financial, legal, investment, or professional advice of any kind.</p>
+    <h2>4. AI-Generated Content</h2>
+    <p>The "AI Opportunity Analysis" feature generates automated analysis based on publicly available market information. This content is provided for entertainment and research purposes only. It does not constitute business, financial, or investment advice. WhoEarns is not responsible for any decisions made based on AI-generated content.</p>
+    <h2>5. Intellectual Property</h2>
+    <p>All original content on this Site, including the WhoEarns brand, design, layout, copy and proprietary data compilations, is the property of WhoEarns and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without our written permission.</p>
+    <p>Publicly available factual data (statistics, revenue figures from public filings) is not owned by WhoEarns. Our presentation, curation and compilation of this data is our intellectual property.</p>
+    <h2>6. Profile Claims</h2>
+    <p>Businesses and individuals may claim their profile on WhoEarns for a monthly fee. By claiming a profile, you warrant that you are authorised to represent the entity in question. You may edit certain fields on your claimed profile but may not remove factual data that is verified from public sources. All edits are subject to review and approval by WhoEarns. WhoEarns reserves the right to reject any edits that are inaccurate, misleading, or in breach of these Terms.</p>
+    <h2>7. User Submissions</h2>
+    <p>You may submit data corrections or profile suggestions to WhoEarns. By submitting data, you grant WhoEarns a non-exclusive, perpetual, royalty-free licence to use, publish and incorporate that data into the Site. You warrant that any data you submit is accurate, lawfully obtained, and does not violate any third-party rights.</p>
+    <h2>8. Prohibited Uses</h2>
+    <p>You may not use the Site to: scrape, crawl or systematically harvest data without our written consent; attempt to reverse-engineer any part of the Site; submit false, misleading or defamatory information; use the Site for any unlawful purpose; or interfere with the security or integrity of the Site.</p>
+    <h2>9. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, WhoEarns and its operators shall not be liable for any indirect, incidental, special, consequential or punitive damages arising from your use of the Site or reliance on any information presented therein.</p>
+    <h2>10. Governing Law</h2>
+    <p>These Terms are governed by the laws of Malta and the European Union. Any disputes shall be subject to the exclusive jurisdiction of the courts of Malta.</p>
+    <h2>11. Changes to Terms</h2>
+    <p>We reserve the right to update these Terms at any time. Continued use of the Site after changes are posted constitutes acceptance of the revised Terms.</p>
+    <h2>12. Contact</h2>
+    <p>For any questions regarding these Terms, contact us at <a href="mailto:hello@whoearns.com">hello@whoearns.com</a>.</p>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div class="subpage" id="page-privacy">
+  <button class="sp-back" onclick="showMain()">← Back to WhoEarns</button>
+  <div class="sp-h1">Privacy Policy</div>
+  <div class="sp-date">Last updated: April 2026</div>
+  <div class="sp-body">
+    <p>WhoEarns ("we", "us", "our") is committed to protecting your personal data. This Privacy Policy explains how we collect, use, store and protect information about you when you use whoearns.com. This policy complies with the EU General Data Protection Regulation (GDPR).</p>
+    <h2>1. Data Controller</h2>
+    <p>WhoEarns operates from Malta, European Union. For GDPR purposes, WhoEarns is the data controller. Contact: <a href="mailto:hello@whoearns.com">hello@whoearns.com</a></p>
+    <h2>2. What Data We Collect</h2>
+    <h3>Data you provide directly</h3>
+    <ul>
+      <li>Email address — when you subscribe to updates, notifications, or our newsletter</li>
+      <li>Name and work email — when you submit a profile claim request</li>
+      <li>Data submissions — content you submit to correct or add profile information</li>
+    </ul>
+    <h3>Data collected automatically</h3>
+    <ul>
+      <li>Usage data via Google Analytics — pages visited, time on site, referral sources (anonymised)</li>
+      <li>Session recordings and heatmaps via Microsoft Clarity — aggregated behaviour data</li>
+      <li>IP address and browser information — for security and fraud prevention purposes</li>
+    </ul>
+    <h2>3. How We Use Your Data</h2>
+    <ul>
+      <li>To send profile update notifications if you subscribed</li>
+      <li>To process and respond to profile claim requests</li>
+      <li>To improve the Site based on aggregated usage analytics</li>
+      <li>To prevent fraud, abuse, and security threats</li>
+      <li>To comply with legal obligations</li>
+    </ul>
+    <h2>4. Legal Basis for Processing (GDPR)</h2>
+    <ul>
+      <li><strong>Consent</strong> — email alerts and newsletter subscriptions (you can withdraw at any time)</li>
+      <li><strong>Contract</strong> — processing profile claims and Pro subscriptions</li>
+      <li><strong>Legitimate interests</strong> — analytics, security, improving the Site</li>
+    </ul>
+    <h2>5. Data Sharing</h2>
+    <p>We do not sell your personal data. We share data only with trusted service providers who process data on our behalf under GDPR-compliant data processing agreements:</p>
+    <ul>
+      <li>Supabase — database hosting (EU region)</li>
+      <li>Vercel — website hosting (edge network, GDPR compliant)</li>
+      <li>Stripe — payment processing (PCI DSS compliant)</li>
+      <li>Google Analytics — anonymised usage analytics</li>
+      <li>Microsoft Clarity — anonymised session analytics</li>
+      <li>Beehiiv — newsletter delivery</li>
+    </ul>
+    <h2>6. Data Retention</h2>
+    <ul>
+      <li>Email alert subscriptions — retained until you unsubscribe</li>
+      <li>Profile claim data — retained for the duration of the claim relationship plus 2 years</li>
+      <li>Analytics data — retained per Google and Microsoft's standard retention policies (up to 26 months)</li>
+    </ul>
+    <h2>7. Your Rights (GDPR)</h2>
+    <p>Under GDPR, you have the right to: access your personal data; correct inaccurate data; request deletion ("right to be forgotten"); restrict or object to processing; data portability; and withdraw consent at any time.</p>
+    <p>To exercise any of these rights, email <a href="mailto:hello@whoearns.com">hello@whoearns.com</a>. We will respond within 30 days.</p>
+    <h2>8. Cookies</h2>
+    <p>We use cookies for analytics and functionality. See our <a onclick="showPage('cookies');return false">Cookie Policy</a> for full details.</p>
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this policy from time to time. We will notify registered users of material changes by email.</p>
+  </div>
+</div>
+
+<!-- COOKIE POLICY -->
+<div class="subpage" id="page-cookies">
+  <button class="sp-back" onclick="showMain()">← Back to WhoEarns</button>
+  <div class="sp-h1">Cookie Policy</div>
+  <div class="sp-date">Last updated: April 2026</div>
+  <div class="sp-body">
+    <p>WhoEarns uses cookies and similar tracking technologies on whoearns.com. This policy explains what cookies we use and why.</p>
+    <h2>What are cookies?</h2>
+    <p>Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work, improve user experience, and provide analytical information to site owners.</p>
+    <h2>Cookies we use</h2>
+    <h3>Strictly necessary cookies</h3>
+    <p>These cookies are essential for the Site to function. They include session management and security cookies. These cannot be disabled.</p>
+    <h3>Analytics cookies</h3>
+    <p><strong>Google Analytics 4</strong> — We use GA4 to understand how visitors use our site. Data is anonymised and aggregated. IP addresses are anonymised. You can opt out via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google's opt-out tool</a>.</p>
+    <p><strong>Microsoft Clarity</strong> — We use Clarity to record session data including mouse movements, clicks and scroll behaviour. This data is aggregated and anonymised. See <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener">Microsoft's Privacy Statement</a>.</p>
+    <h3>Functional cookies</h3>
+    <p>We store your light/dark mode preference locally in your browser. No personal data is involved.</p>
+    <h2>Managing cookies</h2>
+    <p>You can control cookies through your browser settings. Note that disabling certain cookies may affect the functionality of the Site. Most browsers allow you to view, manage, and delete cookies in their privacy or security settings.</p>
+    <h2>Contact</h2>
+    <p>Questions about cookies: <a href="mailto:hello@whoearns.com">hello@whoearns.com</a></p>
+  </div>
+</div>
+
+<!-- DATA DISCLAIMER -->
+<div class="subpage" id="page-disclaimer">
+  <button class="sp-back" onclick="showMain()">← Back to WhoEarns</button>
+  <div class="sp-h1">Data Disclaimer</div>
+  <div class="sp-date">Last updated: April 2026</div>
+  <div class="sp-body">
+    <p>WhoEarns aggregates publicly available financial and career data for informational and research purposes. This disclaimer explains how our data is sourced, labelled, and maintained.</p>
+    <h2>Data Labels</h2>
+    <p>Every figure on WhoEarns is clearly labelled as one of two types:</p>
+    <p><strong>Verified</strong> — Data sourced directly from official, verifiable sources including: SEC EDGAR annual filings, Warsaw Stock Exchange (GPW) filings, official UEFA and FIFA statistics databases, Stripe-verified MRR data (via TrustMRR), publicly verifiable on-chain blockchain data.</p>
+    <p><strong>Estimated</strong> — Data estimated from reputable secondary sources including Forbes, Bloomberg, The Sunday Times Rich List, reported contract values, property records, and industry analysis. Net worth estimates for individuals are inherently approximate and represent our best assessment based on available information.</p>
+    <h2>Net Worth Estimates</h2>
+    <p>Net worth figures for athletes, entertainers and creators are estimates. Real personal wealth is not publicly disclosed. Our estimates are based on: reported salaries and contracts, publicly known business interests, property records, published endorsement deals, and credible media reporting. Actual figures may differ materially.</p>
+    <h2>Not Financial Advice</h2>
+    <p>Nothing on WhoEarns constitutes financial, investment, tax, or legal advice. Data is provided for informational and entertainment purposes only. Do not make financial or business decisions based solely on information from this Site.</p>
+    <h2>Data Currency</h2>
+    <p>All profiles display a "last reviewed" date. We review our top 100 profiles monthly. Figures may be outdated between review cycles. We recommend verifying important figures through primary sources.</p>
+    <h2>Disputing Data</h2>
+    <p>If you believe any data on WhoEarns is inaccurate, please email <a href="mailto:hello@whoearns.com">hello@whoearns.com</a> with: the profile in question, the specific figure you believe is incorrect, your suggested correction, and a credible source supporting your correction. We will review and respond within 48 hours.</p>
+    <h2>Profile Claims</h2>
+    <p>Businesses and individuals can claim their profile to add supplementary information. Claimed profiles are marked accordingly. Claimed profile holders may not alter verified data — only add supplementary information such as website links, social profiles and founder notes.</p>
+    <h2>Public Figures</h2>
+    <p>WhoEarns covers public figures whose financial and professional activities are a matter of legitimate public interest. We present factual information from public sources and clearly distinguish between verified data and estimates. If you are a public figure and believe your profile contains materially inaccurate information, contact us at <a href="mailto:hello@whoearns.com">hello@whoearns.com</a>.</p>
+  </div>
+</div>
+
+</div><!-- end subpages -->
+
+<!-- MODALS -->
 <div class="overlay" id="pm" onclick="if(event.target.id==='pm')closePro()">
   <div class="modal">
     <div class="m-handle"></div>
     <button class="m-close" onclick="closePro()">✕</button>
     <div class="m-title">Upgrade to Pro</div>
-    <div class="m-sub">Unlimited AI analyses, export profiles, claim your listing and more.</div>
+    <div class="m-sub">Unlimited AI analyses, export profiles and claim your listing.</div>
     <div class="pc-grid">
       <div class="pc">
         <div class="pc-tier">Free</div><div class="pc-price">€0</div><div class="pc-period">forever</div>
@@ -762,28 +939,26 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
       </div>
       <div class="pc feat">
         <div class="pc-tier">Pro</div><div class="pc-price" style="color:var(--gold)">€9</div><div class="pc-period">per month · cancel anytime</div>
-        <ul class="pc-feats"><li>Everything free</li><li>Unlimited AI analyses</li><li>Landing page previews</li><li>Export any profile</li><li>Email alerts on updates</li><li>Early access features</li><li>Claim & edit your profile</li></ul>
-        <button class="pc-btn" onclick="alert('Stripe checkout in production')">Start Free Trial →</button>
+        <ul class="pc-feats"><li>Everything free</li><li>Unlimited AI analyses</li><li>Landing page previews</li><li>Export any profile</li><li>Email alerts on updates</li><li>Early access features</li><li>Claim and edit your profile</li></ul>
+        <button class="pc-btn" onclick="alert('Stripe checkout coming soon')">Start Free Trial</button>
       </div>
     </div>
     <div class="m-also"><strong>Also available:</strong> Claim Profile €49/mo · Featured Placement €99–299/mo · API Access €99/mo</div>
-    <div class="stripe-note">🔒 Secured by Stripe · No card needed for trial</div>
+    <div class="stripe-note">Secured by Stripe · No card needed for trial</div>
   </div>
 </div>
 
-<!-- NOTIFY MODAL -->
 <div class="notify-modal" id="notifyModal" onclick="if(event.target.id==='notifyModal')closeNotify()">
   <div class="nm-box">
-    <div class="nm-title">Get Updates 🔔</div>
-    <div class="nm-sub" id="notifyText">Get notified when this profile is updated with new data.</div>
+    <div class="nm-title">Get Updates</div>
+    <div class="nm-sub" id="notifyText">Get notified when this profile is updated.</div>
     <input class="nm-input" type="email" id="notifyEmail" placeholder="your@email.com">
     <button class="nm-btn" onclick="submitNotify()">Notify Me</button>
     <button class="nm-cancel" onclick="closeNotify()">No thanks</button>
   </div>
 </div>
 
-<!-- SHARE TOAST -->
-<div class="toast" id="toast">✓ Link copied to clipboard</div>
+<div class="toast" id="toast">Link copied</div>
 
 <script>
 // ── AVATAR ──────────────────────────────
@@ -798,7 +973,7 @@ ${nm?`<text x="40" y="75" text-anchor="middle" fill="rgba(255,255,255,.4)" font-
 <ellipse cx="23" cy="34" rx="4.5" ry="5.5" fill="${sk}"/>
 <ellipse cx="57" cy="34" rx="4.5" ry="5.5" fill="${sk}"/>
 ${st==='short'?`<path d="M23 28 Q22 13 40 12 Q58 13 57 28 Q52 20 40 20 Q28 20 23 28Z" fill="${hr}"/>`:''}
-${st==='curly'?`<path d="M23 29 Q20 11 40 10 Q60 11 57 29 Q50 17 40 17 Q30 17 23 29Z" fill="${hr}"/><circle cx="24" cy="24" r="5" fill="${hr}"/><circle cx="56" cy="24" r="5" fill="${hr}"/><circle cx="32" cy="16" r="5" fill="${hr}"/><circle cx="48" cy="16" r="5" fill="${hr}"/>`:''}
+${st==='curly'?`<path d="M23 29 Q20 11 40 10 Q60 11 57 29 Q50 17 40 17 Q30 17 23 29Z" fill="${hr}"/><circle cx="24" cy="24" r="5" fill="${hr}"/><circle cx="56" cy="24" r="5" fill="${hr}"/>`:''}
 ${st==='long'?`<path d="M23 28 Q21 12 40 11 Q59 12 57 28 Q52 19 40 19 Q28 19 23 28Z" fill="${hr}"/><rect x="18" y="26" width="7" height="24" rx="3.5" fill="${hr}"/><rect x="55" y="26" width="7" height="24" rx="3.5" fill="${hr}"/>`:''}
 ${st==='bald'?`<ellipse cx="40" cy="22" rx="17" ry="9" fill="${sk}" opacity=".3"/>`:''}
 <path d="M28 27 Q33 25.5 38 27" stroke="${hr}" stroke-width="1.8" stroke-linecap="round"/>
@@ -818,290 +993,435 @@ ${ac==='stubble'?`<ellipse cx="40" cy="45" rx="11" ry="5.5" fill="${hr}" opacity
 </svg>`;
 }
 
-// ── PROFILES ────────────────────────────
+// ── PROFILES ─────────────────────────────
 const P={
-  // ── POLAND ──
   lewandowski:{name:'Robert Lewandowski',ava:av({sk:'#d4a87a',hr:'#c8a060',st:'short',jr:'#dc143c',nm:'9',bg:'#1a0508',ac:'stubble'}),type:'footballer',country:'pl',ver:false,rev:'April 2026',claim:true,
     tags:[{l:'Footballer',c:'s'},{l:'Active',c:'a'},{l:'Poland Record',c:'r'}],
-    meta:['🎂 Aug 21, 1988','📍 Leszno, Poland','🇵🇱 Polish','⏳ Age 37'],
-    soc:[{i:'📸',l:'@lewy_official · 30M',u:'https://instagram.com/lewy_official'},{i:'𝕏',l:'@lewy_official · 5M',u:'https://x.com/lewy_official'}],
+    meta:['Aug 21, 1988','Leszno, Poland','Polish','Age 37'],
+    soc:[{i:'Instagram',l:'@lewy_official · 30M',u:'https://instagram.com/lewy_official'},{i:'X',l:'@lewy_official · 5M',u:'https://x.com/lewy_official'}],
     stats:[{l:'Net Worth',v:'$200M',c:'gold',n:'Forbes est. 2025',e:true},{l:'Intl Caps',v:'148',c:'blue',n:'Poland all-time record',v2:true},{l:'Intl Goals',v:'82',c:'gold',n:'Poland all-time top scorer',v2:true},{l:'Career Goals',v:'620+',c:'',n:'All clubs combined',v2:true}],
-    career:[{c:'Lech Poznań',f:'🇵🇱',y:'2007–10',a:82,g:41,as:11},{c:'Borussia Dortmund',f:'🇩🇪',y:'2010–14',a:131,g:74,as:38},{c:'Bayern Munich',f:'🇩🇪',y:'2014–22',a:374,g:344,as:92},{c:'FC Barcelona',f:'🇪🇸',y:'2022–now',a:110,g:80,as:25}],tA:697,tG:539,tAs:166,
-    i1:{t:'💰 Earnings',r:[{k:'Net Worth',v:'$200M',c:'gold',e:true},{k:'Annual Earnings',v:'~$35M',e:true},{k:'Endorsements',v:'Nike, Huawei, Knorr'},{k:'RL9 Brand',v:'Own clothing line'},{k:'Crypto',v:'No public data'}]},
-    i2:{t:'🏅 International',r:[{k:'Country',v:'🇵🇱 Poland'},{k:'Caps',v:'148',v2:true},{k:'Goals',v:'82',v2:true},{k:'World Cups',v:'2018, 2022'},{k:'EURO',v:'2008, 2012, 2016, 2020, 2024'},{k:'Career club goals',v:'620+',v2:true}]},
-    ai:{n:'Robert Lewandowski',w:'<strong>Lewandowski is one of the most underrepresented superstars</strong> in global media. Massively famous in Europe, almost invisible in English-language content despite being a genuine all-time great.',m:'<strong>Polish diaspora globally (21M+)</strong> and European football fans who know Lewandowski is special but have no English-language destination for his story.',o:'<strong>English-language Polish football platform.</strong> Lewandowski as the entry point — his stats, his career, Poland\'s football story told for an international audience.',d:'<strong>Easy</strong> — content play with massive underserved audience.',b:'Polska Football',bd:'English-language newsletter and YouTube covering Polish football — Lewandowski, the Bundesliga years, the Poland national team story. 20,000 subscribers at €5/month = €100K MRR.',pn:'Polska Football',pt:'The Polish football story. In English.',pc:'Subscribe Free',pf:['Lewandowski deep dives','Bundesliga from Poland perspective','National team coverage','English language'],pu:'polskafootball.com',pbg:'#1a0508',pa:'#dc143c'}},
+    career:[{c:'Lech Poznan',f:'PL',y:'2007–10',a:82,g:41,as:11},{c:'Borussia Dortmund',f:'DE',y:'2010–14',a:131,g:74,as:38},{c:'Bayern Munich',f:'DE',y:'2014–22',a:374,g:344,as:92},{c:'FC Barcelona',f:'ES',y:'2022–now',a:110,g:80,as:25}],tA:697,tG:539,tAs:166,
+    i1:{t:'Earnings',r:[{k:'Net Worth',v:'$200M',c:'gold',e:true},{k:'Annual Earnings',v:'~$35M',e:true},{k:'Endorsements',v:'Nike, Huawei, Knorr'},{k:'RL9 Brand',v:'Own clothing line'}]},
+    i2:{t:'International',r:[{k:'Country',v:'Poland'},{k:'Caps',v:'148',v2:true},{k:'Goals',v:'82',v2:true},{k:'World Cups',v:'2018, 2022'},{k:'EURO appearances',v:'2008–2024'}]},
+    ai:{n:'Robert Lewandowski',w:'<strong>One of the most underrepresented superstars</strong> in global media. Massively famous in Europe, almost invisible in English-language content despite being an all-time great striker.',m:'<strong>Polish diaspora of 21M+ people worldwide</strong> and European football fans who know Lewandowski is exceptional but have no English-language destination for his story.',o:'<strong>English-language Polish football platform.</strong> Lewandowski as the entry point — his career, his records, the Poland national team story told properly for an international audience.',d:'<strong>Easy.</strong> Pure content play with a massively underserved audience already looking for this.',
+      layout:'c',
+      b:'Polska Football',bd:'English-language newsletter and YouTube covering Polish football. Lewandowski, the Bundesliga years, the national team. 20,000 subscribers at €5/month = €100K MRR.',
+      pn:'Polska Football',pt:'The Polish football story. In English.',pc:'Subscribe Free',
+      pf:['Lewandowski career deep dives','Bundesliga from Poland\'s perspective','National team coverage','Published in English'],
+      pc2:[{t:'Career Stats',v:'148 caps · 82 goals'},{t:'Topic',v:'Underserved market'},{t:'Audience',v:'21M+ diaspora'}],
+      pu:'polskafootball.com',pbg:'#1a0508',pa:'#dc143c'}},
 
-  cdprojekt:{name:'CD Projekt',ava:av({sk:'#c8311a',hr:'#8b2010',st:'bald',jr:'#c8311a',nm:'CDP',bg:'#0f0808',ac:''}),type:'business',country:'pl',ver:true,rev:'2024 Annual Report — GPW',claim:false,
-    tags:[{l:'Gaming Company',c:'r'},{l:'Public GPW:CDR',c:'a'},{l:'Poland',c:'s'}],
-    meta:['📅 Founded 1994','🏢 Warsaw, Poland','👥 1,100+ employees','📈 GPW: CDR'],
-    soc:[{i:'🌐',l:'cdprojektred.com',u:'https://cdprojektred.com'},{i:'𝕏',l:'@CDPROJEKTRED · 2M',u:'https://x.com/CDPROJEKTRED'}],
-    stats:[{l:'Revenue 2024',v:'~$270M',c:'gold',n:'Warsaw Stock Exchange',v2:true},{l:'Market Cap',v:'~$2.5B',c:'green',n:'April 2026',v2:true},{l:'Games Sold',v:'75M+',c:'blue',n:'Witcher + Cyberpunk',v2:true},{l:'Founded',v:'1994',c:'',n:'Warsaw, Poland',v2:true}],
+  cdprojekt:{name:'CD Projekt',ava:av({sk:'#c8311a',hr:'#8b2010',st:'bald',jr:'#c8311a',nm:'CDP',bg:'#0f0808',ac:''}),type:'business',country:'pl',ver:true,rev:'2024 Annual Report',claim:false,
+    tags:[{l:'Gaming Company',c:'r'},{l:'Public — GPW:CDR',c:'a'},{l:'Poland',c:'s'}],
+    meta:['Founded 1994','Warsaw, Poland','1,100+ employees','GPW: CDR'],
+    soc:[{i:'Web',l:'cdprojektred.com',u:'https://cdprojektred.com'},{i:'X',l:'@CDPROJEKTRED · 2M',u:'https://x.com/CDPROJEKTRED'}],
+    stats:[{l:'Revenue 2024',v:'~$270M',c:'gold',n:'Warsaw Stock Exchange filing',v2:true},{l:'Market Cap',v:'~$2.5B',c:'green',n:'April 2026',v2:true},{l:'Games Sold',v:'75M+',c:'blue',n:'Witcher + Cyberpunk combined',v2:true},{l:'Founded',v:'1994',c:'',n:'Warsaw, Poland',v2:true}],
     career:[],tA:0,tG:0,tAs:0,
-    i1:{t:'🎮 Key Products',r:[{k:'The Witcher 3',v:'50M+ copies sold',v2:true},{k:'Cyberpunk 2077',v:'25M+ copies sold',v2:true},{k:'Gwent (card game)',v:'Free-to-play'},{k:'The Witcher 4',v:'In development'},{k:'Cyberpunk DLC',v:'Phantom Liberty'}]},
-    i2:{t:'🏢 Company',r:[{k:'Founded',v:'1994 by Marcin Iwiński'},{k:'HQ',v:'Warsaw, Poland'},{k:'Employees',v:'1,100+'},{k:'Listed',v:'Warsaw Stock Exchange (GPW)'},{k:'Revenue model',v:'Premium games + DLC + digital'}]},
-    ai:{n:'CD Projekt',w:'<strong>CD Projekt makes massive games with huge gaps between releases</strong> — 8+ years between major titles. Players disengage entirely between launches. No ongoing revenue stream.',m:'<strong>50M+ Witcher and Cyberpunk fans</strong> who have nothing from CD Projekt to engage with between games — no live service, no subscription, no community product.',o:'A <strong>premium game world companion app</strong> — lore database, map tools, community builds, update tracker. Official-quality third-party product for the Witcher/Cyberpunk universe.',d:'<strong>Medium.</strong> No official partnership needed — community tools are legal. Challenge is building quality that stands next to the games themselves.',b:'The Codex',bd:'Companion app for Witcher and Cyberpunk universes. Lore database, interactive maps, community builds, quest guides. €4.99 one-time or freemium. 500K users at €5 = $2.5M.',pn:'The Codex',pt:'Every world. Fully explored.',pc:'Download Free',pf:['Witcher universe lore','Cyberpunk interactive map','Community builds','Quest companion'],pu:'thecodex.app',pbg:'#0f0808',pa:'#c8311a'}},
+    i1:{t:'Key Products',r:[{k:'The Witcher 3',v:'50M+ copies sold',v2:true},{k:'Cyberpunk 2077',v:'25M+ copies sold',v2:true},{k:'Gwent',v:'Free-to-play card game'},{k:'The Witcher 4',v:'In development'},{k:'Phantom Liberty DLC',v:'2M+ sales'}]},
+    i2:{t:'Company',r:[{k:'Founded',v:'1994, Marcin Iwinski'},{k:'HQ',v:'Warsaw, Poland'},{k:'Employees',v:'1,100+'},{k:'Listed',v:'Warsaw Stock Exchange (GPW)'},{k:'Revenue model',v:'Premium games + DLC + digital'}]},
+    ai:{n:'CD Projekt',w:'<strong>CD Projekt releases games with 8+ year gaps between major titles.</strong> Players completely disengage between launches. No ongoing revenue stream, no live service.',m:'<strong>50M+ Witcher and Cyberpunk fans</strong> who have nothing to engage with between game releases — no companion app, no subscription, no community product.',o:'<strong>Premium game world companion app</strong> — lore database, interactive maps, community builds, update tracker. Official-quality third-party product for the Witcher and Cyberpunk universes.',d:'<strong>Medium difficulty.</strong> No official partnership needed — community tools are entirely legal. The challenge is matching the quality standard set by the games.',
+      layout:'b',
+      b:'The Codex',bd:'Companion app for Witcher and Cyberpunk universes. Lore database, interactive maps, community builds, quest guides. Freemium model — €4.99 one-time unlock or €2/month. 500K users.',
+      pn:'The Codex',pt:'Every world. Fully explored.',pc:'Download Free',
+      pf:['Witcher universe lore database','Cyberpunk 2077 interactive map','Community builds and guides','Quest companion tool'],
+      pu:'thecodex.app',pbg:'#0f0808',pa:'#c8311a'}},
 
-  solowow:{name:'Michał Sołowow',ava:av({sk:'#d4a87a',hr:'#5a4030',st:'short',jr:'#1a2a1a',nm:'',bg:'#0a100a',ac:'stubble'}),type:'business',country:'pl',ver:false,rev:'April 2026',claim:false,
+  solowow:{name:'Michal Solowow',ava:av({sk:'#d4a87a',hr:'#5a4030',st:'short',jr:'#1a2a1a',nm:'',bg:'#0a100a',ac:'stubble'}),type:'business',country:'pl',ver:false,rev:'April 2026',claim:false,
     tags:[{l:'Billionaire',c:'r'},{l:'Poland',c:'s'},{l:'Motorsport',c:'a'}],
-    meta:['🎂 Born 1966','📍 Kielce, Poland','🇵🇱 Polish','⏳ Age ~60'],
+    meta:['Born 1966','Kielce, Poland','Polish','Age ~60'],
     soc:[],
-    stats:[{l:'Net Worth',v:'~$3B',c:'gold',n:'Forbes Poland 2025',e:true},{l:'Businesses',v:'12+',c:'blue',n:'Ceramics, construction, chemicals',e:true},{l:'WRC Titles',v:'3×',c:'',n:'World Rally Championship',v2:true},{l:'Poland rank',v:'#1-3',c:'green',n:'Richest in Poland',e:true}],
+    stats:[{l:'Net Worth',v:'~$3B',c:'gold',n:'Forbes Poland 2025',e:true},{l:'Businesses',v:'12+',c:'blue',n:'Ceramics, construction, chemicals',e:true},{l:'WRC Titles',v:'3x',c:'',n:'World Rally Championship',v2:true},{l:'Poland Rank',v:'#1–3',c:'green',n:'Richest in Poland',e:true}],
     career:[],tA:0,tG:0,tAs:0,
-    i1:{t:'💰 Business Empire',r:[{k:'Cersanit',v:'Ceramics & tiles — €500M+ revenue'},{k:'Barlinek',v:'Flooring — major European brand'},{k:'Synthos',v:'Chemical company'},{k:'Net Worth',v:'~$3B',e:true}]},
-    i2:{t:'🏁 Motorsport',r:[{k:'WRC Championships',v:'3× (2005, 2008, 2012)',v2:true},{k:'WRC debut',v:'1999'},{k:'Class',v:'Private gentleman driver'},{k:'Known for',v:'Self-funded world championship wins'}]},
-    ai:{n:'Michał Sołowow',w:'<strong>Poland\'s most successful billionaire is almost completely unknown internationally</strong> — and even his business empire has minimal digital presence.',m:'<strong>Polish business community and motorsport fans</strong> who have no central resource for Polish billionaire wealth stories.',o:'<strong>"Poland\'s Unknown Rich" content series.</strong> The stories of Poland\'s self-made billionaires are extraordinary and almost entirely untold in English.',d:'<strong>Easy</strong> — pure content play.',b:'Poland Rich List',bd:'English-language content brand covering Poland\'s billionaires and success stories. Newsletter + YouTube + WhoEarns profiles. The "Flamini effect" — one unknown billionaire story goes globally viral.',pn:'Poland Rich',pt:'Poland\'s untold wealth stories.',pc:'Subscribe',pf:['Billionaire profiles','Business deep dives','English language','Weekly newsletter'],pu:'polandrich.com',pbg:'#0a100a',pa:'#22c97a'}},
+    i1:{t:'Business Empire',r:[{k:'Cersanit',v:'Ceramics and tiles — 500M+ revenue'},{k:'Barlinek',v:'Flooring — major European brand'},{k:'Synthos',v:'Chemical company'},{k:'Net Worth',v:'~$3B',e:true}]},
+    i2:{t:'Motorsport',r:[{k:'WRC Championships',v:'3x (2005, 2008, 2012)',v2:true},{k:'WRC debut',v:'1999'},{k:'Class',v:'Private gentleman driver'},{k:'Known for',v:'Self-funded world championship wins'}]},
+    ai:{n:'Michal Solowow',w:`<strong>Poland's most successful self-made billionaire is almost completely unknown internationally</strong> — and even domestically his business empire has minimal digital presence.`,m:'<strong>Polish business community and motorsport fans</strong> globally who have no central resource for Polish billionaire wealth stories.',o:`<strong>"Poland's Unknown Rich" content series.</strong> The stories of Poland's self-made billionaires are extraordinary and almost entirely untold in English. One post about Solowow could reach millions.`,d:'<strong>Easy.</strong> Pure content play — no product to build.',
+      layout:'c',
+      b:'Poland Rich',bd:'English-language brand covering Poland\'s billionaires and success stories. Newsletter + YouTube. One unknown billionaire story can go globally viral — the Flamini effect.',
+      pn:'Poland Rich',pt:`Poland's untold wealth stories.`,pc:'Subscribe',
+      pf:['Billionaire profiles','Business deep dives','English and Polish','Weekly newsletter'],
+      pu:'polandrich.com',pbg:'#0a100a',pa:'#22c97a'}},
 
   friz:{name:'Friz (Ekipa)',ava:av({sk:'#d4a87a',hr:'#1a0f08',st:'short',jr:'#ff1493',nm:'',bg:'#150010',ac:''}),type:'creator',country:'pl',ver:false,rev:'April 2026',claim:true,
     tags:[{l:'Creator',c:'c'},{l:'Active',c:'a'},{l:'Poland',c:'s'}],
-    meta:['📍 Warsaw, Poland','🇵🇱 Polish','📺 YouTuber / Brand founder','⏳ Active 2026'],
-    soc:[{i:'▶️',l:'YouTube · 5M+ subs',u:'https://youtube.com/@friz'},{i:'📸',l:'Instagram · 3M+',u:'https://instagram.com/friz'}],
-    stats:[{l:'Net Worth',v:'~$15M',c:'gold',n:'Estimated 2025',e:true},{l:'YouTube Subs',v:'5M+',c:'blue',n:'Poland largest creator',v2:true},{l:'Ekipa Brand',v:'~$5M/yr',c:'green',n:'Clothing + merch revenue',e:true},{l:'YouTube Revenue',v:'~$3M/yr',c:'',n:'AdSense estimate',e:true}],
+    meta:['Warsaw, Poland','Polish','YouTuber and brand founder','Active 2026'],
+    soc:[{i:'YouTube',l:'5M+ subscribers',u:'https://youtube.com/@friz'},{i:'Instagram',l:'3M+',u:'https://instagram.com/friz'}],
+    stats:[{l:'Net Worth',v:'~$15M',c:'gold',n:'Estimated 2025',e:true},{l:'YouTube Subs',v:'5M+',c:'blue',n:'Poland largest creator',v2:true},{l:'Ekipa Brand',v:'~$5M/yr',c:'green',n:'Clothing and merch revenue',e:true},{l:'YouTube Revenue',v:'~$3M/yr',c:'',n:'AdSense estimate',e:true}],
     career:[],tA:0,tG:0,tAs:0,
-    i1:{t:'💰 Revenue Sources',r:[{k:'Net Worth',v:'~$15M',e:true},{k:'YouTube Revenue',v:'~$3M/yr',e:true},{k:'Ekipa clothing brand',v:'~$5M/yr',e:true},{k:'Sponsorships',v:'Major Polish brands'},{k:'Merchandise',v:'Ekipa product line'}]},
-    i2:{t:'📊 Platform Stats',r:[{k:'YouTube Subscribers',v:'5M+',v2:true},{k:'Instagram',v:'3M+',v2:true},{k:'Country',v:'🇵🇱 Poland'},{k:'Ekipa members',v:'Group of 8 creators'},{k:'Known for',v:'Pranks, challenges, lifestyle'}]},
-    ai:{n:'Friz / Ekipa',w:'<strong>Ekipa is massive in Poland but completely invisible internationally.</strong> They have 5M+ subscribers and a clothing brand but zero English-language coverage.',m:'<strong>Polish diaspora worldwide</strong> and European creator economy watchers who have no visibility into Poland\'s creator scene.',o:'<strong>Polish creator economy coverage in English.</strong> Who are Poland\'s biggest YouTubers? What do they earn? Zero English content exists for this.',d:'<strong>Easy</strong> — content gap that clearly exists.',b:'Poland Creators',bd:'English-language coverage of Poland\'s creator economy. WhoEarns profiles + newsletter + YouTube. The gap is enormous — nobody does this.',pn:'Poland Creators',pt:'Poland\'s digital stars. In English.',pc:'Follow',pf:['Polish YouTuber profiles','Earnings estimates','English coverage','Creator economy'],pu:'polandcreators.com',pbg:'#150010',pa:'#ff1493'}},
+    i1:{t:'Revenue Sources',r:[{k:'Net Worth',v:'~$15M',e:true},{k:'YouTube Revenue',v:'~$3M/yr',e:true},{k:'Ekipa clothing brand',v:'~$5M/yr',e:true},{k:'Sponsorships',v:'Major Polish brands'},{k:'Merchandise',v:'Ekipa product line'}]},
+    i2:{t:'Platform Stats',r:[{k:'YouTube Subscribers',v:'5M+',v2:true},{k:'Instagram',v:'3M+',v2:true},{k:'Country',v:'Poland'},{k:'Ekipa members',v:'Group of 8 creators'},{k:'Known for',v:'Pranks, challenges, lifestyle'}]},
+    ai:{n:'Friz and Ekipa',w:'<strong>Ekipa is massive in Poland but completely invisible internationally.</strong> They have 5M+ subscribers and a clothing brand but zero English-language coverage.',m:'<strong>Polish diaspora worldwide</strong> and European creator economy observers who have no visibility into Poland\'s creator scene.',o:'<strong>English-language Polish creator economy coverage.</strong> Who are Poland\'s biggest YouTubers? What do they earn? The gap is enormous — nobody does this.',d:'<strong>Easy.</strong> Clear content gap with no real competition.',
+      layout:'c',
+      b:'Poland Creators',bd:'English-language coverage of Poland\'s creator economy. WhoEarns profiles plus newsletter and YouTube. The gap is enormous.',
+      pn:'Poland Creators',pt:`Poland's digital stars. In English.`,pc:'Follow',
+      pf:['Polish YouTuber profiles','Earnings estimates','English-language coverage','Creator economy focus'],
+      pu:'polandcreators.com',pbg:'#150010',pa:'#ff1493'}},
 
-  // ── GLOBAL FOOTBALLERS ──
   ronaldo:{name:'Cristiano Ronaldo',ava:av({sk:'#c8845a',hr:'#100808',st:'short',jr:'#006600',nm:'7',bg:'#051405',ac:'stubble'}),type:'footballer',country:'pt',ver:false,rev:'April 2026',claim:true,
     tags:[{l:'Footballer',c:'s'},{l:'Active',c:'a'},{l:'World Record',c:'r'}],
-    meta:['🎂 Feb 5, 1985','📍 Madeira, Portugal','🇵🇹 Portuguese','⏳ Age 41'],
-    soc:[{i:'📸',l:'@Cristiano · 650M',u:'https://instagram.com/cristiano'},{i:'𝕏',l:'@Cristiano · 113M',u:'https://x.com/Cristiano'},{i:'▶️',l:'YouTube · 61M',u:'https://youtube.com/@cristiano'}],
-    stats:[{l:'Net Worth',v:'$1.1B',c:'gold',n:'Forbes est. 2025',e:true},{l:'Intl Caps',v:'217',c:'blue',n:'World record',v2:true},{l:'Intl Goals',v:'135',c:'gold',n:'World record',v2:true},{l:'Career Goals',v:'782',c:'',n:'All clubs',v2:true}],
-    career:[{c:'Sporting CP',f:'🇵🇹',y:'2002–03',a:31,g:5,as:6},{c:'Man United',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',y:'2003–09,2021–23',a:346,g:145,as:75},{c:'Real Madrid',f:'🇪🇸',y:'2009–18',a:438,g:450,as:131},{c:'Juventus',f:'🇮🇹',y:'2018–21',a:134,g:101,as:22},{c:'Al Nassr',f:'🇸🇦',y:'2023–now',a:97,g:81,as:24}],tA:1046,tG:782,tAs:258,
-    i1:{t:'💰 Earnings',r:[{k:'Net Worth',v:'$1.1B',c:'gold',e:true},{k:'Annual Earnings',v:'~$200M',e:true},{k:'Endorsements',v:'Nike, Herbalife, CR7'},{k:'IG Earnings',v:'$3.2M/post',e:true},{k:'Hotels (CR7)',v:'10+ properties'},{k:'Crypto (est.)',v:'$10-50M',e:true}]},
-    i2:{t:'🏅 International',r:[{k:'Country',v:'🇵🇹 Portugal'},{k:'Caps',v:'217',v2:true},{k:'Goals',v:'135',v2:true},{k:'EURO',v:'2016 ✓'},{k:'World Cups',v:'5 appearances'},{k:'UCL',v:'5× winner'}]},
-    ai:{n:'Cristiano Ronaldo',w:'<strong>CR7\'s brand is entirely personality-dependent</strong> — 650M followers with no owned subscription product or community platform.',m:'<strong>650M Instagram followers</strong> with no direct monetisation channel beyond passive social media.',o:'A <strong>fan membership platform</strong> — exclusive training content, nutrition insights, behind-the-scenes.',d:'<strong>Easy concept.</strong> Hard without athlete involvement. White-label for mid-tier athletes is more buildable.',b:'AthletePass',bd:'White-label membership platform for athletes. 20% revenue share. Target 100K–10M follower athletes first.',pn:'AthletePass',pt:'Your favourite athletes. Exclusive access.',pc:'Start Free Trial',pf:['Exclusive training content','Behind the scenes','Early merch drops','Monthly Q&A'],pu:'athletepass.io',pbg:'#051405',pa:'#22c97a'}},
+    meta:['Feb 5, 1985','Madeira, Portugal','Portuguese','Age 41'],
+    soc:[{i:'Instagram',l:'@Cristiano · 650M',u:'https://instagram.com/cristiano'},{i:'X',l:'@Cristiano · 113M',u:'https://x.com/Cristiano'},{i:'YouTube',l:'61M subscribers',u:'https://youtube.com/@cristiano'}],
+    stats:[{l:'Net Worth',v:'$1.1B',c:'gold',n:'Forbes est. 2025',e:true},{l:'Intl Caps',v:'217',c:'blue',n:'World record',v2:true},{l:'Intl Goals',v:'135',c:'gold',n:'World record',v2:true},{l:'Career Goals',v:'782',c:'',n:'All clubs combined',v2:true}],
+    career:[{c:'Sporting CP',f:'PT',y:'2002–03',a:31,g:5,as:6},{c:'Manchester United',f:'EN',y:'2003–09, 2021–23',a:346,g:145,as:75},{c:'Real Madrid',f:'ES',y:'2009–18',a:438,g:450,as:131},{c:'Juventus',f:'IT',y:'2018–21',a:134,g:101,as:22},{c:'Al Nassr',f:'SA',y:'2023–now',a:97,g:81,as:24}],tA:1046,tG:782,tAs:258,
+    i1:{t:'Earnings',r:[{k:'Net Worth',v:'$1.1B',c:'gold',e:true},{k:'Annual Earnings',v:'~$200M',e:true},{k:'Endorsements',v:'Nike, Herbalife, CR7'},{k:'Instagram per post',v:'$3.2M',e:true},{k:'Hotels (CR7 brand)',v:'10+ properties'},{k:'Crypto (est.)',v:'$10–50M',e:true}]},
+    i2:{t:'International Career',r:[{k:'Country',v:'Portugal'},{k:'Caps',v:'217',v2:true},{k:'Goals',v:'135',v2:true},{k:'EURO',v:'2016 winner'},{k:'World Cups',v:'5 appearances'},{k:'UCL titles',v:'5x'}]},
+    ai:{n:'Cristiano Ronaldo',w:'<strong>CR7\'s brand is entirely personality-dependent.</strong> 650M followers with no owned subscription product, no community platform, no direct monetisation beyond passive social media.',m:'<strong>650M Instagram followers</strong> who can only consume content passively — no membership, no exclusive access, no direct relationship.',o:'<strong>A fan membership platform</strong> — exclusive training content, nutrition insights, behind-the-scenes access. He has the world\'s largest individual audience and no product for it.',d:'<strong>Easy concept.</strong> Challenge is getting the athlete\'s involvement. White-label platform for 100K–10M follower athletes is a far more buildable starting point.',
+      layout:'d',
+      b:'AthletePass',bd:'White-label membership platform for athletes. They bring the audience, you provide the platform. 20% revenue share. Target athletes with 100K–10M followers who can\'t negotiate deals themselves.',
+      pn:'AthletePass',pt:'Your favourite athletes. Exclusive access.',pc:'Start Free Trial',
+      pf:['Exclusive training content','Behind the scenes access','Early merchandise drops','Monthly live Q and A'],
+      pu:'athletepass.io',pbg:'#0a150a',pa:'#22c97a'}},
 
   messi:{name:'Lionel Messi',ava:av({sk:'#c8845a',hr:'#1a0f08',st:'short',jr:'#74acdf',nm:'10',bg:'#08101e',ac:'stubble'}),type:'footballer',country:'ar',ver:false,rev:'April 2026',claim:true,
     tags:[{l:'Footballer',c:'s'},{l:'Active',c:'a'},{l:'World Cup Winner',c:'r'}],
-    meta:['🎂 Jun 24, 1987','📍 Rosario, Argentina','🇦🇷 Argentine','⏳ Age 37'],
-    soc:[{i:'📸',l:'@leomessi · 500M',u:'https://instagram.com/leomessi'}],
-    stats:[{l:'Net Worth',v:'$700M',c:'gold',n:'Forbes est. 2025',e:true},{l:'Intl Caps',v:'191',c:'blue',n:'2nd most ever',v2:true},{l:'Intl Goals',v:'112',c:'gold',n:'2nd most ever',v2:true},{l:'Ballon d\'Or',v:'8×',c:'',n:'All-time record',v2:true}],
-    career:[{c:'FC Barcelona',f:'🇪🇸',y:'2004–21',a:778,g:672,as:303},{c:'Paris Saint-Germain',f:'🇫🇷',y:'2021–23',a:75,g:32,as:35},{c:'Inter Miami',f:'🇺🇸',y:'2023–now',a:75,g:57,as:24}],tA:928,tG:761,tAs:362,
-    i1:{t:'💰 Earnings',r:[{k:'Net Worth',v:'$700M',c:'gold',e:true},{k:'Annual Earnings',v:'~$135M',e:true},{k:'Endorsements',v:'Adidas, Pepsi, Hard Rock'},{k:'IG Earnings',v:'$2.6M/post',e:true}]},
-    i2:{t:'🏅 International',r:[{k:'Country',v:'🇦🇷 Argentina'},{k:'Caps',v:'191',v2:true},{k:'Goals',v:'112',v2:true},{k:'World Cup',v:'✓ 2022 Winner'},{k:'Ballon d\'Or',v:'8×',v2:true}]},
-    ai:{n:'Lionel Messi',w:'<strong>Messi\'s commercial empire is underdeveloped vs his fame.</strong> 500M followers, no owned platform.',m:'<strong>300M+ South American and European fans</strong> with no direct engagement channel.',o:'<strong>Argentine football content globally underserved.</strong> World Cup 2022 created a new wave of fans.',d:'<strong>Easy</strong> — pure content play.',b:'La Albiceleste Pass',bd:'Premium Argentina football community. €7/month. 50,000 subscribers = €350K MRR.',pn:'AlbicelestePASS',pt:'Argentina football. Deeper than ever.',pc:'Join the Community',pf:['Match breakdowns','Player spotlight series','Historical archive','English + Spanish'],pu:'albiceleste.pass',pbg:'#08101e',pa:'#74acdf'}},
+    meta:['Jun 24, 1987','Rosario, Argentina','Argentine','Age 37'],
+    soc:[{i:'Instagram',l:'@leomessi · 500M',u:'https://instagram.com/leomessi'}],
+    stats:[{l:'Net Worth',v:'$700M',c:'gold',n:'Forbes est. 2025',e:true},{l:'Intl Caps',v:'191',c:'blue',n:'2nd most ever',v2:true},{l:'Intl Goals',v:'112',c:'gold',n:'2nd most ever',v2:true},{l:'Ballon d\'Or',v:'8x',c:'',n:'All-time record',v2:true}],
+    career:[{c:'FC Barcelona',f:'ES',y:'2004–21',a:778,g:672,as:303},{c:'Paris Saint-Germain',f:'FR',y:'2021–23',a:75,g:32,as:35},{c:'Inter Miami',f:'US',y:'2023–now',a:75,g:57,as:24}],tA:928,tG:761,tAs:362,
+    i1:{t:'Earnings',r:[{k:'Net Worth',v:'$700M',c:'gold',e:true},{k:'Annual Earnings',v:'~$135M',e:true},{k:'Endorsements',v:'Adidas, Pepsi, Hard Rock'},{k:'Instagram per post',v:'$2.6M',e:true}]},
+    i2:{t:'International Career',r:[{k:'Country',v:'Argentina'},{k:'Caps',v:'191',v2:true},{k:'Goals',v:'112',v2:true},{k:'World Cup',v:'2022 winner'},{k:'Ballon d\'Or',v:'8x',v2:true}]},
+    ai:{n:'Lionel Messi',w:'<strong>Messi\'s commercial empire is underdeveloped relative to his fame.</strong> 500M followers, no owned platform, brand deals that don\'t leverage his true reach.',m:'<strong>300M+ South American and European fans</strong> who follow Messi obsessively but have no direct engagement channel beyond social media.',o:'<strong>Argentine football content is globally underserved.</strong> The 2022 World Cup created a massive new wave of international fans with nowhere to go for premium content.',d:'<strong>Easy.</strong> Pure content play — no official partnership required.',
+      layout:'c',
+      b:'Albiceleste Pass',bd:'Premium Argentina football community. Match analysis, player profiles, content in Spanish and English. €7/month. 50,000 subscribers = €350K MRR.',
+      pn:'AlbielestePASS',pt:'Argentina football. Deeper than ever.',pc:'Join the Community',
+      pf:['Match tactical breakdowns','Player spotlight series','Historical archive','English and Spanish'],
+      pu:'albiceleste.pass',pbg:'#08101e',pa:'#74acdf'}},
 
   depay:{name:'Memphis Depay',ava:av({sk:'#7a4a2a',hr:'#0a0808',st:'short',jr:'#ff6200',nm:'10',bg:'#150800',ac:'beard'}),type:'footballer',country:'nl',ver:false,rev:'April 2026',claim:true,
     tags:[{l:'Footballer',c:'s'},{l:'Active',c:'a'},{l:'Netherlands',c:'r'}],
-    meta:['🎂 Feb 13, 1994','📍 Moordrecht, Netherlands','🇳🇱 Dutch','⏳ Age 31'],
-    soc:[{i:'📸',l:'@memphisdepay · 15M',u:'https://instagram.com/memphisdepay'},{i:'𝕏',l:'@Memphis · 2M',u:'https://x.com/Memphis'}],
+    meta:['Feb 13, 1994','Moordrecht, Netherlands','Dutch','Age 31'],
+    soc:[{i:'Instagram',l:'@memphisdepay · 15M',u:'https://instagram.com/memphisdepay'},{i:'X',l:'@Memphis · 2M',u:'https://x.com/Memphis'}],
     stats:[{l:'Net Worth',v:'$50M',c:'gold',n:'Estimated 2025',e:true},{l:'Intl Caps',v:'113',c:'blue',n:'Netherlands top 5 ever',v2:true},{l:'Intl Goals',v:'46',c:'gold',n:'Joint NL top scorer',v2:true},{l:'Career Goals',v:'158',c:'',n:'All clubs',v2:true}],
-    career:[{c:'PSV Eindhoven',f:'🇳🇱',y:'2012–15',a:87,g:50,as:31},{c:'Man United',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',y:'2015–17',a:58,g:7,as:11},{c:'Lyon',f:'🇫🇷',y:'2017–21',a:178,g:76,as:55},{c:'FC Barcelona',f:'🇪🇸',y:'2021–23',a:65,g:13,as:9},{c:'Atlético Madrid',f:'🇪🇸',y:'2023–24',a:38,g:12,as:5}],tA:426,tG:158,tAs:111,
-    i1:{t:'💰 Earnings',r:[{k:'Net Worth',v:'$50M',e:true},{k:'Annual Earnings',v:'~$12M',e:true},{k:'Music',v:'Rapper — Memphis'},{k:'Clothing',v:'Own brand'}]},
-    i2:{t:'🏅 International',r:[{k:'Country',v:'🇳🇱 Netherlands'},{k:'Caps',v:'113',v2:true},{k:'Goals',v:'46',v2:true},{k:'World Cups',v:'2014, 2022'}]},
-    ai:{n:'Memphis Depay',w:'<strong>Dutch football has almost no English-language international coverage.</strong>',m:'Global fans wanting to track Dutch talent early.',o:'English-language Dutch football scouting platform.',d:'<strong>Easy</strong> — content play.',b:'Oranje Scout',bd:'Newsletter + YouTube covering Dutch talent. 10,000 subs at €7/month = €70K MRR.',pn:'Oranje Scout',pt:'Find the next Dutch superstar first.',pc:'Subscribe',pf:['Weekly scouting','Eredivisie dives','Talent tracker','English'],pu:'oranjescout.com',pbg:'#150800',pa:'#ff6200'}},
+    career:[{c:'PSV Eindhoven',f:'NL',y:'2012–15',a:87,g:50,as:31},{c:'Manchester United',f:'EN',y:'2015–17',a:58,g:7,as:11},{c:'Lyon',f:'FR',y:'2017–21',a:178,g:76,as:55},{c:'FC Barcelona',f:'ES',y:'2021–23',a:65,g:13,as:9},{c:'Atletico Madrid',f:'ES',y:'2023–24',a:38,g:12,as:5}],tA:426,tG:158,tAs:111,
+    i1:{t:'Earnings',r:[{k:'Net Worth',v:'$50M',e:true},{k:'Annual Earnings',v:'~$12M',e:true},{k:'Music career',v:'Rapper — Memphis'},{k:'Clothing brand',v:'Own label'}]},
+    i2:{t:'International Career',r:[{k:'Country',v:'Netherlands'},{k:'Caps',v:'113',v2:true},{k:'Goals',v:'46',v2:true},{k:'World Cups',v:'2014, 2022'}]},
+    ai:{n:'Memphis Depay',w:'<strong>Dutch football has almost no English-language international coverage</strong> despite consistently producing world-class talent.',m:'Global football fans who want to track Dutch talent before they reach the biggest clubs.',o:'English-language Dutch football scouting platform. Find the next Depay before the world does.',d:'<strong>Easy.</strong> Pure content play.',
+      layout:'c',
+      b:'Oranje Scout',bd:'Newsletter and YouTube covering Dutch football talent in English. 10,000 subscribers at €7/month = €70K MRR.',
+      pn:'Oranje Scout',pt:'Find the next Dutch superstar first.',pc:'Subscribe',
+      pf:['Weekly scouting reports','Eredivisie deep dives','Talent pipeline tracker','English language'],
+      pu:'oranjescout.com',pbg:'#150800',pa:'#ff6200'}},
 
   neymar:{name:'Neymar Jr.',ava:av({sk:'#c8845a',hr:'#100808',st:'short',jr:'#009c3b',nm:'10',bg:'#001a08',ac:'stubble'}),type:'footballer',country:'br',ver:false,rev:'April 2026',claim:true,
     tags:[{l:'Footballer',c:'s'},{l:'Active',c:'a'},{l:'Brazil',c:'r'}],
-    meta:['🎂 Feb 5, 1992','📍 Mogi das Cruzes, Brazil','🇧🇷 Brazilian','⏳ Age 33'],
-    soc:[{i:'📸',l:'@neymarjr · 230M',u:'https://instagram.com/neymarjr'},{i:'𝕏',l:'@neymarjr · 60M',u:'https://x.com/neymarjr'}],
+    meta:['Feb 5, 1992','Mogi das Cruzes, Brazil','Brazilian','Age 33'],
+    soc:[{i:'Instagram',l:'@neymarjr · 230M',u:'https://instagram.com/neymarjr'},{i:'X',l:'@neymarjr · 60M',u:'https://x.com/neymarjr'}],
     stats:[{l:'Net Worth',v:'$200M',c:'gold',n:'Estimated 2025',e:true},{l:'Intl Caps',v:'129',c:'blue',n:'Brazil 3rd most capped',v2:true},{l:'Intl Goals',v:'79',c:'gold',n:'Brazil all-time top scorer',v2:true},{l:'Crypto (on-chain)',v:'$56K',c:'green',n:'Verified public wallet',v2:true}],
-    career:[{c:'Santos',f:'🇧🇷',y:'2009–13,2025',a:263,g:136,as:65},{c:'FC Barcelona',f:'🇪🇸',y:'2013–17',a:186,g:105,as:76},{c:'Paris Saint-Germain',f:'🇫🇷',y:'2017–23',a:173,g:118,as:77},{c:'Al Hilal',f:'🇸🇦',y:'2023–24',a:7,g:1,as:1}],tA:629,tG:360,tAs:219,
-    i1:{t:'💰 Earnings & Crypto',r:[{k:'Net Worth',v:'$200M',e:true},{k:'Annual Earnings',v:'~$45M',e:true},{k:'Endorsements',v:'Puma, Red Bull'},{k:'ETH on-chain',v:'$37K',v2:true},{k:'ApeCoin (APE)',v:'20,188 APE',v2:true}]},
-    i2:{t:'🏅 International',r:[{k:'Country',v:'🇧🇷 Brazil'},{k:'Caps',v:'129',v2:true},{k:'Goals',v:'79',v2:true},{k:'Olympics',v:'Gold 2016 ✓'},{k:'Copa América',v:'2019 ✓'}]},
-    ai:{n:'Neymar Jr.',w:'<strong>Brazilian football content in English barely exists</strong> despite 200M+ global fans.',m:'Global fans wanting Brazilian football culture and next-gen talent.',o:'English-language Brazilian football media brand.',d:'<strong>Easy</strong> — content play.',b:'Jogo Bonito',bd:'English newsletter + YouTube covering Brazilian football culture. Monetise through sponsorship + premium.',pn:'Jogo Bonito',pt:'The beautiful game. Told beautifully.',pc:'Join Free',pf:['Talent scouting','Street football','English + Portuguese','Newsletter'],pu:'jogobonito.media',pbg:'#001a08',pa:'#009c3b'}},
+    career:[{c:'Santos',f:'BR',y:'2009–13, 2025',a:263,g:136,as:65},{c:'FC Barcelona',f:'ES',y:'2013–17',a:186,g:105,as:76},{c:'Paris Saint-Germain',f:'FR',y:'2017–23',a:173,g:118,as:77},{c:'Al Hilal',f:'SA',y:'2023–24',a:7,g:1,as:1}],tA:629,tG:360,tAs:219,
+    i1:{t:'Earnings and Crypto',r:[{k:'Net Worth',v:'$200M',e:true},{k:'Annual Earnings',v:'~$45M',e:true},{k:'Endorsements',v:'Puma, Red Bull'},{k:'ETH on-chain',v:'$37K',v2:true},{k:'ApeCoin (APE)',v:'20,188 APE',v2:true}]},
+    i2:{t:'International Career',r:[{k:'Country',v:'Brazil'},{k:'Caps',v:'129',v2:true},{k:'Goals',v:'79',v2:true},{k:'Olympics',v:'Gold 2016'},{k:'Copa America',v:'2019 winner'}]},
+    ai:{n:'Neymar Jr.',w:'<strong>Brazilian football content in English barely exists</strong> despite over 200M global fans.',m:'Global fans wanting to understand Brazilian football culture and track next-generation talent.',o:'English-language Brazilian football media brand. The jogo bonito story has never been told properly for international audiences.',d:'<strong>Easy.</strong> Content and community play.',
+      layout:'c',
+      b:'Jogo Bonito',bd:'English newsletter and YouTube covering Brazilian football culture and next-gen talent. Sponsorship plus €7/month premium tier.',
+      pn:'Jogo Bonito',pt:'The beautiful game. Told beautifully.',pc:'Join Free',
+      pf:['Talent scouting','Street football culture','English and Portuguese','Weekly newsletter'],
+      pu:'jogobonito.media',pbg:'#001a08',pa:'#009c3b'}},
 
-  mbappe:{name:'Kylian Mbappé',ava:av({sk:'#6b3d20',hr:'#080808',st:'short',jr:'#ffffff',nm:'9',bg:'#0f0f0f',ac:''}),type:'footballer',country:'fr',ver:false,rev:'April 2026',claim:true,
+  mbappe:{name:'Kylian Mbappe',ava:av({sk:'#6b3d20',hr:'#080808',st:'short',jr:'#ffffff',nm:'9',bg:'#0f0f0f',ac:''}),type:'footballer',country:'fr',ver:false,rev:'April 2026',claim:true,
     tags:[{l:'Footballer',c:'s'},{l:'Active',c:'a'},{l:'France',c:'r'}],
-    meta:['🎂 Dec 20, 1998','📍 Bondy, France','🇫🇷 French','⏳ Age 26'],
-    soc:[{i:'📸',l:'@k.mbappe · 110M',u:'https://instagram.com/k.mbappe'},{i:'𝕏',l:'@KMbappe · 17M',u:'https://x.com/KMbappe'}],
+    meta:['Dec 20, 1998','Bondy, France','French','Age 26'],
+    soc:[{i:'Instagram',l:'@k.mbappe · 110M',u:'https://instagram.com/k.mbappe'},{i:'X',l:'@KMbappe · 17M',u:'https://x.com/KMbappe'}],
     stats:[{l:'Net Worth',v:'$300M',c:'gold',n:'Estimated 2025',e:true},{l:'Intl Caps',v:'95',c:'blue',n:'France — active',v2:true},{l:'Intl Goals',v:'51',c:'gold',n:'2nd all-time France',v2:true},{l:'Career Goals',v:'325',c:'',n:'All clubs',v2:true}],
-    career:[{c:'Monaco',f:'🇲🇨',y:'2015–17',a:60,g:27,as:14},{c:'PSG',f:'🇫🇷',y:'2017–24',a:308,g:256,as:108},{c:'Real Madrid',f:'🇪🇸',y:'2024–now',a:62,g:42,as:14}],tA:430,tG:325,tAs:136,
-    i1:{t:'💰 Earnings',r:[{k:'Net Worth',v:'$300M',e:true},{k:'Annual Earnings',v:'~$150M',e:true},{k:'Endorsements',v:'Nike, Hublot, Dior'}]},
-    i2:{t:'🏅 International',r:[{k:'Country',v:'🇫🇷 France'},{k:'Caps',v:'95',v2:true},{k:'Goals',v:'51',v2:true},{k:'World Cup',v:'2018 ✓ · 2022 Final'}]},
-    ai:{n:'Kylian Mbappé',w:'<strong>Zero owned digital presence</strong> despite being football\'s most marketable player under 30.',m:'Gen Z football fans globally.',o:'A Gen Z sports media brand — content, culture, training.',d:'<strong>Easy</strong> to start as independent media.',b:'NextGen FC',bd:'Digital media for next-generation footballers. Sponsorship + premium tier.',pn:'NextGen FC',pt:'Football for the next generation.',pc:'Join Free',pf:['Next-gen profiles','Culture + fashion','Short-form','Newsletter'],pu:'nextgenfc.io',pbg:'#0f0f0f',pa:'#f2b420'}},
+    career:[{c:'Monaco',f:'MC',y:'2015–17',a:60,g:27,as:14},{c:'Paris Saint-Germain',f:'FR',y:'2017–24',a:308,g:256,as:108},{c:'Real Madrid',f:'ES',y:'2024–now',a:62,g:42,as:14}],tA:430,tG:325,tAs:136,
+    i1:{t:'Earnings',r:[{k:'Net Worth',v:'$300M',e:true},{k:'Annual Earnings',v:'~$150M',e:true},{k:'Endorsements',v:'Nike, Hublot, Dior'}]},
+    i2:{t:'International Career',r:[{k:'Country',v:'France'},{k:'Caps',v:'95',v2:true},{k:'Goals',v:'51',v2:true},{k:'World Cup',v:'2018 winner · 2022 final'}]},
+    ai:{n:'Kylian Mbappe',w:'<strong>Zero owned digital presence</strong> despite being football\'s most marketable player under 30.',m:'Gen Z football fans globally with no direct product or community to engage with.',o:'A Gen Z sports media brand — content, culture, training, fashion. Nothing properly serves 16–25 year old football fans.',d:'<strong>Easy</strong> to start as independent media.',
+      layout:'b',
+      b:'NextGen FC',bd:'Digital media brand for next-generation footballers. Short-form content, deep stats, fashion crossover. Monetise through sponsorship and a premium tier.',
+      pn:'NextGen FC',pt:'Football for the next generation.',pc:'Join Free',
+      pf:['Next-gen player profiles','Culture and fashion','Short-form analysis','Weekly newsletter'],
+      pu:'nextgenfc.io',pbg:'#0f0f0f',pa:'#f2b420'}},
 
-  // ── TECH & BUSINESS ──
   mrbeast:{name:'MrBeast',ava:av({sk:'#f0c898',hr:'#1a0f08',st:'short',jr:'#1a1a4a',nm:'',bg:'#08081a',ac:''}),type:'creator',country:'us',ver:false,rev:'April 2026',claim:false,
     tags:[{l:'Creator',c:'c'},{l:'Active',c:'a'},{l:'Billionaire-track',c:'r'}],
-    meta:['🎂 May 7, 1998','📍 Greenville, NC, USA','🇺🇸 American','⏳ Age 26'],
-    soc:[{i:'▶️',l:'YouTube · 370M subs',u:'https://youtube.com/@mrbeast'},{i:'📸',l:'@mrbeast · 60M',u:'https://instagram.com/mrbeast'},{i:'𝕏',l:'@MrBeast · 28M',u:'https://x.com/MrBeast'}],
-    stats:[{l:'Net Worth',v:'$700M',c:'gold',n:'Bloomberg est. 2025',e:true},{l:'YouTube Revenue',v:'~$80M/yr',c:'green',n:'AdSense + sponsors',e:true},{l:'Feastables',v:'~$100M/yr',c:'',n:'Chocolate brand',e:true},{l:'YT Subscribers',v:'370M+',c:'blue',n:'Most subscribed individual',v2:true}],
+    meta:['May 7, 1998','Greenville, NC, USA','American','Age 26'],
+    soc:[{i:'YouTube',l:'370M subscribers',u:'https://youtube.com/@mrbeast'},{i:'Instagram',l:'@mrbeast · 60M',u:'https://instagram.com/mrbeast'},{i:'X',l:'@MrBeast · 28M',u:'https://x.com/MrBeast'}],
+    stats:[{l:'Net Worth',v:'$700M',c:'gold',n:'Bloomberg est. 2025',e:true},{l:'YouTube Revenue',v:'~$80M/yr',c:'green',n:'AdSense and sponsorships',e:true},{l:'Feastables',v:'~$100M/yr',c:'',n:'Chocolate brand revenue',e:true},{l:'YouTube Subscribers',v:'370M+',c:'blue',n:'Most subscribed individual',v2:true}],
     career:[],tA:0,tG:0,tAs:0,
-    i1:{t:'💰 Revenue',r:[{k:'Net Worth',v:'$700M',e:true},{k:'YouTube AdSense',v:'~$80M/yr',e:true},{k:'Feastables brand',v:'~$100M/yr',e:true},{k:'Sponsorships',v:'~$50M/yr',e:true}]},
-    i2:{t:'📊 Platforms',r:[{k:'YouTube Subs',v:'370M+',v2:true},{k:'Monthly Views',v:'~3 Billion',v2:true},{k:'TikTok',v:'100M+',v2:true},{k:'Instagram',v:'60M+',v2:true},{k:'Started',v:'2012 (age 13)'}]},
-    ai:{n:'MrBeast',w:'<strong>Entire business depends on one person.</strong> $3M+ per video formula cannot be replicated.',m:'500M+ creators wanting his formula without his budget.',o:'A "MrBeast Formula" AI tool — analyses viral videos, identifies hooks, generates templates.',d:'<strong>Easy</strong> — YouTube data is public.',b:'ViralBlueprint',bd:'Paste any viral YouTube URL → hook analysis, structure, emotional triggers, templates. €19/month.',pn:'ViralBlueprint',pt:'The MrBeast formula. For every creator.',pc:'Try Free →',pf:['Viral video analysis','Hook breakdown','Templates','Any niche'],pu:'viralblueprint.ai',pbg:'#08081a',pa:'#f2b420'}},
+    i1:{t:'Revenue',r:[{k:'Net Worth',v:'$700M',e:true},{k:'YouTube AdSense',v:'~$80M/yr',e:true},{k:'Feastables brand',v:'~$100M/yr',e:true},{k:'Sponsorships',v:'~$50M/yr',e:true}]},
+    i2:{t:'Platforms',r:[{k:'YouTube Subscribers',v:'370M+',v2:true},{k:'Monthly views',v:'~3 billion',v2:true},{k:'TikTok',v:'100M+',v2:true},{k:'Instagram',v:'60M+',v2:true},{k:'Started YouTube',v:'2012 at age 13'}]},
+    ai:{n:'MrBeast',w:'<strong>Entire business depends on one person.</strong> The $3M+ per video formula cannot be replicated by anyone else.',m:'500M+ YouTube creators who want to grow but cannot access MrBeast\'s production budget.',o:'An AI tool that reverse-engineers viral videos — identifies the hook type, emotional structure, and title formula for any niche and any budget.',d:'<strong>Easy.</strong> YouTube data is entirely public. No permission needed.',
+      layout:'b',
+      b:'ViralBlueprint',bd:'Paste any viral YouTube URL and receive a complete breakdown: hook type, emotional triggers, content structure, title formula, personalised templates for your niche. €19/month.',
+      pn:'ViralBlueprint',pt:'The viral formula. For every creator.',pc:'Try Free',
+      pf:['Paste any viral video URL','Hook structure analysis','Personalised templates','Works for any niche'],
+      pu:'viralblueprint.ai',pbg:'#08081a',pa:'#f2b420'}},
 
   openai:{name:'OpenAI',ava:av({sk:'#8090a0',hr:'#101010',st:'bald',jr:'#1a1a20',nm:'AI',bg:'#080808',ac:''}),type:'ai',country:'us',ver:false,rev:'April 2026',claim:false,
     tags:[{l:'AI Company',c:'c'},{l:'Private',c:'a'},{l:'Fastest Growing',c:'r'}],
-    meta:['📅 Founded 2015','🏢 San Francisco, CA','👥 3,000+','💰 $157B valuation'],
-    soc:[{i:'🌐',l:'openai.com',u:'https://openai.com'},{i:'𝕏',l:'@OpenAI · 3.5M',u:'https://x.com/OpenAI'}],
-    stats:[{l:'ARR',v:'$3.7B',c:'gold',n:'End 2024 — reported',e:true},{l:'Valuation',v:'$157B',c:'green',n:'2024 funding',e:true},{l:'Weekly Users',v:'300M+',c:'blue',n:'ChatGPT WAU',e:true},{l:'Revenue Growth',v:'3.4×',c:'',n:'Year-on-year',e:true}],
+    meta:['Founded 2015','San Francisco, CA','3,000+ employees','$157B valuation'],
+    soc:[{i:'Web',l:'openai.com',u:'https://openai.com'},{i:'X',l:'@OpenAI · 3.5M',u:'https://x.com/OpenAI'}],
+    stats:[{l:'ARR',v:'$3.7B',c:'gold',n:'End 2024 — reported',e:true},{l:'Valuation',v:'$157B',c:'green',n:'2024 funding round',e:true},{l:'Weekly Users',v:'300M+',c:'blue',n:'ChatGPT WAU',e:true},{l:'Revenue Growth',v:'3.4x',c:'',n:'Year on year',e:true}],
     career:[],tA:0,tG:0,tAs:0,
-    i1:{t:'📊 Revenue',r:[{k:'ChatGPT Plus/Pro',v:'~$2B (54%)',e:true},{k:'API Revenue',v:'~$1.2B (32%)',e:true},{k:'Enterprise',v:'~$500M (14%)',e:true}]},
-    i2:{t:'🏢 Company',r:[{k:'CEO',v:'Sam Altman'},{k:'Backer',v:'Microsoft — $13B'},{k:'Products',v:'ChatGPT, GPT-4o, Sora'},{k:'Founded',v:'2015'}]},
-    ai:{n:'OpenAI',w:'<strong>Serves everyone, serves no one perfectly.</strong> Medical, legal, finance need specialist AI.',m:'50M+ professionals who\'d pay 3× for domain-specific AI.',o:'<strong>Vertical AI</strong> — one profession, deep domain training, €99-299/month.',d:'<strong>Medium.</strong> Infrastructure exists — build the knowledge layer.',b:'LegalSnap',bd:'AI for small law firms. Document analysis, contracts, research. €149/month × 500 firms = €75K MRR.',pn:'LegalSnap',pt:'AI built for lawyers. Not everyone.',pc:'Start Free Trial',pf:['Document analysis','Contract drafting','Case research','Compliance-aware'],pu:'legalsnap.ai',pbg:'#080808',pa:'#a78bfa'}},
+    i1:{t:'Revenue Breakdown',r:[{k:'ChatGPT Plus and Pro',v:'~$2B (54%)',e:true},{k:'API Revenue',v:'~$1.2B (32%)',e:true},{k:'Enterprise',v:'~$500M (14%)',e:true}]},
+    i2:{t:'Company',r:[{k:'CEO',v:'Sam Altman'},{k:'Key backer',v:'Microsoft — $13B invested'},{k:'Products',v:'ChatGPT, GPT-4o, Sora, DALL-E'},{k:'Founded',v:'2015'}]},
+    ai:{n:'OpenAI',w:'<strong>Serves everyone which means it serves no one perfectly.</strong> Medical, legal and finance professionals all need specialist AI trained on domain-specific knowledge.',m:'50M+ professional knowledge workers who use ChatGPT generically but would pay three times more for domain-specific AI.',o:'<strong>Vertical AI</strong> — build one product for one profession. Domain-specific training, domain-specific workflows. €99–299/month instead of €20.',d:'<strong>Medium difficulty.</strong> AI infrastructure already exists. The work is building the knowledge and workflow layer.',
+      layout:'d',
+      b:'LegalSnap',bd:'AI built specifically for small law firms. Document analysis, contract drafting, case research, compliance checks. €149/month per lawyer. 500 firms = €75K MRR.',
+      pn:'LegalSnap',pt:'AI built for lawyers. Not everyone.',pc:'Start Free Trial',
+      pf:['Document analysis and review','Contract drafting','Case research automation','Compliance-aware responses'],
+      pu:'legalsnap.ai',pbg:'#080808',pa:'#a78bfa'}},
 
   google:{name:'Google (Alphabet Inc.)',ava:av({sk:'#4285f4',hr:'#ea4335',st:'bald',jr:'#34a853',nm:'G',bg:'#0a1420',ac:''}),type:'tech',country:'us',ver:true,rev:'Q4 2024 SEC Filing',claim:false,
-    tags:[{l:'Tech Giant',c:'r'},{l:'Public $GOOGL',c:'a'},{l:'SEC Verified',c:'s'}],
-    meta:['📅 Founded 1998','🏢 Mountain View, CA','👥 182,000','📈 NASDAQ: GOOGL'],
-    soc:[{i:'🌐',l:'google.com',u:'https://google.com'},{i:'𝕏',l:'@Google',u:'https://x.com/Google'}],
-    stats:[{l:'Annual Revenue',v:'$307B',c:'gold',n:'2024 SEC filing',v2:true},{l:'Net Profit',v:'$73.5B',c:'green',n:'2024',v2:true},{l:'Market Cap',v:'$2.1T',c:'blue',n:'April 2026',v2:true},{l:'Search Share',v:'~90%',c:'',n:'Global search',e:true}],
+    tags:[{l:'Tech Giant',c:'r'},{l:'Public — NASDAQ: GOOGL',c:'a'},{l:'SEC Verified',c:'s'}],
+    meta:['Founded 1998','Mountain View, CA','182,000 employees','NASDAQ: GOOGL'],
+    soc:[{i:'Web',l:'google.com',u:'https://google.com'},{i:'X',l:'@Google',u:'https://x.com/Google'}],
+    stats:[{l:'Annual Revenue',v:'$307B',c:'gold',n:'2024 SEC filing',v2:true},{l:'Net Profit',v:'$73.5B',c:'green',n:'2024',v2:true},{l:'Market Cap',v:'$2.1T',c:'blue',n:'April 2026',v2:true},{l:'Search Market Share',v:'~90%',c:'',n:'Global search',e:true}],
     career:[],tA:0,tG:0,tAs:0,
-    i1:{t:'📊 Revenue by Segment',r:[{k:'Search Advertising',v:'$198B (64%)',v2:true},{k:'YouTube Ads',v:'$36B (12%)',v2:true},{k:'Google Cloud',v:'$43B (14%)',v2:true},{k:'Other Bets',v:'$2B',v2:true}]},
-    i2:{t:'🏢 Company',r:[{k:'CEO',v:'Sundar Pichai'},{k:'Employees',v:'182,000+'},{k:'Founded',v:'1998 — Page & Brin'},{k:'Products',v:'Search, Gmail, Maps, YouTube, Android'}]},
-    ai:{n:'Google',w:'<strong>25-year-old text link model.</strong> AI answers destroying click-through rates — own Gemini cannibalises ad revenue.',m:'500M+ people searching local services still getting irrelevant results.',o:'Hyper-local AI search — verified businesses, AI booking, zero ads.',d:'<strong>Hard globally, easy in one city.</strong>',b:'LocalAI',bd:'AI local service finder for one city. €49/month per business. Google ignores cities under 2M.',pn:'LocalAI',pt:'Your city. Actually found.',pc:'Search →',pf:['Verified businesses','AI booking','Zero ads','Truly local'],pu:'localai.city',pbg:'#0a1420',pa:'#4285f4'}},
+    i1:{t:'Revenue by Segment',r:[{k:'Search Advertising',v:'$198B (64%)',v2:true},{k:'YouTube Ads',v:'$36B (12%)',v2:true},{k:'Google Cloud',v:'$43B (14%)',v2:true},{k:'Other Bets',v:'$2B',v2:true}]},
+    i2:{t:'Company',r:[{k:'CEO',v:'Sundar Pichai'},{k:'Employees',v:'182,000+'},{k:'Founded',v:'1998 — Page and Brin'},{k:'Products',v:'Search, Gmail, Maps, YouTube, Android, Cloud'}]},
+    ai:{n:'Google',w:'<strong>A 25-year-old text link model under existential pressure.</strong> AI-generated answers are destroying click-through rates and their own Gemini product cannibalises advertising revenue.',m:'500M+ people searching for local services who still receive irrelevant sponsored results. 40M+ small businesses paying billions for poor-quality local search ROI.',o:'<strong>Hyper-local AI search</strong> — verified businesses, AI-powered booking, zero advertising. Subscription model instead of ads. One city, one category.',d:'<strong>Hard to compete globally</strong> but entirely feasible in one city with one service category.',
+      layout:'d',
+      b:'LocalAI',bd:'AI-powered local service finder for one city. Verified businesses, AI booking, zero ads. Charge businesses €49/month. Google systematically ignores cities under 2 million people.',
+      pn:'LocalAI',pt:'Your city. Actually found.',pc:'Search now',
+      pf:['Verified local businesses only','AI-powered appointment booking','Zero sponsored results','Genuinely local results'],
+      pu:'localai.city',pbg:'#0a1420',pa:'#4285f4'}},
 
   marclou:{name:'Marc Lou',ava:av({sk:'#c8845a',hr:'#1a0f08',st:'short',jr:'#2563eb',nm:'',bg:'#080f1a',ac:'stubble'}),type:'founder',country:'fr',ver:false,rev:'April 2026',claim:true,
     tags:[{l:'Tech Founder',c:'c'},{l:'Solo Builder',c:'a'},{l:'Indie Hacker',c:'r'}],
-    meta:['📍 France / Remote','🔨 Solo founder','🏗️ 12+ products','⏳ Active 2026'],
-    soc:[{i:'𝕏',l:'@marc_louvion · 180K',u:'https://x.com/marc_louvion'},{i:'🌐',l:'marclou.com',u:'https://marclou.com'}],
-    stats:[{l:'Est. Total MRR',v:'~$250K',c:'gold',n:'Combined all products',e:true},{l:'Products Built',v:'12+',c:'blue',n:'All launches',v2:true},{l:'X Followers',v:'180K+',c:'',n:'Primary distribution',v2:true},{l:'ShipFast Lifetime',v:'$2M+',c:'green',n:'Lifetime est.',e:true}],
+    meta:['France and remote','Solo founder','12+ products launched','Active 2026'],
+    soc:[{i:'X',l:'@marc_louvion · 180K',u:'https://x.com/marc_louvion'},{i:'Web',l:'marclou.com',u:'https://marclou.com'}],
+    stats:[{l:'Est. Total MRR',v:'~$250K',c:'gold',n:'Combined all products',e:true},{l:'Products Built',v:'12+',c:'blue',n:'All launches',v2:true},{l:'X Followers',v:'180K+',c:'',n:'Primary distribution channel',v2:true},{l:'ShipFast Lifetime',v:'$2M+',c:'green',n:'Lifetime estimated',e:true}],
     career:[],tA:0,tG:0,tAs:0,
-    i1:{t:'🚀 Key Products',r:[{k:'ShipFast',v:'Next.js boilerplate · $2M+ lifetime'},{k:'TrustMRR',v:'Startup DB · $75K MRR'},{k:'SuperShrimp',v:'Posture app · one-time'},{k:'DataFast',v:'Analytics SaaS'}]},
-    i2:{t:'📊 Stats',r:[{k:'Model',v:'Build in public on X'},{k:'Stack',v:'Next.js, Supabase, Stripe'},{k:'Products/year',v:'~4-6'},{k:'Team',v:'Solo'}]},
-    ai:{n:'Marc Lou\'s Playbook',w:'<strong>Model relies entirely on 180K X following.</strong> Distribution IS the moat.',m:'50M+ aspiring indie hackers with no proven formula.',o:'Structured course teaching his exact system.',d:'<strong>Easy concept</strong> with credibility.',b:'BuildInPublic.school',bd:'Course + community teaching the Marc Lou / Pieter Levels playbook. €199 one-time or €29/month.',pn:'BuildInPublic',pt:'From idea to €10K MRR.',pc:'Enroll Now',pf:['12-week program','Live sessions','Builder community','Proven playbook'],pu:'buildinpublic.school',pbg:'#080f1a',pa:'#2563eb'}},
+    i1:{t:'Key Products',r:[{k:'ShipFast',v:'Next.js boilerplate · $2M+ lifetime'},{k:'TrustMRR',v:'Startup revenue DB · $75K MRR'},{k:'SuperShrimp',v:'Posture correction app'},{k:'DataFast',v:'Analytics SaaS'}]},
+    i2:{t:'Builder Stats',r:[{k:'Model',v:'Build in public on X'},{k:'Stack',v:'Next.js, Supabase, Stripe'},{k:'Products per year',v:'~4–6 launches'},{k:'Team size',v:'Solo'}]},
+    ai:{n:'Marc Lou\'s Playbook',w:'<strong>The entire model depends on his 180K X following.</strong> Without that audience, products would not hit $5K in week one. The distribution is the moat.',m:'50M+ aspiring indie hackers with no audience, no distribution system and no proven formula for shipping products people buy.',o:'A structured course teaching his exact system — building in public, growing an X audience while building, and launching products that convert.',d:'<strong>Easy concept</strong> if you have personal brand credibility to back it.',
+      layout:'b',
+      b:'BuildInPublic.school',bd:'Structured course and community teaching the Marc Lou and Pieter Levels playbook. €199 one-time or €29/month community access.',
+      pn:'BuildInPublic',pt:'From idea to €10K MRR.',pc:'Enroll Now',
+      pf:['12-week structured program','Weekly live sessions','Builder community','Marc Lou playbook adapted'],
+      pu:'buildinpublic.school',pbg:'#080f1a',pa:'#2563eb'}},
 };
+
+// ── MINI LANDING LAYOUTS ────────────────
+function miniLanding(ai){
+  const{layout='a',pn,pt,pc,pf,pu,pbg,pa}=ai;
+
+  const bar=`<div class="mini-bar"><div class="mini-dots"><div class="mini-dot" style="background:#ff5f56"></div><div class="mini-dot" style="background:#ffbd2e"></div><div class="mini-dot" style="background:#27c93f"></div></div><div class="mini-url">${pu}</div></div>`;
+
+  if(layout==='b'){
+    // SaaS / tool — two column
+    return`<div class="mini">${bar}<div class="mini-body-b" style="background:${pbg}">
+      <div class="mini-b-left">
+        <div class="mini-logo-b" style="color:${pa}">${pn}</div>
+        <div class="mini-tag-b" style="color:rgba(255,255,255,.55)">${pt}</div>
+        <div class="mini-cta-b" style="background:${pa}">${pc}</div>
+      </div>
+      <div class="mini-b-right">${pf.map(f=>`<div class="mini-feat-b" style="background:rgba(255,255,255,.05);color:rgba(255,255,255,.55)">${f}</div>`).join('')}</div>
+    </div></div>`;
+  }
+  if(layout==='c'){
+    // Media / editorial — three card grid
+    const cards=[
+      {t:'The opportunity',v:ai.o?ai.o.replace(/<[^>]*>/g,'').slice(0,60)+'…':''},
+      {t:'Target audience',v:ai.m?ai.m.replace(/<[^>]*>/g,'').slice(0,55)+'…':''},
+      {t:'Revenue model',v:ai.bd?ai.bd.replace(/<[^>]*>/g,'').slice(0,55)+'…':''},
+    ];
+    return`<div class="mini">${bar}<div class="mini-body-c" style="background:${pbg}">
+      <div class="mini-c-head">
+        <div class="mini-logo-c" style="color:${pa}">${pn}</div>
+        <div class="mini-cta-c" style="background:${pa}">${pc}</div>
+      </div>
+      <div class="mini-c-grid">${cards.map(c=>`<div class="mini-c-card" style="background:rgba(255,255,255,.05);color:rgba(255,255,255,.6)"><strong style="color:${pa}">${c.t}</strong>${c.v}</div>`).join('')}</div>
+    </div></div>`;
+  }
+  if(layout==='d'){
+    // B2B / enterprise — stats dashboard style
+    const stats=(ai.pc2||[{t:'Category',v:ai.pf[0]||''},{t:'Model',v:'B2B SaaS'},{t:'Target',v:'SMB'}]);
+    return`<div class="mini">${bar}<div class="mini-body-d" style="background:${pbg}">
+      <div class="mini-d-top">
+        <div class="mini-logo-d" style="color:${pa}">${pn}</div>
+        <div class="mini-cta-d" style="background:${pa}">${pc}</div>
+      </div>
+      <div class="mini-d-stats">${stats.map(s=>`<div class="mini-d-stat" style="background:rgba(255,255,255,.05)"><div class="mini-d-stat-val" style="color:${pa}">${s.v}</div><div class="mini-d-stat-lbl" style="color:rgba(255,255,255,.4)">${s.t}</div></div>`).join('')}</div>
+      <div class="mini-d-feats">${pf.map(f=>`<div class="mini-d-feat" style="background:rgba(255,255,255,.06);color:rgba(255,255,255,.45)">${f}</div>`).join('')}</div>
+    </div></div>`;
+  }
+  // default A: centred
+  return`<div class="mini">${bar}<div class="mini-body-a" style="background:${pbg}">
+    <div class="mini-logo-a" style="color:${pa}">${pn}</div>
+    <div class="mini-tag-a" style="color:rgba(255,255,255,.5)">${pt}</div>
+    <div class="mini-cta-a" style="background:${pa}">${pc}</div>
+    <div class="mini-feats-a">${pf.map(f=>`<div class="mini-feat" style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.45)">${f}</div>`).join('')}</div>
+  </div></div>`;
+}
 
 // ── RANKINGS ────────────────────────────
 const R={
-  tech:{t:'Tech Giants — Annual Revenue',s:'SEC filings · Verified ✓',items:[
-    {e:'📦',n:'Amazon',d:'E-commerce · AWS · Advertising',v:'$620B',s:'2024 ✓',c:'gold',b:'v',g:'+11%'},
-    {e:'🍎',n:'Apple',d:'iPhone · Services · Mac',v:'$391B',s:'2024 ✓',c:'gold',b:'v',g:'+2%'},
-    {e:'🔍',n:'Google',d:'Search · Cloud · YouTube',v:'$307B',s:'2024 ✓',c:'gold',b:'v',k:'google',g:'+14%'},
-    {e:'🪟',n:'Microsoft',d:'Azure · Office · LinkedIn',v:'$245B',s:'2024 ✓',c:'gold',b:'v',g:'+16%'},
-    {e:'📘',n:'Meta',d:'Facebook · Instagram · WhatsApp',v:'$164B',s:'2024 ✓',c:'gold',b:'v',g:'+22%'},
-    {e:'📺',n:'Netflix',d:'Streaming · 260M subs',v:'$39B',s:'2024 ✓',c:'gold',b:'v',g:'+16%'},
-    {e:'💼',n:'Salesforce',d:'CRM SaaS leader',v:'$34.9B',s:'2024 ✓',c:'gold',b:'v',g:'+9%'},
-    {e:'🛍️',n:'Shopify',d:'E-commerce · 4.6M merchants',v:'$7.7B',s:'2024 ✓',c:'gold',b:'v',k:null,g:'+26%'},
+  tech:{t:'Tech Giants — Annual Revenue',s:'SEC filings · Annual reports · Verified',items:[
+    {e:'',n:'Amazon',d:'E-commerce · AWS · Advertising',v:'$620B',s:'2024 verified',c:'gold',b:'v',g:'+11%'},
+    {e:'',n:'Apple',d:'iPhone · Services · Mac',v:'$391B',s:'2024 verified',c:'gold',b:'v',g:'+2%'},
+    {e:'',n:'Google (Alphabet)',d:'Search · Cloud · YouTube',v:'$307B',s:'2024 verified',c:'gold',b:'v',k:'google',g:'+14%'},
+    {e:'',n:'Microsoft',d:'Azure · Office · LinkedIn',v:'$245B',s:'2024 verified',c:'gold',b:'v',g:'+16%'},
+    {e:'',n:'Meta Platforms',d:'Facebook · Instagram · WhatsApp',v:'$164B',s:'2024 verified',c:'gold',b:'v',g:'+22%'},
+    {e:'',n:'Netflix',d:'Streaming · 260M subscribers',v:'$39B',s:'2024 verified',c:'gold',b:'v',g:'+16%'},
+    {e:'',n:'Salesforce',d:'CRM SaaS leader',v:'$34.9B',s:'2024 verified',c:'gold',b:'v',g:'+9%'},
+    {e:'',n:'Shopify',d:'E-commerce · 4.6M merchants',v:'$7.7B',s:'2024 verified',c:'gold',b:'v',g:'+26%'},
   ]},
-  ai:{t:'AI Companies — Revenue',s:'Fastest-growing AI companies · estimated unless stated',items:[
-    {e:'🤖',n:'OpenAI',d:'ChatGPT · GPT-4o · API',v:'$3.7B ARR',s:'~ Est.',c:'purple',b:'hot',k:'openai',g:'+3.4×'},
-    {e:'🎨',n:'Midjourney',d:'AI image gen · Bootstrapped',v:'$300M ARR',s:'~ Est.',c:'purple',b:'hot',g:'+80%'},
-    {e:'🔮',n:'Anthropic',d:'Claude AI',v:'$1B+ ARR',s:'~ Est.',c:'purple',g:'+4×'},
-    {e:'✍️',n:'Cursor',d:'AI code editor',v:'$500M ARR',s:'~ Est.',c:'purple',b:'hot',g:'+10×'},
-    {e:'🖥️',n:'Lovable',d:'AI app builder · fastest ever',v:'$100M ARR',s:'~ Est.',c:'purple',b:'hot',g:'New'},
-    {e:'🔍',n:'Perplexity AI',d:'AI search engine',v:'$100M ARR',s:'~ Est.',c:'purple',g:'+5×'},
-    {e:'⚡',n:'ElevenLabs',d:'AI voice generation',v:'$80M ARR',s:'~ Est.',c:'purple',g:'+3×'},
-    {e:'🎥',n:'HeyGen',d:'AI video avatars',v:'$35M ARR',s:'~ Est.',c:'purple',g:'+4×'},
+  ai:{t:'AI Companies — Revenue and Valuation',s:'Fastest-growing AI companies · estimated unless stated',items:[
+    {e:'',n:'OpenAI',d:'ChatGPT · GPT-4o · API · Sora',v:'$3.7B ARR',s:'est.',c:'purple',b:'hot',k:'openai',g:'+3.4x'},
+    {e:'',n:'Midjourney',d:'AI image generation · Bootstrapped',v:'$300M ARR',s:'est.',c:'purple',b:'hot',g:'+80%'},
+    {e:'',n:'Anthropic',d:'Claude AI · Safety-focused',v:'$1B+ ARR',s:'est.',c:'purple',g:'+4x'},
+    {e:'',n:'Cursor',d:'AI code editor · Developer favourite',v:'$500M ARR',s:'est.',c:'purple',b:'hot',g:'+10x'},
+    {e:'',n:'Lovable',d:'AI app builder · Fastest ARR ever',v:'$100M ARR',s:'est.',c:'purple',b:'hot',g:'New'},
+    {e:'',n:'Perplexity AI',d:'AI search engine',v:'$100M ARR',s:'est.',c:'purple',g:'+5x'},
+    {e:'',n:'ElevenLabs',d:'AI voice generation',v:'$80M ARR',s:'est.',c:'purple',g:'+3x'},
+    {e:'',n:'HeyGen',d:'AI video avatars',v:'$35M ARR',s:'est.',c:'purple',g:'+4x'},
   ]},
-  founders:{t:'Tech Founders — MRR',s:'Solo builders · estimated',items:[
-    {e:'🌍',n:'Pieter Levels',d:'Nomad List · Remote OK · ideasai',v:'~$120K MRR',s:'~ Est.',c:'green',b:'hot'},
-    {e:'🚀',n:'Marc Lou',d:'ShipFast · TrustMRR · SuperShrimp',v:'~$250K MRR',s:'~ Est.',c:'green',b:'hot',k:'marclou'},
-    {e:'✉️',n:'Sahil Lavingia',d:'Gumroad founder',v:'~$12M ARR',s:'~ Est.',c:'green'},
-    {e:'🖥️',n:'Tony Dinh',d:'Xnapper · Black Magic',v:'~$50K MRR',s:'~ Est.',c:'green'},
-    {e:'📊',n:'Arvid Kahl',d:'FeedbackPanda (sold) · author',v:'$55K MRR',s:'At exit',c:'green'},
-    {e:'🤿',n:'Jon Yongfook',d:'Bannerbear · API-first',v:'~$25K MRR',s:'~ Est.',c:'green'},
-    {e:'📱',n:'Danny Postma',d:'Headlime · micro-products',v:'~$30K MRR',s:'~ Est.',c:'green'},
-    {e:'🧑‍💻',n:'Lachlan Kirkwood',d:'Potion · Notion tools',v:'~$10K MRR',s:'~ Est.',c:'green'},
+  founders:{t:'Tech Founders — Monthly Recurring Revenue',s:'Solo builders and indie founders · all estimated',items:[
+    {e:'',n:'Pieter Levels',d:'Nomad List · Remote OK · ideasai',v:'~$120K MRR',s:'est.',c:'green',b:'hot'},
+    {e:'',n:'Marc Lou',d:'ShipFast · TrustMRR · SuperShrimp',v:'~$250K MRR',s:'est.',c:'green',b:'hot',k:'marclou'},
+    {e:'',n:'Sahil Lavingia',d:'Gumroad founder · creator economy',v:'~$12M ARR',s:'est.',c:'green'},
+    {e:'',n:'Tony Dinh',d:'Xnapper · Black Magic',v:'~$50K MRR',s:'est.',c:'green'},
+    {e:'',n:'Arvid Kahl',d:'FeedbackPanda (sold) · author',v:'$55K MRR',s:'At exit',c:'green'},
+    {e:'',n:'Jon Yongfook',d:'Bannerbear · API-first',v:'~$25K MRR',s:'est.',c:'green'},
+    {e:'',n:'Danny Postma',d:'Headlime · micro-products',v:'~$30K MRR',s:'est.',c:'green'},
+    {e:'',n:'Lachlan Kirkwood',d:'Potion · Notion tools',v:'~$10K MRR',s:'est.',c:'green'},
   ]},
-  startups:{t:'Startups — Verified MRR',s:'Monthly recurring revenue verified via Stripe & payment APIs',items:[
-    {e:'🏆',n:'Stan',d:'Creator monetisation',v:'$3.59M MRR',s:'✓ Verified',c:'green',b:'v',g:'+62%'},
-    {e:'🏥',n:'TrimRx',d:'Telehealth / GLP-1',v:'$290K MRR',s:'✓ Verified',c:'green',b:'v',g:'+62%'},
-    {e:'📄',n:'Rezi',d:'AI resume builder',v:'$284K MRR',s:'✓ Verified',c:'green',b:'v',g:'+3221%'},
-    {e:'📊',n:'Cometly',d:'Marketing attribution SaaS',v:'$207K MRR',s:'✓ Verified',c:'green',b:'v',g:'+11%'},
-    {e:'📱',n:'Vid.AI',d:'AI video from scripts',v:'$96K MRR',s:'✓ Verified',c:'green',b:'v',g:'+10%'},
-    {e:'📅',n:'Postiz',d:'AI social scheduler',v:'$88K MRR',s:'✓ Verified',c:'green',b:'v',g:'+36%'},
-    {e:'🤖',n:'SEOBOT',d:'AI SEO agent · John Rush',v:'$78K MRR',s:'✓ Verified',c:'green',b:'v',g:'+9%'},
-    {e:'🎯',n:'Supergrow',d:'LinkedIn growth',v:'$79K MRR',s:'✓ Verified',c:'green',b:'v'},
+  startups:{t:'Startups — Verified Monthly Recurring Revenue',s:'MRR verified via Stripe and payment APIs',items:[
+    {e:'',n:'Stan',d:'Creator monetisation platform',v:'$3.59M MRR',s:'verified',c:'green',b:'v',g:'+62%'},
+    {e:'',n:'TrimRx',d:'Telehealth / GLP-1 weight loss',v:'$290K MRR',s:'verified',c:'green',b:'v',g:'+62%'},
+    {e:'',n:'Rezi',d:'AI resume builder',v:'$284K MRR',s:'verified',c:'green',b:'v',g:'+3221%'},
+    {e:'',n:'Cometly',d:'Marketing attribution SaaS',v:'$207K MRR',s:'verified',c:'green',b:'v',g:'+11%'},
+    {e:'',n:'Vid.AI',d:'AI video from scripts',v:'$96K MRR',s:'verified',c:'green',b:'v',g:'+10%'},
+    {e:'',n:'Postiz',d:'AI social media scheduler',v:'$88K MRR',s:'verified',c:'green',b:'v',g:'+36%'},
+    {e:'',n:'SEOBOT',d:'AI SEO agent · John Rush',v:'$78K MRR',s:'verified',c:'green',b:'v',g:'+9%'},
+    {e:'',n:'Supergrow',d:'LinkedIn growth tool',v:'$79K MRR',s:'verified',c:'green',b:'v'},
   ]},
-  footballers:{t:'Richest Footballers',s:'All ~ estimated from Forbes & public records',items:[
-    {e:'👑',n:'Faiq Bolkiah',d:'Brunei · Prince & Footballer',v:'$20B+',s:'INHERITED ~',c:'gold'},
-    {e:'💼',n:'Mathieu Flamini',d:'France · Retired · GFBiochemicals CEO',v:'$13B+',s:'BUSINESS ~',c:'gold'},
-    {e:'⚽',n:'Cristiano Ronaldo',d:'Portugal · Al Nassr · Active',v:'$1.1B',s:'~ Est.',c:'gold',b:'r',k:'ronaldo'},
-    {e:'🐐',n:'Lionel Messi',d:'Argentina · Inter Miami',v:'$700M',s:'~ Est.',c:'gold',k:'messi'},
-    {e:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',n:'David Beckham',d:'England · Retired · Inter Miami owner',v:'$450M',s:'~ Est.',c:'gold'},
-    {e:'⚡',n:'Kylian Mbappé',d:'France · Real Madrid',v:'$300M',s:'~ Est.',c:'gold',k:'mbappe'},
-    {e:'🇧🇷',n:'Neymar Jr.',d:'Brazil · Santos',v:'$200M',s:'~ Est.',c:'gold',k:'neymar'},
-    {e:'🇵🇱',n:'Robert Lewandowski',d:'Poland · FC Barcelona',v:'$200M',s:'~ Est.',c:'gold',k:'lewandowski'},
+  footballers:{t:'Richest Footballers — Net Worth',s:'All estimated from Forbes and public records',items:[
+    {e:'',n:'Faiq Bolkiah',d:'Brunei · Prince and footballer',v:'$20B+',s:'inherited est.',c:'gold'},
+    {e:'',n:'Mathieu Flamini',d:'France · Retired · GFBiochemicals CEO',v:'$13B+',s:'business est.',c:'gold'},
+    {e:'',n:'Cristiano Ronaldo',d:'Portugal · Al Nassr · Active',v:'$1.1B',s:'est.',c:'gold',b:'r',k:'ronaldo'},
+    {e:'',n:'Lionel Messi',d:'Argentina · Inter Miami',v:'$700M',s:'est.',c:'gold',k:'messi'},
+    {e:'',n:'David Beckham',d:'England · Retired · Inter Miami owner',v:'$450M',s:'est.',c:'gold'},
+    {e:'',n:'Kylian Mbappe',d:'France · Real Madrid',v:'$300M',s:'est.',c:'gold',k:'mbappe'},
+    {e:'',n:'Neymar Jr.',d:'Brazil · Santos',v:'$200M',s:'est.',c:'gold',k:'neymar'},
+    {e:'',n:'Robert Lewandowski',d:'Poland · FC Barcelona',v:'$200M',s:'est.',c:'gold',k:'lewandowski'},
   ]},
-  poland:{t:'🇵🇱 Poland — Profiles',s:'Polish footballers, creators, billionaires and businesses',items:[
-    {e:'⚽',n:'Robert Lewandowski',d:'Poland all-time top scorer · Barcelona',v:'$200M',s:'~ Est.',c:'gold',k:'lewandowski',b:'r'},
-    {e:'💰',n:'Michał Sołowow',d:'Poland\'s richest · Ceramics, motorsport',v:'~$3B',s:'~ Est.',c:'gold',k:'solowow'},
-    {e:'🎮',n:'CD Projekt RED',d:'Witcher · Cyberpunk · GPW listed',v:'$270M rev',s:'✓ GPW',c:'green',k:'cdprojekt',b:'v'},
-    {e:'📺',n:'Friz (Ekipa)',d:'Poland\'s largest YouTuber · 5M+ subs',v:'~$15M',s:'~ Est.',c:'gold',k:'friz'},
-    {e:'💼',n:'Zygmunt Solorz',d:'Polish media & telecoms billionaire',v:'~$3B',s:'~ Est.',c:'gold'},
-    {e:'🛒',n:'Allegro',d:'Polish e-commerce · "Amazon of Poland"',v:'€1.6B rev',s:'✓ WSE',c:'green',b:'v'},
-    {e:'⚽',n:'Wojciech Szczęsny',d:'Poland goalkeeper · retired 2024',v:'~$20M',s:'~ Est.',c:'gold'},
-    {e:'🏗️',n:'Booksy',d:'Polish startup · Beauty booking SaaS',v:'$150M+ ARR',s:'~ Est.',c:'green'},
+  poland:{t:'Poland — Profiles',s:'Polish footballers, creators, billionaires and businesses',items:[
+    {e:'',n:'Robert Lewandowski',d:'Poland all-time top scorer · FC Barcelona',v:'$200M',s:'est.',c:'gold',k:'lewandowski',b:'r'},
+    {e:'',n:'Michal Solowow',d:"Poland's richest · Ceramics, motorsport",v:'~$3B',s:'est.',c:'gold',k:'solowow'},
+    {e:'',n:'CD Projekt RED',d:'Witcher · Cyberpunk · Warsaw Stock Exchange listed',v:'$270M rev.',s:'verified',c:'green',k:'cdprojekt',b:'v'},
+    {e:'',n:'Friz (Ekipa)',d:"Poland's largest YouTuber · 5M+ subscribers",v:'~$15M',s:'est.',c:'gold',k:'friz'},
+    {e:'',n:'Zygmunt Solorz',d:'Polish media and telecoms billionaire',v:'~$3B',s:'est.',c:'gold'},
+    {e:'',n:'Allegro',d:'Polish e-commerce · Amazon of Poland',v:'€1.6B rev.',s:'verified',c:'green',b:'v'},
+    {e:'',n:'Wojciech Szczesny',d:'Poland goalkeeper · FC Barcelona',v:'~$20M',s:'est.',c:'gold'},
+    {e:'',n:'Booksy',d:'Polish startup · Beauty booking SaaS',v:'$150M+ ARR',s:'est.',c:'green'},
   ]},
-  creators:{t:'Top Creators — Net Worth',s:'Estimated from reported deals & subscriber data',items:[
-    {e:'📺',n:'MrBeast',d:'YouTube · 370M subs · Feastables',v:'$700M',s:'~ Est.',c:'gold',b:'hot',k:'mrbeast'},
-    {e:'💄',n:'Kylie Jenner',d:'Instagram · Kylie Cosmetics',v:'$700M',s:'~ Est.',c:'gold'},
-    {e:'🎭',n:'Logan Paul',d:'YouTube · Prime Hydration co-founder',v:'$245M',s:'~ Est.',c:'gold'},
-    {e:'🎙️',n:'Joe Rogan',d:'Podcast · $250M Spotify deal',v:'$200M',s:'~ Est.',c:'gold'},
-    {e:'🎮',n:'PewDiePie',d:'YouTube · 111M subscribers',v:'$60M',s:'~ Est.',c:'gold'},
-    {e:'🎤',n:'KSI',d:'YouTube · Music · Prime co-founder',v:'$50M',s:'~ Est.',c:'gold'},
-    {e:'🇵🇱',n:'Friz (Ekipa)',d:'Poland · YouTube · 5M+ subs',v:'~$15M',s:'~ Est.',c:'gold',k:'friz'},
-    {e:'💃',n:'Charli D\'Amelio',d:'TikTok · 155M followers',v:'$20M',s:'~ Est.',c:'gold'},
+  creators:{t:'Top Creators — Net Worth',s:'Estimated from reported deals and subscriber data',items:[
+    {e:'',n:'MrBeast',d:'YouTube · 370M subscribers · Feastables',v:'$700M',s:'est.',c:'gold',b:'hot',k:'mrbeast'},
+    {e:'',n:'Kylie Jenner',d:'Instagram · Kylie Cosmetics',v:'$700M',s:'est.',c:'gold'},
+    {e:'',n:'Logan Paul',d:'YouTube · Prime Hydration co-founder',v:'$245M',s:'est.',c:'gold'},
+    {e:'',n:'Joe Rogan',d:'Podcast · $250M Spotify deal',v:'$200M',s:'est.',c:'gold'},
+    {e:'',n:'PewDiePie',d:'YouTube · 111M subscribers',v:'$60M',s:'est.',c:'gold'},
+    {e:'',n:'KSI',d:'YouTube · Music · Prime co-founder',v:'$50M',s:'est.',c:'gold'},
+    {e:'',n:'Friz (Ekipa)',d:'Poland · YouTube · 5M+ subscribers',v:'~$15M',s:'est.',c:'gold',k:'friz'},
+    {e:'',n:"Charli D'Amelio",d:'TikTok · 155M followers',v:'$20M',s:'est.',c:'gold'},
   ]},
-  local:{t:'Local Business Benchmarks',s:'Average UK/EU annual revenue · All estimated',items:[
-    {e:'🦷',n:'Dental Practice (2 dentists)',d:'NHS + private · UK average',v:'~£1.2M',s:'AVG ~',c:'gold'},
-    {e:'🍕',n:'Good Independent Restaurant',d:'50 covers · busy location',v:'~£800K',s:'AVG ~',c:'gold'},
-    {e:'🚗',n:'Car Garage (3 bays)',d:'MOT + service · UK average',v:'~£700K',s:'AVG ~',c:'gold'},
-    {e:'🏋️',n:'Independent Gym',d:'500 members · monthly subs',v:'~£600K',s:'AVG ~',c:'gold'},
-    {e:'🍺',n:'Pub / Bar',d:'UK average · wet-led',v:'~£500K',s:'AVG ~',c:'gold'},
-    {e:'✂️',n:'Barbershop (2 chairs)',d:'UK average · busy high street',v:'~£400K',s:'AVG ~',c:'gold'},
-    {e:'🧹',n:'Cleaning Company (small)',d:'10 cleaners · B2B contracts',v:'~£350K',s:'AVG ~',c:'gold'},
-    {e:'📦',n:'E-commerce Store (mid)',d:'Shopify · 5,000 orders/month',v:'~£2M',s:'AVG ~',c:'gold'},
+  local:{t:'Local Business — Annual Revenue Benchmarks',s:'Average UK and EU annual revenue · all estimated',items:[
+    {e:'',n:'Dental Practice (2 dentists)',d:'NHS and private · UK average',v:'~£1.2M',s:'avg est.',c:'gold'},
+    {e:'',n:'Independent Restaurant',d:'50 covers · busy location',v:'~£800K',s:'avg est.',c:'gold'},
+    {e:'',n:'Car Garage (3 bays)',d:'MOT and service · UK average',v:'~£700K',s:'avg est.',c:'gold'},
+    {e:'',n:'Independent Gym',d:'500 members · monthly subscriptions',v:'~£600K',s:'avg est.',c:'gold'},
+    {e:'',n:'Pub or Bar',d:'UK average · wet-led',v:'~£500K',s:'avg est.',c:'gold'},
+    {e:'',n:'Barbershop (2 chairs)',d:'UK average · busy high street',v:'~£400K',s:'avg est.',c:'gold'},
+    {e:'',n:'Cleaning Company (small)',d:'10 cleaners · B2B contracts',v:'~£350K',s:'avg est.',c:'gold'},
+    {e:'',n:'E-commerce Store (mid)',d:'Shopify · 5,000 orders/month',v:'~£2M',s:'avg est.',c:'gold'},
   ]},
 };
 
 const TRENDING=[
-  {k:'lewandowski',n:'Lewandowski',f:'🇵🇱 $200M · 148 caps · Poland record'},
-  {k:'ronaldo',n:'Ronaldo',f:'$1.1B · 217 caps world record'},
-  {k:'cdprojekt',n:'CD Projekt',f:'🇵🇱 $270M revenue · Witcher, Cyberpunk'},
+  {k:'lewandowski',n:'Lewandowski',f:'$200M · 148 caps · Poland record'},
+  {k:'ronaldo',n:'Ronaldo',f:'$1.1B · 217 caps — world record'},
+  {k:'cdprojekt',n:'CD Projekt',f:'$270M revenue · Witcher · Cyberpunk'},
   {k:'openai',n:'OpenAI',f:'$3.7B ARR · fastest growing ever'},
-  {k:'mrbeast',n:'MrBeast',f:'$700M · 370M YouTube subs'},
+  {k:'mrbeast',n:'MrBeast',f:'$700M · 370M YouTube subscribers'},
   {k:'marclou',n:'Marc Lou',f:'~$250K MRR · solo builder'},
-  {k:'messi',n:'Messi',f:'$700M · 8× Ballon d\'Or · World Cup'},
+  {k:'messi',n:'Messi',f:'$700M · 8x Ballon d\'Or · World Cup'},
   {k:'neymar',n:'Neymar',f:'$200M · $56K verified on-chain crypto'},
-  {k:'solowow',n:'M. Sołowow',f:'🇵🇱 ~$3B · Poland\'s richest · 3× WRC'},
+  {k:'solowow',n:'M. Solowow',f:"~$3B · Poland's richest · 3x WRC champion"},
 ];
 
 // ── STATE ──
-let curK=null,aiOpen=false,notifyProfile=null;
+let curK=null,aiOpen=false,notifyK=null;
 
 // ── SHOW PROFILE ──
 function showP(k){
   const p=P[k];if(!p)return;
-  curK=k;aiOpen=false;
-  closeSearch();
+  curK=k;aiOpen=false;closeSearch();
   document.getElementById('pAva').innerHTML=p.ava;
   document.getElementById('pNm').textContent=p.name;
   document.getElementById('pMt').innerHTML=p.meta.map(m=>`<span>${m}</span>`).join('');
   document.getElementById('pTg').innerHTML=p.tags.map(t=>`<span class="pt ${t.c}">${t.l}</span>`).join('');
-  document.getElementById('pSo').innerHTML=p.soc.map(s=>`<a href="${s.u}" target="_blank" rel="noopener"><span>${s.i}</span>${s.l}</a>`).join('');
+  document.getElementById('pSo').innerHTML=p.soc.map(s=>`<a href="${s.u}" target="_blank" rel="noopener">${s.i}: ${s.l}</a>`).join('');
   const vEl=document.getElementById('pVr');
   vEl.innerHTML=p.ver
-    ?`<div class="vdot"></div><span>Verified — ${p.rev}</span><span class="vb v">✓</span>`
-    :`<div class="vdot e"></div><span>Last reviewed: ${p.rev}</span><span class="vb e">~ est.</span>`;
+    ?`<div class="vdot"></div><span>Verified data · ${p.rev}</span><span class="vb v">verified</span>`
+    :`<div class="vdot e"></div><span>Last reviewed: ${p.rev}</span><span class="vb e">estimated</span>`;
   document.getElementById('cl').classList.toggle('show',!!p.claim);
   const ap=document.getElementById('aiP');
   ap.classList.remove('show');ap.innerHTML='';
   document.getElementById('aiB').classList.remove('open');
   document.getElementById('aiArr').textContent='›';
-
+  // update page title for SEO
+  document.title=`${p.name} — Net Worth and Career Stats · WhoEarns`;
+  // stats
   document.getElementById('pSt').innerHTML=p.stats.map(s=>`
     <div class="sb">
-      <div class="sl">${s.l}${s.v2?`<span class="vb v">✓</span>`:''}${s.e?`<span class="vb e">~</span>`:''}</div>
+      <div class="sl">${s.l}${s.v2?`<span class="vb v">v</span>`:''}${s.e?`<span class="vb e">est</span>`:''}</div>
       <div class="sv ${s.c||''}">${s.v}</div>
       <div class="sn">${s.n}</div>
     </div>`).join('');
-
+  // career
   let ch='';
-  if((p.type==='footballer'||p.type==='footballer')&&p.career&&p.career.length){
+  if(p.career&&p.career.length){
     ch=`<div class="career-scroll"><table class="ct">
       <thead><tr><th>Club</th><th>Country</th><th>Years</th><th>Apps</th><th>Goals</th><th>Assists</th></tr></thead>
       <tbody>${p.career.map(c=>`<tr><td style="font-weight:600">${c.c}</td><td>${c.f}</td><td style="color:var(--t3)">${c.y}</td><td>${c.a}</td><td><span class="gn">${c.g}</span></td><td>${c.as}</td></tr>`).join('')}
-      <tr class="tot"><td colspan="3"><strong>Career Total</strong> <span class="vb v">✓</span></td><td><strong>${p.tA}</strong></td><td><strong><span class="gn h">${p.tG}</span></strong></td><td><strong>${p.tAs}</strong></td></tr></tbody>
+      <tr class="tot"><td colspan="3"><strong>Career Total</strong> <span class="vb v">verified</span></td><td><strong>${p.tA}</strong></td><td><strong><span class="gn h">${p.tG}</span></strong></td><td><strong>${p.tAs}</strong></td></tr></tbody>
     </table></div>`;
   }
   document.getElementById('pCr').innerHTML=ch;
-
   function ri(inf){
-    if(!inf)return'';
-    return`<div class="ib"><div class="ibt">${inf.t}</div>${inf.r.map(r=>`<div class="dr"><span class="dk">${r.k}</span><span class="dv ${r.c||''}">${r.v}${r.v2?`<span class="vb v" style="font-size:7px">✓</span>`:''}${r.e?`<span class="vb e" style="font-size:7px">~</span>`:''}</span></div>`).join('')}</div>`;
+    if(!inf||!inf.t)return'';
+    return`<div class="ib"><div class="ibt">${inf.t}</div>${inf.r.map(r=>`<div class="dr"><span class="dk">${r.k}</span><span class="dv ${r.c||''}">${r.v}${r.v2?`<span class="vb v" style="font-size:7px">v</span>`:''}${r.e?`<span class="vb e" style="font-size:7px">est</span>`:''}</span></div>`).join('')}</div>`;
   }
   document.getElementById('pIn').innerHTML=ri(p.i1)+ri(p.i2);
-
   const panel=document.getElementById('pp');
   panel.classList.add('show');
   setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'start'}),60);
 }
 
-// ── LIVE SEARCH ──
+// ── AI ──
+function toggleAI(){
+  if(!curK)return;const p=P[curK];if(!p)return;
+  const ap=document.getElementById('aiP');
+  const btn=document.getElementById('aiB');
+  const arr=document.getElementById('aiArr');
+  if(aiOpen){ap.classList.remove('show');btn.classList.remove('open');arr.textContent='›';aiOpen=false;return;}
+  btn.classList.add('open');arr.textContent='‹';aiOpen=true;
+  ap.innerHTML=`<div class="ai-title">Opportunity Analysis — ${p.name}</div>
+    <div class="opp-grid">${['Weakness','Market','Opportunity','Difficulty'].map(l=>`<div class="opp-card"><div class="opp-label">${l}</div><div class="ldots"><span></span><span></span><span></span></div></div>`).join('')}</div>`;
+  ap.classList.add('show');
+  if(!p.ai){setTimeout(()=>{ap.innerHTML=`<div class="ai-title">No AI analysis yet for this profile.</div>`;},600);return;}
+  setTimeout(()=>{
+    const ai=p.ai;
+    ap.innerHTML=`
+      <div class="ai-title">Opportunity Analysis — ${ai.n}</div>
+      <div class="opp-grid">
+        <div class="opp-card"><div class="opp-label">The Weakness</div><div class="opp-text">${ai.w}</div></div>
+        <div class="opp-card"><div class="opp-label">Underserved Market</div><div class="opp-text">${ai.m}</div></div>
+        <div class="opp-card"><div class="opp-label">The Opportunity</div><div class="opp-text">${ai.o}</div></div>
+        <div class="opp-card"><div class="opp-label">Execution Difficulty</div><div class="opp-text">${ai.d}</div></div>
+      </div>
+      <div class="build-box"><div class="build-label">Build This Instead — <strong>${ai.b}</strong></div><div class="build-text">${ai.bd}</div></div>
+      ${miniLanding(ai)}
+      <div class="ai-disc">AI analysis by WhoEarns · Not investment advice · Based on public market data</div>`;
+    const el=document.getElementById('c4');const cur=parseInt(el.textContent.replace(/,/g,''))||0;
+    animN('c4',cur,cur+1,300,'');
+  },900);
+}
+
+// ── SEARCH ──
 function liveSearch(){
   const v=document.getElementById('si').value.toLowerCase().trim();
   const drop=document.getElementById('searchDrop');
@@ -1109,12 +1429,11 @@ function liveSearch(){
   const matches=Object.keys(P).filter(k=>k.includes(v)||P[k].name.toLowerCase().includes(v)).slice(0,5);
   if(!matches.length){drop.classList.remove('show');return;}
   drop.innerHTML=matches.map(k=>{
-    const p=P[k];
-    const mainStat=p.stats[0];
+    const p=P[k];const ms=p.stats[0];
     return`<div class="sd-item" onclick="showP('${k}');document.getElementById('si').value='${p.name}';closeSearch()">
       <div class="sd-ava">${p.ava}</div>
       <div><div class="sd-name">${p.name}</div><div class="sd-det">${p.meta[0]} · ${p.tags[0]?.l}</div></div>
-      <div class="sd-val">${mainStat?.v||''}</div>
+      <div class="sd-val">${ms?.v||''}</div>
     </div>`;
   }).join('');
   drop.classList.add('show');
@@ -1123,101 +1442,9 @@ function closeSearch(){document.getElementById('searchDrop').classList.remove('s
 function doSearch(){
   const v=document.getElementById('si').value.toLowerCase().trim();
   const m=Object.keys(P).find(k=>k.includes(v)||P[k].name.toLowerCase().includes(v));
-  if(m)showP(m);
-  closeSearch();
+  if(m)showP(m);closeSearch();
 }
 document.addEventListener('click',e=>{if(!e.target.closest('.search-outer'))closeSearch();});
-
-// ── AI ──
-function toggleAI(){
-  if(!curK)return;
-  const p=P[curK];if(!p)return;
-  const ap=document.getElementById('aiP');
-  const btn=document.getElementById('aiB');
-  const arr=document.getElementById('aiArr');
-  if(aiOpen){ap.classList.remove('show');btn.classList.remove('open');arr.textContent='›';aiOpen=false;return;}
-  btn.classList.add('open');arr.textContent='‹';aiOpen=true;
-  ap.innerHTML=`<div class="ai-title">AI Opportunity — ${p.name}</div>
-    <div class="opp-grid">${['📉 Weakness','👥 Market','💡 Opportunity','⚡ Difficulty'].map(l=>`<div class="opp-card"><div class="opp-label">${l}</div><div class="ldots"><span></span><span></span><span></span></div></div>`).join('')}</div>`;
-  ap.classList.add('show');
-  if(!p.ai){setTimeout(()=>{ap.innerHTML=`<div class="ai-title">No AI analysis yet</div><p style="font-size:12px;color:var(--t2)">Coming soon.</p>`;},600);return;}
-  setTimeout(()=>{
-    const ai=p.ai;
-    ap.innerHTML=`
-      <div class="ai-title">🤖 AI Opportunity — ${ai.n}</div>
-      <div class="opp-grid">
-        <div class="opp-card"><div class="opp-label">📉 The Weakness</div><div class="opp-text">${ai.w}</div></div>
-        <div class="opp-card"><div class="opp-label">👥 Underserved Market</div><div class="opp-text">${ai.m}</div></div>
-        <div class="opp-card"><div class="opp-label">💡 The Opportunity</div><div class="opp-text">${ai.o}</div></div>
-        <div class="opp-card"><div class="opp-label">⚡ Execution Difficulty</div><div class="opp-text">${ai.d}</div></div>
-      </div>
-      <div class="build-box"><div class="build-label">🚀 Build This Instead — <strong>${ai.b}</strong></div><div class="build-text">${ai.bd}</div></div>
-      <div class="mini">
-        <div class="mini-bar"><div class="mini-dots"><div class="mini-dot" style="background:#ff5f56"></div><div class="mini-dot" style="background:#ffbd2e"></div><div class="mini-dot" style="background:#27c93f"></div></div><div class="mini-url">🔒 ${ai.pu}</div></div>
-        <div class="mini-body" style="background:${ai.pbg}"><div class="mini-logo" style="color:${ai.pa}">${ai.pn}</div><div class="mini-tag">${ai.pt}</div><div class="mini-cta" style="background:${ai.pa}">${ai.pc}</div><div class="mini-feats">${ai.pf.map(f=>`<div class="mini-feat">${f}</div>`).join('')}</div></div>
-      </div>
-      <div class="ai-disc">💡 AI analysis by WhoEarns · Not investment advice · Public market data</div>`;
-    const el=document.getElementById('c4');const cur=parseInt(el.textContent.replace(/,/g,''))||0;
-    animN('c4',cur,cur+1,300,'');
-  },900);
-}
-
-// ── SHARE ──
-function shareProfile(){
-  const p=P[curK];if(!p)return;
-  const url=`https://whoearns.io/${curK}`;
-  const text=`${p.name} on WhoEarns — ${p.stats[0]?.v} ${p.stats[0]?.l}`;
-  if(navigator.share){navigator.share({title:text,url});}
-  else{navigator.clipboard.writeText(url).then(()=>showToast('✓ Link copied to clipboard')).catch(()=>showToast('✓ whoearns.io/'+curK));}
-}
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2500);
-}
-
-// ── COMPARE ──
-function scrollToCompare(){document.getElementById('compare-tool').scrollIntoView({behavior:'smooth'});}
-function renderCompare(){
-  const k1=document.getElementById('cmp1').value;
-  const k2=document.getElementById('cmp2').value;
-  if(!k1||!k2){document.getElementById('dynVs').innerHTML='';return;}
-  const p1=P[k1],p2=P[k2];
-  if(!p1||!p2)return;
-  const allKeys=[...new Set([...p1.stats.map(s=>s.l),...p2.stats.map(s=>s.l)])];
-  function getVal(p,l){return p.stats.find(s=>s.l===l)?.v||'—';}
-  document.getElementById('dynVs').innerHTML=`
-    <div class="dyn-vs-card">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
-        <div style="width:42px;height:42px;border-radius:10px;overflow:hidden;border:1px solid var(--b2)">${p1.ava}</div>
-        <div><div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700">${p1.name}</div><div style="font-size:11px;color:var(--t2)">${p1.meta[0]}</div></div>
-      </div>
-      ${allKeys.map(l=>`<div class="vs-row"><span class="vs-k">${l}</span><span class="vs-v">${getVal(p1,l)}</span></div>`).join('')}
-    </div>
-    <div class="dyn-vs-card">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
-        <div style="width:42px;height:42px;border-radius:10px;overflow:hidden;border:1px solid var(--b2)">${p2.ava}</div>
-        <div><div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700">${p2.name}</div><div style="font-size:11px;color:var(--t2)">${p2.meta[0]}</div></div>
-      </div>
-      ${allKeys.map(l=>`<div class="vs-row"><span class="vs-k">${l}</span><span class="vs-v">${getVal(p2,l)}</span></div>`).join('')}
-    </div>`;
-}
-
-// ── NOTIFY ──
-function openNotify(){
-  const p=P[curK];if(!p)return;
-  notifyProfile=curK;
-  document.getElementById('notifyText').textContent=`Get notified when ${p.name}'s profile is updated with new data.`;
-  document.getElementById('notifyModal').classList.add('show');
-}
-function closeNotify(){document.getElementById('notifyModal').classList.remove('show');notifyProfile=null;}
-function submitNotify(){
-  const email=document.getElementById('notifyEmail').value;
-  if(!email||!email.includes('@')){document.getElementById('notifyEmail').style.borderColor='var(--red)';return;}
-  closeNotify();
-  showToast(`✓ You'll be notified when ${P[notifyProfile||curK]?.name} is updated`);
-  document.getElementById('notifyEmail').value='';
-}
 
 // ── RANKINGS ──
 function renderR(key){
@@ -1226,23 +1453,22 @@ function renderR(key){
   document.getElementById('lbS').textContent=r.s;
   document.getElementById('rl').innerHTML=r.items.map((item,i)=>{
     const hk=item.k&&P[item.k];
-    const ava=hk?`<div class="rava">${P[item.k].ava}</div>`:`<div class="rava-e">${item.e}</div>`;
-    const growthBadge=item.g?`<span class="growth ${item.g.startsWith('-')?'dn':'up'}">${item.g}</span>`:'';
-    return`<div class="rc ${i===0?'p1':i===1?'p2':i===2?'p3':''}" onclick="${hk?`showP('${item.k}')`:``}" style="cursor:${hk?'pointer':'default'}">
+    const ava=hk?`<div class="rava">${P[item.k].ava}</div>`:`<div class="rava-e">${item.n.charAt(0)}</div>`;
+    const gBadge=item.g?`<span class="growth ${item.g.startsWith('-')?'dn':'up'}">${item.g}</span>`:'';
+    return`<div class="rc ${i===0?'p1':i===1?'p2':i===2?'p3':''}" onclick="${hk?`showP('${item.k}')`:''}" style="cursor:${hk?'pointer':'default'}">
       <div class="rpos ${i<3?'top':''}">${i+1}</div>
       ${ava}
       <div class="ri">
-        <div class="rn">${item.n}${item.b==='v'?'<span class="rb v">✓</span>':item.b==='r'?'<span class="rb r">Record</span>':item.b==='hot'?'<span class="rb hot">Hot</span>':''}</div>
+        <div class="rn">${item.n}${item.b==='v'?'<span class="rb v">verified</span>':item.b==='r'?'<span class="rb r">record</span>':item.b==='hot'?'<span class="rb hot">trending</span>':''}</div>
         <div class="rd">${item.d}</div>
       </div>
       <div class="rv">
-        <div class="rm ${item.c}">${item.v}${growthBadge}</div>
+        <div class="rm ${item.c}">${item.v}${gBadge}</div>
         <div class="rs">${item.s}</div>
       </div>
     </div>`;
   }).join('');
 }
-
 function switchCat(key){
   document.querySelectorAll('.cat').forEach(c=>c.classList.remove('on'));
   const cc=document.getElementById('ct-'+key);if(cc)cc.classList.add('on');
@@ -1250,54 +1476,110 @@ function switchCat(key){
   document.getElementById('leaderboard').scrollIntoView({behavior:'smooth'});
 }
 function swF(el){document.querySelectorAll('.lf').forEach(b=>b.classList.remove('on'));el.classList.add('on');}
-
-// ── COUNTRY FILTER ──
 function filterCountry(code){
   document.querySelectorAll('.cf').forEach(c=>c.classList.remove('on'));
   document.getElementById('cf-'+code)?.classList.add('on');
-  if(code==='all'){renderR('footballers');switchCat('footballers');return;}
-  const countryMap={pl:'poland',pt:'footballers',br:'footballers',fr:'footballers',us:'tech',nl:'footballers'};
-  switchCat(countryMap[code]||'footballers');
-  if(code==='pl')switchCat('poland');
+  const map={pl:'poland',pt:'footballers',br:'footballers',fr:'founders',us:'tech',nl:'footballers'};
+  switchCat(code==='all'?'tech':map[code]||'tech');
 }
 
 // ── TRENDING ──
 function renderTrending(){
   document.getElementById('tg').innerHTML=TRENDING.map(t=>{
-    const ava=P[t.k]?`<div class="tava">${P[t.k].ava}</div>`:`<div class="tava" style="display:flex;align-items:center;justify-content:center;font-size:16px">?</div>`;
+    const ava=P[t.k]?`<div class="tava">${P[t.k].ava}</div>`:`<div class="tava" style="display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--t3)">${t.n.charAt(0)}</div>`;
     return`<div class="tcard" onclick="showP('${t.k}')">${ava}<div><div class="tname">${t.n}</div><div class="tfact">${t.f}</div></div><div class="tarr">›</div></div>`;
   }).join('');
 }
 
-// ── COMPARE SELECTS ──
+// ── COMPARE ──
 function populateCompareSelects(){
-  const opts=Object.keys(P).map(k=>`<option value="${k}">${P[k].name} (${P[k].stats[0]?.v||''})</option>`).join('');
-  document.getElementById('cmp1').innerHTML=`<option value="">Select first…</option>${opts}`;
-  document.getElementById('cmp2').innerHTML=`<option value="">Select second…</option>${opts}`;
+  const opts=Object.keys(P).map(k=>`<option value="${k}">${P[k].name}</option>`).join('');
+  document.getElementById('cmp1').innerHTML=`<option value="">Select first profile…</option>${opts}`;
+  document.getElementById('cmp2').innerHTML=`<option value="">Select second profile…</option>${opts}`;
+}
+function scrollToCompare(){document.getElementById('compare-tool').scrollIntoView({behavior:'smooth'});}
+function renderCompare(){
+  const k1=document.getElementById('cmp1').value;
+  const k2=document.getElementById('cmp2').value;
+  if(!k1||!k2){document.getElementById('dynVs').innerHTML='';return;}
+  const p1=P[k1],p2=P[k2];if(!p1||!p2)return;
+  const allKeys=[...new Set([...p1.stats.map(s=>s.l),...p2.stats.map(s=>s.l)])];
+  function getV(p,l){return p.stats.find(s=>s.l===l)?.v||'—';}
+  document.getElementById('dynVs').innerHTML=[p1,p2].map(p=>`
+    <div class="dyn-vs-card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+        <div style="width:42px;height:42px;border-radius:10px;overflow:hidden;border:1px solid var(--b2)">${p.ava}</div>
+        <div><div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700">${p.name}</div><div style="font-size:11px;color:var(--t2)">${p.meta[0]}</div></div>
+      </div>
+      ${allKeys.map(l=>`<div class="vs-row"><span class="vs-k">${l}</span><span class="vs-v">${getV(p,l)}</span></div>`).join('')}
+    </div>`).join('');
 }
 
-// ── LIGHT/DARK ──
+// ── SHARE ──
+function shareProfile(){
+  const p=P[curK];if(!p)return;
+  const url=`https://whoearns.com/${curK}`;
+  const text=`${p.name} — ${p.stats[0]?.v} · WhoEarns`;
+  if(navigator.share){navigator.share({title:text,url});}
+  else{navigator.clipboard.writeText(url).then(()=>showToast('Link copied')).catch(()=>showToast('whoearns.com/'+curK));}
+}
+function showToast(msg){
+  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
+}
+
+// ── NOTIFY ──
+function openNotify(){
+  const p=P[curK];if(!p)return;
+  notifyK=curK;
+  document.getElementById('notifyText').textContent=`Get notified when ${p.name}'s profile is updated.`;
+  document.getElementById('notifyModal').classList.add('show');
+}
+function closeNotify(){document.getElementById('notifyModal').classList.remove('show');notifyK=null;}
+function submitNotify(){
+  const email=document.getElementById('notifyEmail').value;
+  if(!email||!email.includes('@')){document.getElementById('notifyEmail').style.borderColor='var(--red)';return;}
+  closeNotify();
+  showToast(`You will be notified when ${P[notifyK||curK]?.name} is updated`);
+  document.getElementById('notifyEmail').value='';
+}
+
+// ── SUBPAGES ──
+function showPage(id){
+  document.getElementById('mainSite').style.display='none';
+  document.querySelectorAll('.subpage').forEach(s=>s.classList.remove('show'));
+  const pg=document.getElementById('page-'+id);
+  if(pg){pg.classList.add('show');window.scrollTo(0,0);document.title=pg.querySelector('.sp-h1')?.textContent+' · WhoEarns';}
+}
+function showMain(){
+  document.getElementById('mainSite').style.display='';
+  document.querySelectorAll('.subpage').forEach(s=>s.classList.remove('show'));
+  document.title='WhoEarns — Net Worth, Revenue and Career Stats';
+  window.scrollTo(0,0);
+}
+
+// ── MODE ──
 function toggleMode(){
   document.body.classList.toggle('light');
-  document.getElementById('modeBtn').textContent=document.body.classList.contains('light')?'🌙':'☀️';
+  document.getElementById('modeBtn').textContent=document.body.classList.contains('light')?'—':'☀';
 }
 
 // ── MODAL ──
 function openPro(){document.getElementById('pm').classList.add('show');}
 function closePro(){document.getElementById('pm').classList.remove('show');}
+document.getElementById('pm').addEventListener('click',e=>{if(e.target.id==='pm')closePro();});
+document.getElementById('notifyModal').addEventListener('click',e=>{if(e.target.id==='notifyModal')closeNotify();});
 
 // ── COUNTER ──
 function animN(id,from,to,dur,suf){
   const el=document.getElementById(id);const start=Date.now();
-  const t=setInterval(()=>{const p=Math.min((Date.now()-start)/dur,1);const e=1-Math.pow(1-p,3);el.textContent=Math.round(from+(to-from)*e).toLocaleString()+suf;if(p>=1)clearInterval(t);},16);
+  const timer=setInterval(()=>{const prog=Math.min((Date.now()-start)/dur,1);const e=1-Math.pow(1-prog,3);el.textContent=Math.round(from+(to-from)*e).toLocaleString()+suf;if(prog>=1)clearInterval(timer);},16);
 }
 
 // ── INIT ──
 renderR('tech');
 renderTrending();
 populateCompareSelects();
-document.getElementById('pm').addEventListener('click',e=>{if(e.target.id==='pm')closePro();});
-document.getElementById('notifyModal').addEventListener('click',e=>{if(e.target.id==='notifyModal')closeNotify();});
 setTimeout(()=>{
   animN('c1',0,14847,2200,'');
   animN('c2',0,12,1200,'');
