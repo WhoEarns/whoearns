@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://whoearns.com/sitemap.xml

@@ -17,6 +17,16 @@
 <meta name="twitter:title" content="WhoEarns — Net Worth, Revenue & Career Stats">
 <meta name="twitter:description" content="The numbers people actually want to see.">
 <link rel="canonical" href="https://whoearns.com">
+<script>
+// Dynamic meta updater for profile subpages
+(function(){
+  var slug = window.location.hash.replace('#/','').replace('#','');
+  if(slug && slug.length > 1){
+    // Will be updated once JS loads full profile data
+    document.title = 'Loading... · WhoEarns';
+  }
+})();
+</script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%2309090b'/><text y='.9em' font-size='80' font-family='Georgia,serif' fill='%23f2b420'>W</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -510,6 +520,9 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
       <button class="qb" onclick="showP('mrbeast')">MrBeast</button>
       <button class="qb" onclick="showP('openai')">OpenAI</button>
       <button class="qb" onclick="showP('marclou')">Marc Lou</button>
+      <button class="qb" onclick="showP('haaland')">Haaland</button>
+      <button class="qb" onclick="showP('taylorswift')">Taylor Swift</button>
+      <button class="qb" onclick="showP('elonmusk')">Elon Musk</button>
     </div>
   </div>
 </section>
@@ -562,6 +575,11 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
 
 <!-- PROFILE PANEL -->
 <div class="pp" id="pp">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12px;color:var(--t3);">
+    <a onclick="showMain();history.pushState({},'','/');return false" style="color:var(--t3);text-decoration:none;cursor:pointer;">WhoEarns</a>
+    <span>›</span>
+    <span id="pBreadcrumb" style="color:var(--t2)"></span>
+  </div>
   <div class="ph">
     <div class="ph-inner">
       <div class="avatar" id="pAva"></div>
@@ -592,6 +610,8 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
   <div class="sg" id="pSt"></div>
   <div id="pCr"></div>
   <div class="two-col" id="pIn"></div>
+  <!-- SEO content block - readable by Google -->
+  <div id="pSeoContent" style="margin-bottom:10px;"></div>
   <div class="submit-banner">
     <div class="submit-text"><strong>Spotted an error?</strong> Submit updated data with a source and we'll review within 48 hours.</div>
     <button class="submit-btn" onclick="window.location.href='mailto:hello@whoearns.com?subject=Data correction'">Submit Data</button>
@@ -647,42 +667,6 @@ footer{background:var(--s1);border-top:1px solid var(--b1);padding:clamp(32px,5v
     <select class="cs" id="cmp2" onchange="renderCompare()"><option value="">Select second profile…</option></select>
   </div>
   <div class="dyn-vs" id="dynVs"></div>
-</div>
-
-<!-- VS FIXED -->
-<div class="vs-sec" id="compare">
-  <div class="vs-in">
-    <div class="sec-ey">Head to Head</div>
-    <div class="sec-h" style="margin-bottom:5px">The GOAT debate</div>
-    <div class="sec-s" style="margin-bottom:24px">Settled by numbers only</div>
-    <div class="vs-grid">
-      <div class="vs-card">
-        <div class="vs-name">Cristiano Ronaldo</div>
-        <div class="vs-sub">Portugal · Al Nassr · Active</div>
-        <div class="vs-row"><span class="vs-k">Net Worth</span><span class="vs-v w">$1.1B <span class="vb e">est</span></span></div>
-        <div class="vs-row"><span class="vs-k">Annual Earnings</span><span class="vs-v w">$200M <span class="vb e">est</span></span></div>
-        <div class="vs-row"><span class="vs-k">Intl Caps</span><span class="vs-v w">217 <span class="vb v">verified</span></span></div>
-        <div class="vs-row"><span class="vs-k">Intl Goals</span><span class="vs-v w">135 <span class="vb v">verified</span></span></div>
-        <div class="vs-row"><span class="vs-k">UCL Titles</span><span class="vs-v w">5×</span></div>
-        <div class="vs-row"><span class="vs-k">Ballon d'Or</span><span class="vs-v">5×</span></div>
-        <div class="vs-row"><span class="vs-k">World Cup</span><span class="vs-v d">—</span></div>
-        <div class="vs-row"><span class="vs-k">Instagram followers</span><span class="vs-v w">650M+</span></div>
-      </div>
-      <div class="vs-badge">vs</div>
-      <div class="vs-card">
-        <div class="vs-name">Lionel Messi</div>
-        <div class="vs-sub">Argentina · Inter Miami · Active</div>
-        <div class="vs-row"><span class="vs-k">Net Worth</span><span class="vs-v">$700M <span class="vb e">est</span></span></div>
-        <div class="vs-row"><span class="vs-k">Annual Earnings</span><span class="vs-v">$135M <span class="vb e">est</span></span></div>
-        <div class="vs-row"><span class="vs-k">Intl Caps</span><span class="vs-v">191 <span class="vb v">verified</span></span></div>
-        <div class="vs-row"><span class="vs-k">Intl Goals</span><span class="vs-v">112 <span class="vb v">verified</span></span></div>
-        <div class="vs-row"><span class="vs-k">UCL Titles</span><span class="vs-v">4×</span></div>
-        <div class="vs-row"><span class="vs-k">Ballon d'Or</span><span class="vs-v w">8× <span class="vb v">verified</span></span></div>
-        <div class="vs-row"><span class="vs-k">World Cup</span><span class="vs-v w">2022 winner</span></div>
-        <div class="vs-row"><span class="vs-k">Instagram followers</span><span class="vs-v">500M+</span></div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- TRENDING -->
@@ -996,13 +980,13 @@ ${ac==='stubble'?`<ellipse cx="40" cy="45" rx="11" ry="5.5" fill="${hr}" opacity
 // ── PROFILES ─────────────────────────────
 const P={
   lewandowski:{name:'Robert Lewandowski',ava:av({sk:'#d4a87a',hr:'#c8a060',st:'short',jr:'#dc143c',nm:'9',bg:'#1a0508',ac:'stubble'}),type:'footballer',country:'pl',ver:false,rev:'April 2026',claim:true,
-    tags:[{l:'Footballer',c:'s'},{l:'Active',c:'a'},{l:'Poland Record',c:'r'}],
+    tags:[{l:'Footballer',c:'s'},{l:'Active',c:'a'},{l:'Poland Record',c:'r'},{l:'Intl. Retirement Likely',c:'a'}],
     meta:['Aug 21, 1988','Leszno, Poland','Polish','Age 37'],
     soc:[{i:'Instagram',l:'@lewy_official · 30M',u:'https://instagram.com/lewy_official'},{i:'X',l:'@lewy_official · 5M',u:'https://x.com/lewy_official'}],
-    stats:[{l:'Net Worth',v:'$200M',c:'gold',n:'Forbes est. 2025',e:true},{l:'Intl Caps',v:'148',c:'blue',n:'Poland all-time record',v2:true},{l:'Intl Goals',v:'82',c:'gold',n:'Poland all-time top scorer',v2:true},{l:'Career Goals',v:'620+',c:'',n:'All clubs combined',v2:true}],
+    stats:[{l:'Net Worth',v:'$200M',c:'gold',n:'Forbes est. 2025',e:true},{l:'Intl Caps',v:'165',c:'blue',n:'Poland all-time record',v2:true},{l:'Intl Goals',v:'89',c:'gold',n:'Poland all-time top scorer',v2:true},{l:'Career Goals',v:'620+',c:'',n:'All clubs combined',v2:true}],
     career:[{c:'Lech Poznan',f:'PL',y:'2007–10',a:82,g:41,as:11},{c:'Borussia Dortmund',f:'DE',y:'2010–14',a:131,g:74,as:38},{c:'Bayern Munich',f:'DE',y:'2014–22',a:374,g:344,as:92},{c:'FC Barcelona',f:'ES',y:'2022–now',a:110,g:80,as:25}],tA:697,tG:539,tAs:166,
-    i1:{t:'Earnings',r:[{k:'Net Worth',v:'$200M',c:'gold',e:true},{k:'Annual Earnings',v:'~$35M',e:true},{k:'Endorsements',v:'Nike, Huawei, Knorr'},{k:'RL9 Brand',v:'Own clothing line'}]},
-    i2:{t:'International',r:[{k:'Country',v:'Poland'},{k:'Caps',v:'148',v2:true},{k:'Goals',v:'82',v2:true},{k:'World Cups',v:'2018, 2022'},{k:'EURO appearances',v:'2008–2024'}]},
+    i1:{t:'Earnings',r:[{k:'Net Worth',v:'$200M',c:'gold',e:true},{k:'Annual Earnings',v:'~$35M',e:true},{k:'Endorsements',v:'Nike, Gillette, 4F, Oshee, OANDA'},{k:'RL9 Brand',v:'Own clothing line'}]},
+    i2:{t:'International',r:[{k:'Country',v:'Poland'},{k:'Caps',v:'165',v2:true},{k:'Goals',v:'89',v2:true},{k:'Barcelona contract',v:'Until Jun 2026'},{k:'World Cups',v:'2018, 2022'},{k:'EURO appearances',v:'2008–2024'}]},
     ai:{n:'Robert Lewandowski',w:'<strong>One of the most underrepresented superstars</strong> in global media. Massively famous in Europe, almost invisible in English-language content despite being an all-time great striker.',m:'<strong>Polish diaspora of 21M+ people worldwide</strong> and European football fans who know Lewandowski is exceptional but have no English-language destination for his story.',o:'<strong>English-language Polish football platform.</strong> Lewandowski as the entry point — his career, his records, the Poland national team story told properly for an international audience.',d:'<strong>Easy.</strong> Pure content play with a massively underserved audience already looking for this.',
       layout:'c',
       b:'Polska Football',bd:'English-language newsletter and YouTube covering Polish football. Lewandowski, the Bundesliga years, the national team. 20,000 subscribers at €5/month = €100K MRR.',
@@ -1256,6 +1240,7 @@ const R={
     {e:'',n:'Netflix',d:'Streaming · 260M subscribers',v:'$39B',s:'2024 verified',c:'gold',b:'v',g:'+16%'},
     {e:'',n:'Salesforce',d:'CRM SaaS leader',v:'$34.9B',s:'2024 verified',c:'gold',b:'v',g:'+9%'},
     {e:'',n:'Shopify',d:'E-commerce · 4.6M merchants',v:'$7.7B',s:'2024 verified',c:'gold',b:'v',g:'+26%'},
+    {e:'',n:'NVIDIA',d:'AI chips · GPUs · Data center',v:'$130B',s:'FY2025 verified',c:'gold',b:'v',g:'+114%',k:'jensen'},
   ]},
   ai:{t:'AI Companies — Revenue and Valuation',s:'Fastest-growing AI companies · estimated unless stated',items:[
     {e:'',n:'OpenAI',d:'ChatGPT · GPT-4o · API · Sora',v:'$3.7B ARR',s:'est.',c:'purple',b:'hot',k:'openai',g:'+3.4x'},
@@ -1298,7 +1283,7 @@ const R={
     {e:'',n:'Robert Lewandowski',d:'Poland · FC Barcelona',v:'$200M',s:'est.',c:'gold',k:'lewandowski'},
   ]},
   poland:{t:'Poland — Profiles',s:'Polish footballers, creators, billionaires and businesses',items:[
-    {e:'',n:'Robert Lewandowski',d:'Poland all-time top scorer · FC Barcelona',v:'$200M',s:'est.',c:'gold',k:'lewandowski',b:'r'},
+    {e:'',n:'Robert Lewandowski',d:'Poland all-time top scorer · 165 caps · 89 goals · FC Barcelona',v:'$200M',s:'est.',c:'gold',k:'lewandowski',b:'r'},
     {e:'',n:'Michal Solowow',d:"Poland's richest · Ceramics, motorsport",v:'~$3B',s:'est.',c:'gold',k:'solowow'},
     {e:'',n:'CD Projekt RED',d:'Witcher · Cyberpunk · Warsaw Stock Exchange listed',v:'$270M rev.',s:'verified',c:'green',k:'cdprojekt',b:'v'},
     {e:'',n:'Friz (Ekipa)',d:"Poland's largest YouTuber · 5M+ subscribers",v:'~$15M',s:'est.',c:'gold',k:'friz'},
@@ -1316,6 +1301,7 @@ const R={
     {e:'',n:'KSI',d:'YouTube · Music · Prime co-founder',v:'$50M',s:'est.',c:'gold'},
     {e:'',n:'Friz (Ekipa)',d:'Poland · YouTube · 5M+ subscribers',v:'~$15M',s:'est.',c:'gold',k:'friz'},
     {e:'',n:"Charli D'Amelio",d:'TikTok · 155M followers',v:'$20M',s:'est.',c:'gold'},
+    {e:'',n:'Taylor Swift',d:'Musician · Billionaire · Eras Tour',v:'$1.6B',s:'est.',c:'gold',k:'taylorswift'},
   ]},
   local:{t:'Local Business — Annual Revenue Benchmarks',s:'Average UK and EU annual revenue · all estimated',items:[
     {e:'',n:'Dental Practice (2 dentists)',d:'NHS and private · UK average',v:'~£1.2M',s:'avg est.',c:'gold'},
@@ -1339,6 +1325,11 @@ const TRENDING=[
   {k:'messi',n:'Messi',f:'$700M · 8x Ballon d\'Or · World Cup'},
   {k:'neymar',n:'Neymar',f:'$200M · $56K verified on-chain crypto'},
   {k:'solowow',n:'M. Solowow',f:"~$3B · Poland's richest · 3x WRC champion"},
+  {k:'haaland',n:'Haaland',f:'$100M · Norway World Cup 2026 · all-time top scorer'},
+  {k:'taylorswift',n:'Taylor Swift',f:'$1.6B billionaire · Eras Tour grossed $2B+'},
+  {k:'elonmusk',n:'Elon Musk',f:'$300B+ net worth · Tesla · SpaceX · xAI'},
+  {k:'jensen',n:'Jensen Huang',f:'$120B · NVIDIA $130B revenue · AI era'},
+  {k:'lebronjames',n:'LeBron James',f:'$1.5B · 40,000+ career points · NBA record'},
 ];
 
 // ── STATE ──
@@ -1349,6 +1340,7 @@ function showP(k){
   const p=P[k];if(!p)return;
   curK=k;aiOpen=false;closeSearch();
   document.getElementById('pAva').innerHTML=p.ava;
+  var bc=document.getElementById('pBreadcrumb');if(bc)bc.textContent=p.name;
   document.getElementById('pNm').textContent=p.name;
   document.getElementById('pMt').innerHTML=p.meta.map(m=>`<span>${m}</span>`).join('');
   document.getElementById('pTg').innerHTML=p.tags.map(t=>`<span class="pt ${t.c}">${t.l}</span>`).join('');
@@ -1388,6 +1380,9 @@ function showP(k){
   document.getElementById('pIn').innerHTML=ri(p.i1)+ri(p.i2);
   const panel=document.getElementById('pp');
   panel.classList.add('show');
+  setURL(k);
+  updateMeta(k);
+  renderSeoContent(k);
   setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'start'}),60);
 }
 
@@ -1479,7 +1474,57 @@ function swF(el){document.querySelectorAll('.lf').forEach(b=>b.classList.remove(
 function filterCountry(code){
   document.querySelectorAll('.cf').forEach(c=>c.classList.remove('on'));
   document.getElementById('cf-'+code)?.classList.add('on');
-  const map={pl:'poland',pt:'footballers',br:'footballers',fr:'founders',us:'tech',nl:'footballers'};
+  const map={pl:'poland',pt:'footballers',br:'footballers',fr:'founders',us:'tech',nl:'footballers'
+  haaland:{name:'Erling Haaland',ava:av({sk:'#f0d0a0',hr:'#f0c060',st:'short',jr:'#6cabdd',nm:'9',bg:'#081420',ac:''}),type:'footballer',country:'no',ver:false,rev:'April 2026',claim:true,
+    tags:[{l:'Footballer',c:'s'},{l:'Active',c:'a'},{l:'World Cup 2026',c:'r'}],
+    meta:['Jul 21, 2000','Leeds, England / Bryne, Norway','Norwegian','Age 25'],
+    soc:[{i:'Instagram',l:'@erling.haaland · 35M',u:'https://instagram.com/erling.haaland'}],
+    stats:[{l:'Net Worth',v:'$100M',c:'gold',n:'Estimated 2026',e:true},{l:'Man City Salary',v:'£28M/yr',c:'blue',n:'After 2025 contract ext.',v2:true},{l:'Norway Goals',v:'50+',c:'gold',n:'All-time top scorer',v2:true},{l:'Career Goals',v:'310+',c:'',n:'All clubs combined',v2:true}],
+    career:[{c:'Bryne FK',f:'NO',y:'2016',a:16,g:0,as:0},{c:'Molde FK',f:'NO',y:'2017–19',a:50,g:20,as:8},{c:'RB Salzburg',f:'AT',y:'2019–20',a:27,g:29,as:8},{c:'Borussia Dortmund',f:'DE',y:'2020–22',a:89,g:86,as:23},{c:'Manchester City',f:'EN',y:'2022–now',a:160,g:175,as:38}],tA:342,tG:310,tAs:77,
+    i1:{t:'Earnings',r:[{k:'Net Worth',v:'~$100M',e:true},{k:'Man City weekly',v:'~£400K/week',v2:true},{k:'Annual salary',v:'~£28M/year',v2:true},{k:'Endorsements',v:'Nike, Hyperice, Dell, Samsung'},{k:'Nike boot deal',v:'~$20M estimated',e:true}]},
+    i2:{t:'International Career',r:[{k:'Country',v:'Norway'},{k:'Goals',v:'50+',v2:true},{k:'Record',v:'Norway all-time top scorer'},{k:'World Cup 2026',v:'Qualified — Norway first WC since 1998'},{k:'Contract',v:'Man City extended 2025 — long-term'}]},
+    ai:{n:'Erling Haaland',w:'<strong>Haaland is radically under-monetised off the pitch</strong> relative to his on-pitch dominance. Fewer Instagram followers than players with a fraction of his ability.',m:'<strong>Nordic football fans globally</strong> — Norway qualifying for the 2026 World Cup for the first time since 1998 created a massive new global audience with nowhere to go.',o:'<strong>Norwegian football media brand.</strong> Haaland as the entry point. The Scandinavian football story told properly in English for the first time.',d:'<strong>Easy.</strong> Content play with a hungry audience.',layout:'c',b:'Viking Football',bd:'English-language newsletter and YouTube covering Norwegian and Scandinavian football. Haaland, the 2026 World Cup qualification story. €5/month. 20,000 subscribers = €100K MRR.',pn:'Viking Football',pt:'Scandinavian football. In English.',pc:'Subscribe Free',pf:['Haaland career deep dives','World Cup 2026 Norway coverage','Scandinavian talent scouting','English language'],pu:'vikingfootball.com',pbg:'#081420',pa:'#c8102e'}},
+
+  taylorswift:{name:'Taylor Swift',ava:av({sk:'#f5c8a0',hr:'#c8a060',st:'long',jr:'#c8102e',nm:'',bg:'#1a0810',ac:''}),type:'creator',country:'us',ver:false,rev:'April 2026',claim:false,
+    tags:[{l:'Musician',c:'c'},{l:'Billionaire',c:'r'},{l:'Active',c:'a'}],
+    meta:['Dec 13, 1989','West Reading, Pennsylvania, USA','American','Age 36'],
+    soc:[{i:'Instagram',l:'@taylorswift · 300M+',u:'https://instagram.com/taylorswift'},{i:'X',l:'@taylorswift13 · 95M',u:'https://x.com/taylorswift13'}],
+    stats:[{l:'Net Worth',v:'$1.6B',c:'gold',n:'Forbes est. 2025-26',e:true},{l:'Eras Tour gross',v:'$2B+',c:'green',n:'Highest-grossing tour ever',v2:true},{l:'Spotify streams',v:'100B+',c:'blue',n:'All-time streams',v2:true},{l:'Grammy Awards',v:'14×',c:'',n:'All-time female record',v2:true}],
+    career:[],tA:0,tG:0,tAs:0,
+    i1:{t:'Revenue Breakdown',r:[{k:'Net Worth',v:'$1.6B',c:'gold',e:true},{k:'Eras Tour gross',v:'$2B+ ticket sales',v2:true},{k:'Personal tour earnings',v:'~$190M post-tax',e:true},{k:'Music catalog value',v:'~$600M',e:true},{k:'Real estate portfolio',v:'~$150M+',e:true}]},
+    i2:{t:'Career Highlights',r:[{k:'Albums',v:'11 studio albums'},{k:'Re-recordings',v:'Owns all her masters'},{k:'Concert film',v:'$260M — highest ever'},{k:'Engagement',v:'Travis Kelce, 2025'},{k:'2026 activity',v:'New album The Life of a Showgirl'}]},
+    ai:{n:'Taylor Swift',w:'<strong>Taylor Swift has the most loyal fanbase in music history but no subscription product</strong> — Swifties spend thousands on merch and tickets but have no always-on membership community.',m:'<strong>200M+ superfans worldwide</strong> who would pay monthly for exclusive content, early access, community. The demand is proven — they camp outside venues for days.',o:'<strong>Fan membership platform for music artists</strong> — exclusive content, pre-sale access, community forums. Swift would be the proof of concept for a platform that scales to all artists.',d:'<strong>Medium.</strong> Technology is simple. Getting artist buy-in is the challenge. Start with mid-tier artists (1M–10M fans) who need the revenue.',layout:'d',b:'FanPass',bd:'Artist membership platform. Fans pay €9/month for exclusive content, early ticket access, community. Artists get 80% of revenue. Start with 100 mid-tier artists — 10,000 fans each at €9 = €9M MRR.',pn:'FanPass',pt:'Closer to the artists you love.',pc:'Join Now',pf:['Exclusive artist content','Pre-sale ticket access','Fan community forums','Direct artist messaging'],pu:'fanpass.io',pbg:'#1a0810',pa:'#c8102e'}},
+
+  elonmusk:{name:'Elon Musk',ava:av({sk:'#e0c090',hr:'#5a4030',st:'short',jr:'#1a1a2e',nm:'',bg:'#080810',ac:'stubble'}),type:'founder',country:'us',ver:false,rev:'April 2026',claim:false,
+    tags:[{l:'Tech Billionaire',c:'r'},{l:'Active',c:'a'},{l:'Richest Person',c:'r'}],
+    meta:['Jun 28, 1971','Pretoria, South Africa','American / South African','Age 54'],
+    soc:[{i:'X',l:'@elonmusk · 200M+',u:'https://x.com/elonmusk'}],
+    stats:[{l:'Net Worth',v:'$300B+',c:'gold',n:'Bloomberg Billionaires Index',e:true},{l:'Tesla stake',v:'~13%',c:'blue',n:'~$90B value est.',e:true},{l:'SpaceX valuation',v:'$350B',c:'green',n:'2024 funding round',e:true},{l:'X (Twitter)',v:'$44B paid',c:'',n:'Acquisition 2022',v2:true}],
+    career:[],tA:0,tG:0,tAs:0,
+    i1:{t:'Companies and Wealth',r:[{k:'Net Worth',v:'$300B+',e:true},{k:'Tesla (CEO)',v:'EV and energy — $700B mkt cap'},{k:'SpaceX (CEO)',v:'$350B valuation'},{k:'X / Twitter (owner)',v:'Bought for $44B in 2022'},{k:'xAI (Grok AI)',v:'$50B+ valuation est.',e:true},{k:'Neuralink',v:'Brain-computer interface startup'},{k:'The Boring Company',v:'Tunneling infrastructure'}]},
+    i2:{t:'Background',r:[{k:'Born',v:'1971, Pretoria, South Africa'},{k:'Early ventures',v:'Zip2, X.com (became PayPal)'},{k:'PayPal sale',v:'$165M (2002)'},{k:'Tesla founder?',v:'No — early investor and CEO from 2008'},{k:'US political role',v:'DOGE advisory role, 2025'},{k:'Countries',v:'South Africa / Canada / USA'}]},
+    ai:{n:'Elon Musk',w:'<strong>Musk controls the infrastructure of the future but communicates exclusively through chaos.</strong> No structured investor education, no accessible explainer for what his companies actually do day-to-day.',m:'<strong>500M+ people who follow Musk</strong> but have no clear understanding of what Tesla, SpaceX, xAI or Neuralink actually do or how to track their progress.',o:'<strong>A "Musk Portfolio Tracker"</strong> — real-time status of all Musk companies: SpaceX launches, Tesla delivery numbers, X user stats, xAI milestones. One dashboard for the full empire.',d:'<strong>Easy.</strong> All data is public. No permission needed.',layout:'d',b:'Musk Empire Tracker',bd:'One dashboard tracking all Elon Musk company metrics in real time. SpaceX launch count, Tesla quarterly deliveries, X monthly users, xAI benchmark results. Ad-supported free tier, €9/month Pro.',pn:'Musk Tracker',pt:'The full Musk empire. One dashboard.',pc:'Track Now',pf:['SpaceX launch tracker','Tesla delivery dashboard','X platform metrics','xAI benchmark updates'],pu:'musktracker.io',pbg:'#080810',pa:'#5b9cf6'}},
+
+  jensen:{name:'Jensen Huang',ava:av({sk:'#d4a87a',hr:'#1a0f08',st:'short',jr:'#76b900',nm:'',bg:'#081008',ac:'stubble'}),type:'founder',country:'us',ver:false,rev:'April 2026',claim:false,
+    tags:[{l:'Tech Billionaire',c:'r'},{l:'Active',c:'a'},{l:'AI Era',c:'c'}],
+    meta:['Feb 17, 1963','Tainan, Taiwan','American / Taiwanese','Age 62'],
+    soc:[{i:'Web',l:'nvidia.com',u:'https://nvidia.com'}],
+    stats:[{l:'Net Worth',v:'$120B+',c:'gold',n:'Forbes 2026 est.',e:true},{l:'NVIDIA Revenue',v:'$130B',c:'green',n:'FY2025 — all-time record',v2:true},{l:'NVIDIA Market Cap',v:'$3.3T',c:'blue',n:'April 2026',v2:true},{l:'NVIDIA stake',v:'~3.5%',c:'',n:'~$115B at peak',e:true}],
+    career:[],tA:0,tG:0,tAs:0,
+    i1:{t:'NVIDIA Revenue',r:[{k:'Net Worth',v:'$120B+',e:true},{k:'FY2025 Revenue',v:'$130B',v2:true},{k:'Data Center revenue',v:'$115B (88%)',v2:true},{k:'Gaming revenue',v:'$11B',v2:true},{k:'Revenue growth',v:'+114% year on year',v2:true}]},
+    i2:{t:'Background',r:[{k:'Born',v:'1963, Tainan, Taiwan'},{k:'Co-founded NVIDIA',v:'1993 with Chris Malachowsky'},{k:'Leather jacket',v:'Signature look, every keynote'},{k:'Known for',v:'Making AI hardware the most valuable commodity in history'},{k:'CEO since',v:'1993 — one of the longest-serving tech CEOs'}]},
+    ai:{n:'Jensen Huang',w:'<strong>NVIDIA sells the picks and shovels of the AI gold rush</strong> but there is no accessible real-time tracker for AI hardware demand, GPU availability, or AI infrastructure buildout.',m:'<strong>50M+ AI developers and investors</strong> who need to track GPU availability, data center capacity, and AI infrastructure investment in real time.',o:'<strong>AI Infrastructure Intelligence platform</strong> — tracks GPU orders, data center construction, AI capex by company. The Bloomberg terminal for AI infrastructure.',d:'<strong>Hard</strong> — data is fragmented. But a newsletter version is easy.',layout:'d',b:'GPU Intelligence',bd:'Weekly newsletter and dashboard tracking AI infrastructure investment — who is buying GPUs, how much data center capacity is being built, which companies are leading. €49/month Pro.',pn:'GPU Intel',pt:'AI infrastructure. Tracked.',pc:'Subscribe',pf:['Weekly GPU market report','Data center investment tracker','AI capex by company','Early signal detection'],pu:'gpuintel.com',pbg:'#081008',pa:'#76b900'}},
+
+  lebronjames:{name:'LeBron James',ava:av({sk:'#8b5e3c',hr:'#1a0808',st:'short',jr:'#552583',nm:'23',bg:'#150820',ac:'stubble'}),type:'athlete',country:'us',ver:false,rev:'April 2026',claim:false,
+    tags:[{l:'Basketball',c:'s'},{l:'Active',c:'a'},{l:'Billionaire',c:'r'}],
+    meta:['Dec 30, 1984','Akron, Ohio, USA','American','Age 41'],
+    soc:[{i:'Instagram',l:'@kingjames · 160M',u:'https://instagram.com/kingjames'},{i:'X',l:'@KingJames · 52M',u:'https://x.com/KingJames'}],
+    stats:[{l:'Net Worth',v:'$1.5B',c:'gold',n:'Forbes est. 2025',e:true},{l:'Career Points',v:'40,000+',c:'blue',n:'All-time NBA record',v2:true},{l:'NBA Championships',v:'4×',c:'',n:'2012, 2013, 2016, 2020',v2:true},{l:'SpringHill Co.',v:'$725M valuation',c:'green',n:'Entertainment company',e:true}],
+    career:[],tA:0,tG:0,tAs:0,
+    i1:{t:'Earnings',r:[{k:'Net Worth',v:'$1.5B',e:true},{k:'NBA Salary',v:'~$50M/year',v2:true},{k:'Endorsements',v:'Nike lifetime deal ~$1B total',e:true},{k:'SpringHill Co.',v:'Production + media company'},{k:'Blaze Pizza',v:'Early investor — sold stake'},{k:'Liverpool FC',v:'2% stake via partner deal'}]},
+    i2:{t:'Career Highlights',r:[{k:'NBA Debut',v:'2003 — Cleveland Cavaliers'},{k:'Championships',v:'4× (Heat 2012/13, Cavaliers 2016, Lakers 2020)'},{k:'Points record',v:'40,000+ — all-time NBA leader',v2:true},{k:'Son Bronny',v:'NBA — plays alongside LeBron at Lakers'},{k:'Future',v:'Possibly player-owner of expansion franchise'}]},
+    ai:{n:'LeBron James',w:'<strong>LeBron is the most businesslike athlete of his generation but his media company SpringHill has no direct consumer subscription product.</strong>',m:'<strong>NBA fans globally</strong> who want deeper access than broadcasts provide — training content, business insights, the athlete-as-entrepreneur model.',o:'<strong>Athlete entrepreneur content platform.</strong> LeBron has built a media empire but there is no premium subscription tier for his business and basketball content.',d:'<strong>Easy concept.</strong> LeBron has proven the market exists — Uninterrupted already does this, but without a paid tier.',layout:'c',b:'The Boardroom Pass',bd:'Premium content platform for athlete-entrepreneur stories. Training, business, culture. €9/month. LeBron, Durant, Curry, Mahomes as inspiration — not affiliation.',pn:'Boardroom Pass',pt:'The athlete entrepreneur. Unfiltered.',pc:'Join Free',pf:['Athlete business breakdowns','Training and mindset content','Investment case studies','Weekly newsletter'],pu:'boardroompass.com',pbg:'#150820',pa:'#f5b400'}},
+};
   switchCat(code==='all'?'tech':map[code]||'tech');
 }
 
@@ -1554,7 +1599,9 @@ function showPage(id){
 function showMain(){
   document.getElementById('mainSite').style.display='';
   document.querySelectorAll('.subpage').forEach(s=>s.classList.remove('show'));
+  document.getElementById('pp').classList.remove('show');
   document.title='WhoEarns — Net Worth, Revenue and Career Stats';
+  history.pushState({},'','/');
   window.scrollTo(0,0);
 }
 
@@ -1576,12 +1623,175 @@ function animN(id,from,to,dur,suf){
   const timer=setInterval(()=>{const prog=Math.min((Date.now()-start)/dur,1);const e=1-Math.pow(1-prog,3);el.textContent=Math.round(from+(to-from)*e).toLocaleString()+suf;if(prog>=1)clearInterval(timer);},16);
 }
 
+// ── SEO TEXT CONTENT ─────────────────────
+// Google-readable text for each profile
+function renderSeoContent(k){
+  const p = P[k];
+  if(!p) return;
+  const el = document.getElementById('pSeoContent');
+  if(!el) return;
+
+  // Build readable paragraph from profile data
+  const mainStat = p.stats[0];
+  const secondStat = p.stats[1];
+  const thirdStat = p.stats[2];
+
+  let text = '';
+
+  // Opening sentence
+  text += `<h2 style="font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,24px);font-weight:700;letter-spacing:-.3px;margin-bottom:12px;color:var(--t1)">${p.name} — Net Worth and Earnings</h2>`;
+
+  // Main paragraph
+  let para = `${p.name}`;
+  if(p.meta && p.meta.length > 0) para += ` (${p.meta.slice(0,3).join(', ')})`;
+  para += ` has an estimated net worth of ${mainStat?.v || 'undisclosed'}`;
+  if(mainStat?.e) para += ' (estimated)';
+  if(mainStat?.v2) para += ' (verified)';
+  para += '.';
+
+  if(secondStat) {
+    para += ` ${p.name}'s ${secondStat.l.toLowerCase()} stands at ${secondStat.v}`;
+    if(secondStat.n) para += `, ${secondStat.n}`;
+    para += '.';
+  }
+
+  if(thirdStat) {
+    para += ` With ${thirdStat.l.toLowerCase()} of ${thirdStat.v}`;
+    if(thirdStat.n) para += ` (${thirdStat.n})`;
+    para += ', ' + p.name + ' ranks among the most prominent figures in their field.';
+  }
+
+  text += `<p style="font-size:14px;color:var(--t2);line-height:1.8;margin-bottom:12px">${para}</p>`;
+
+  // Career summary for footballers
+  if(p.career && p.career.length > 0){
+    let career = `${p.name} has played for ${p.career.map(c=>c.c).join(', ')} throughout their career. `;
+    career += `Career totals: ${p.tA} appearances, ${p.tG} goals and ${p.tAs} assists. `;
+    if(p.i2 && p.i2.r){
+      const caps = p.i2.r.find(r=>r.k==='Caps');
+      const goals = p.i2.r.find(r=>r.k==='Goals');
+      const country = p.i2.r.find(r=>r.k==='Country');
+      if(country && caps && goals){
+        career += `Internationally, ${p.name} has earned ${caps.v} caps and scored ${goals.v} goals for ${country.v}.`;
+      }
+    }
+    text += `<p style="font-size:14px;color:var(--t2);line-height:1.8;margin-bottom:12px">${career}</p>`;
+  }
+
+  // Earnings details
+  if(p.i1 && p.i1.r && p.i1.r.length > 0){
+    text += `<h3 style="font-size:14px;font-weight:700;margin-bottom:8px;color:var(--t1)">${p.name} Earnings and Income Sources</h3>`;
+    let earnings = p.i1.r.map(r => `${r.k}: ${r.v}`).join('. ') + '.';
+    text += `<p style="font-size:14px;color:var(--t2);line-height:1.8;margin-bottom:12px">${earnings}</p>`;
+  }
+
+  // Data source note
+  const srcNote = `Net worth figures for ${p.name} are ${p.ver ? 'verified from official sources' : 'estimated based on publicly available information including reported salaries, endorsement deals, and credible media sources including Forbes and Bloomberg'}. Last reviewed: ${p.rev}.`;
+  text += `<p style="font-size:12px;color:var(--t3);line-height:1.7;font-style:italic">${srcNote}</p>`;
+
+  el.innerHTML = text;
+}
+
+// ── URL ROUTER ──────────────────────────
+function getSlug(){
+  const path = window.location.pathname;
+  // Clean URL: /cristiano-ronaldo
+  if(path && path.length > 1 && !path.startsWith('/#')){
+    return path.slice(1); // remove leading /
+  }
+  // Fallback hash routing
+  const h = window.location.hash;
+  if(h.startsWith('#/')){return h.slice(2);}
+  return null;
+}
+
+function setURL(slug){
+  if(slug){
+    history.pushState({slug}, '', '/' + slug);
+  } else {
+    history.pushState({}, '', '/');
+  }
+}
+
+function updateMeta(slug){
+  const p = P[slug];
+  if(!p) return;
+  const mainStat = p.stats[0];
+  const val = mainStat ? mainStat.v + ' ' + mainStat.l : '';
+  const title = p.name + ' — Net Worth, Earnings and Career Stats · WhoEarns';
+  const desc = p.name + ' net worth, career stats and earnings. ' + val + ' · WhoEarns — the numbers people actually want to see.';
+  document.title = title;
+  // Update og tags
+  setMeta('og:title', title);
+  setMeta('og:url', 'https://whoearns.com/' + slug);
+  setMeta('og:description', desc);
+  setMeta('twitter:title', title);
+  setMeta('twitter:description', desc);
+  setMeta('description', desc);
+  // Update canonical
+  var canon = document.querySelector('link[rel="canonical"]');
+  if(canon){ canon.href = 'https://whoearns.com/' + slug; }
+  // Inject JSON-LD schema
+  injectSchema(p, slug);
+}
+
+function setMeta(name, val){
+  var el = document.querySelector('meta[name="'+name+'"],meta[property="'+name+'"]');
+  if(el){ el.setAttribute(el.hasAttribute('property')?'content':'content', val); }
+}
+
+function injectSchema(p, slug){
+  var old = document.getElementById('profile-schema');
+  if(old) old.remove();
+  var schema = {
+    '@context': 'https://schema.org',
+    '@type': p.type === 'footballer' || p.type === 'athlete' ? 'Person' : 
+             p.type === 'tech' || p.type === 'ai' || p.type === 'business' ? 'Organization' : 'Person',
+    'name': p.name,
+    'url': 'https://whoearns.com/' + slug,
+    'description': p.name + ' — ' + (p.stats[0]?.l || '') + ': ' + (p.stats[0]?.v || ''),
+    'sameAs': p.soc ? p.soc.map(s => s.u) : []
+  };
+  if(p.type === 'footballer' || p.type === 'athlete'){
+    schema['jobTitle'] = p.tags[0]?.l || 'Athlete';
+    schema['nationality'] = p.meta[2] || '';
+    schema['birthDate'] = p.meta[0] || '';
+  }
+  var s = document.createElement('script');
+  s.id = 'profile-schema';
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(schema);
+  document.head.appendChild(s);
+}
+
+function handleRoute(){
+  const slug = getSlug();
+  if(slug && P[slug]){
+    showP(slug);
+    updateMeta(slug);
+  }
+}
+
+// Handle browser back/forward
+window.addEventListener('popstate', function(e){
+  const slug = getSlug();
+  if(slug && P[slug]){
+    showP(slug);
+    updateMeta(slug);
+  } else {
+    // Back to home
+    document.getElementById('pp').classList.remove('show');
+    document.title = 'WhoEarns — Net Worth, Revenue and Career Stats';
+  }
+});
+
 // ── INIT ──
 renderR('tech');
 renderTrending();
 populateCompareSelects();
+handleRoute();
 setTimeout(()=>{
-  animN('c1',0,14847,2200,'');
+  animN('c1',0,15240,2200,'');
   animN('c2',0,12,1200,'');
   animN('c4',0,4231,1900,'');
   setTimeout(()=>{document.getElementById('c3').textContent='$47T+';},1700);
